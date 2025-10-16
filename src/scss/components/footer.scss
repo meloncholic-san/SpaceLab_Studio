@@ -1,0 +1,64 @@
+@use '../utils/variables.scss';
+
+.footer {
+    padding: 0 64px;
+    padding-right: 0;
+    display: flex;
+    flex-direction: row;
+    margin-top: -48px;
+    gap: 889px;
+    height: 19px;
+    align-items: center;
+    &__dark {
+    position: relative;
+    color: variables.$color-main-white;
+    }
+
+    &__copyright {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-light;
+        font-size: 12px;
+        line-height: 1.52em;
+        color: variables.$color-secondary-grey;
+    }
+    &__phrase {
+        display: flex;
+        flex-direction: row;
+        gap: 26px;
+        
+            &_left {
+            color: variables.$color-secondary-grey;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-light;
+            font-size: 12px;
+            line-height: 1.52em;
+            margin-top: 2px;
+            }
+            &_right {
+            color: variables.$color-main-white;
+            display: flex;
+            flex-direction: column;
+            min-width: 85px;
+                span {
+                    &:first-child {
+                    font-family: variables.$font-family-third;
+                    font-weight: variables.$font-weight-regular;
+                    font-size: 12.4px;
+                    line-height: 0.8em;
+                    }
+
+                    &:last-child {
+                    font-family: variables.$font-family-second;
+                    font-weight: variables.$font-weight-regular;
+                    font-size: 15px;
+                    text-align: right;
+                    line-height: 0.8em;
+                    padding-top: 1px;
+                    padding-right: 6px;
+                    }
+                }
+
+            }
+    }
+}
+

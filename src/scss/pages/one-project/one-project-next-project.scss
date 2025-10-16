@@ -1,0 +1,86 @@
+@use '../../utils/variables.scss';
+@use '../../utils/mixins' as *;
+
+.one-project-next-project {
+    background-color: variables.$color-main-black;
+    margin-top: -1px;
+    color: variables.$color-main-white;
+    min-width: 375px;
+    &__wrapper {
+        padding: 0 64px;
+        padding-bottom: 128px;
+        max-width: 1440px;
+        margin: 0 auto;
+            @include respond-to(md) {
+                padding: 0 56px;
+                padding-bottom: 40px;
+                max-width: 1024px;
+            }
+            @include respond-to(sm) {
+                padding: 0 48px;
+                padding-bottom: 40px;
+                max-width: 768px;
+            }
+            @include respond-to(xxs) {
+                max-width: 375px;
+                padding: 0 24px;
+                padding-bottom: 40px;
+            }
+    }
+
+    &__phrase {
+        text-align: center;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-bold;
+        font-size: 8px;
+        line-height: 1.71em;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 16px;                
+        color: variables.$color-secondary-grey;
+        width: 200px;
+        margin-left: 552px;
+                @include respond-to(md) {
+                    margin-left: 356px;
+                }
+                @include respond-to(sm) {
+                    margin-left: 236px;
+                    margin-bottom: 12px;
+                }
+                @include respond-to(xxs) {
+                    color: variables.$color-main-white;
+                    margin-left: 63px;
+                    margin-bottom: 5px;
+                }
+
+    }
+
+    &__title {
+        text-align: center;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-bold;
+        font-size: 36px;
+        margin-bottom: 128px;
+        margin-left: 16px;
+                @include respond-to(md) {
+                    font-size: 32px;
+                    margin-bottom: 38px;
+                }
+                @include respond-to(sm) {
+                    margin-bottom: 72px;
+                }
+                @include respond-to(xxs) {
+                    font-size: 26px;
+                    margin-left: 13px;
+                    margin-bottom: 48px;
+                    max-width: 300px;
+                }
+    }
+
+    &__photo {
+        @include respond-from(lg) {
+        display: flex;
+        justify-content: center;
+        }
+    }
+}

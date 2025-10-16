@@ -1,0 +1,259 @@
+@use '../utils/variables.scss';
+@use '../utils/mixins' as *;
+
+
+.contacts {
+    background: url("../img/contacts/footer-bg-1440.png") no-repeat center/cover;
+        @include respond-to(md) {
+            background: url("../img/contacts/footer-bg-1024.png") no-repeat center/cover;
+        }
+        @include respond-to(sm) {
+            background: url("../img/contacts/footer-bg-768.png") no-repeat center/cover;
+        }
+        @include respond-to(xxs) {
+            background: url("../img/contacts/footer-bg-375.png") no-repeat center/cover;
+        }
+
+    &__wrapper {
+        padding: 119px 64px;
+        padding-bottom: 170px;
+        margin: 0 auto;
+        max-width: 1440px;
+
+        @include respond-to(md) {
+        width: 1024px;
+        padding: 106px 29px;
+        padding-bottom: 165px;
+        }
+        @include respond-to(sm) {
+        width: 768px;
+        padding: 90px 0px;
+        padding-bottom: 43px;
+        }
+        @include respond-to(xxs) {
+            padding: 59px 0;
+            width: 375px;
+            padding-bottom: 117px;
+        }
+    }
+
+
+    &__headline {
+        margin-bottom: 62px;
+        margin-left: 130px;
+
+            @include respond-to(md) {
+                margin-bottom: 54px;
+            }
+
+            @include respond-to(sm) {
+                margin-left: 124px;
+                margin-bottom: 48px;
+            }
+            @include respond-to(xxs) {
+                margin-left: 25px;
+                margin-bottom: 38px;
+            }
+        &__title {
+        font-size: 36px;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-bold;
+        color: variables.$color-main-white;
+        margin-bottom: 12px;
+        @include respond-to(md) {
+            display: none;
+        }
+
+
+            &-mobile {
+            display: none;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-bold;
+            font-size: 32px;
+            color: variables.$color-main-white;
+                @include respond-to(md) {
+                    display: block;
+                    margin-bottom: 12px;
+                }
+                @include respond-to(xxs) {
+                    font-size: 26px;
+                }
+            }
+        }
+
+        &__phrase {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-light;
+        font-size: 14px;
+        line-height: 1.71em;
+        color: variables.$color-main-white;
+        max-width: 390px;
+        opacity: 0.6;
+
+                @include respond-to(xxs) {
+                    max-width: 315px;
+                }
+        }
+    }
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 68px;
+        margin-left: 130px;
+
+        @include respond-to(md) {
+            margin-bottom: 59px;
+        }
+        @include respond-to(sm) {
+            margin-left: 124px;
+            gap: 49px;
+            flex-direction: column;
+        }
+        @include respond-to(xxs) {
+            margin-left: 25px;
+        }
+    }
+
+    &__navigation {
+
+        display: flex;
+        flex-direction: row;
+        gap: 102px;
+
+            @include respond-to(md) {
+                gap: 40px
+            }
+            @include respond-to(sm) {
+                gap: 35px;
+            }
+            @include respond-to(xxs) {
+                gap: 34px;
+                flex-wrap: wrap;
+                width: 335px;
+            }
+        &__item {
+
+        &:nth-child(1) {
+            min-width: 133px;
+                @include respond-to(xxs) {
+                    margin-right: 6px;
+                }
+        }
+
+        &:nth-child(2) {
+            min-width: 162px;
+        }
+
+        &:nth-child(3) {
+            min-width: 154px;
+        }
+            &_city {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-bold;
+            color: variables.$color-main-white;
+            font-size: 16px;
+            line-height: 1.37em;
+            margin-bottom: 18px;
+                @include respond-to(xxs) {
+                    margin-bottom: 13px;
+                }
+            }
+            &_number,&_geo {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-light;
+            color: variables.$color-main-white;
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            }
+
+            &_number {
+            margin-bottom: 8px;
+            }
+            &_geo-secondline {
+            display: block;
+            margin-top: 8px;
+            }
+
+        }
+
+    }
+
+    &__socials-desktop {
+        margin-top: 4px;
+        margin-right: 115px;
+
+        @include respond-to(md) {
+            margin-right: 186px;
+        }
+
+        @include respond-to(sm) {
+            margin-left: 366px;
+        }
+        @include respond-to(xxs) {
+            margin-left: 0px;
+            margin-top: -14px;
+        }
+
+        &_mail {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-semibold;
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            color: variables.$color-main-white;
+            margin-bottom: 19px;
+
+            @include respond-to(sm) {
+                margin-bottom: 10px;
+            }
+        }
+        &-list {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+        }
+        li a {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-semibold;
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            color: variables.$color-main-white;
+            text-decoration: none; 
+        }
+    }
+
+
+
+        &__request-button {
+        max-width: 183px;
+        background-color: variables.$color-main-white;
+        padding: 17px 48px;
+        color: variables.$color-main-black;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-semibold;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        align-self: flex-end;
+        margin-right: 156px;
+        z-index: 4;
+        cursor: pointer;
+        position: relative;
+
+        @include respond-to(sm) {
+        top: -103px;
+        left: -7px;
+        padding: 14px 48px;
+        }
+
+        @include respond-to(xxs) {
+        top: -15px;
+        left: -106px;
+        margin-left: 26px;
+        margin-right: 0;
+        }
+    }
+
+    &__button {
+        margin-left: 132px;
+    }
+}

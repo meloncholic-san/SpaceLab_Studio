@@ -1,0 +1,113 @@
+<section class="main-projects">
+    <div class="main-projects__wrapper">
+        <div class="main-projects__content">
+            <h2 class="main-projects__title">Our Projects</h2>
+            <p class="main-projects__phrase">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.</p>
+        </div>
+
+
+
+            <div class="main-projects__container-double">
+
+                @@include('../../components/project-room.html', {
+                "class": "main-projects__project-room",
+                "data-link": "one-project",
+                "class-description": "main-projects__project-room__description",
+                "class-container": "main-projects__project-room__container",
+                "class-title": "main-projects__project-room__title-room",
+                "title-room": "Eyewear store interior",
+                "room-description": "<p class='main-projects__project-room__phrase'><span>Lodz</span><span>16.10.2018</span><span>80 sq.m</span></p>",
+                "picture": "{{> img-media\
+                basePath='/img/main/projects/section3-project-photo1'\
+                sizes=(array 375 768 1024 1440)\
+                mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
+                lastSize=1440\
+                imgType='png'\
+                alt='room example - Eyewear store interior'}}"
+                })
+
+
+                @@include('../../components/project-room.html', {
+                "class": "main-projects__project-room room-mobile",
+                "data-link": "one-project",
+                "class-description": "main-projects__project-room__description",
+                "class-container": "main-projects__project-room__container",
+                "class-title": "main-projects__project-room__title-room",
+                "title-room": "Minimalist style home",
+                "room-description": "<p class='main-projects__project-room__phrase'><span>Lodz</span><span>16.10.2018</span><span>80 sq.m</span></p>",
+                "picture": "<img src='./img/main/projects/section3-project-photo6-375.png'></img>"
+                })
+
+                @@include('../../components/project-room.html', {
+                "class": "main-projects__project-room",
+                "data-link": "one-project",
+                "class-description": "main-projects__project-room__description",
+                "class-container": "main-projects__project-room__container",
+                "class-title": "main-projects__project-room__title-room",
+                "title-room": "Minimalist style home",
+                "room-description": "<p class='main-projects__project-room__phrase'><span>Lodz</span><span>16.10.2018</span><span>80 sq.m</span></p>",
+                "picture": "{{> img-media\
+                basePath='/img/main/projects/section3-project-photo2'\
+                sizes=(array 375 768 1024 1440)\
+                mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
+                lastSize=1440\
+                imgType='png'\
+                alt='room example - Eyewear store interior'}}"
+                })
+            </div>
+
+                @@include('../../components/project-room.html', {
+                "class": "main-projects__project-room__room-big",
+                "data-link": "one-project",
+                "class-description": "main-projects__project-room__description",
+                "class-container": "main-projects__project-room__container container-big",
+                "class-title": "main-projects__project-room__title-room container-big",
+                "title-room": "Residence by the lighthouse",
+                "data-category":"",
+                "room-description": "<p class='main-projects__project-room__phrase'><span>Lodz</span><span>16.10.2018</span><span>80 sq.m</span></p>",
+                "picture": "{{> img-media\
+                basePath='/img/main/projects/section3-project-photo3'\
+                sizes=(array 375 768 1024 1440)\
+                mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
+                lastSize=1440\
+                imgType='png'\
+                alt='room example - Eyewear store interior'}}"
+                })
+
+
+
+            <div class="main-projects__container-double">
+
+            @@include('../../components/project-room.html', {
+            "class": "main-projects__project-room",
+            "data-link": "one-project",
+            "class-description": "main-projects__project-room__description",
+            "class-container": "main-projects__project-room__container",
+            "class-title": "main-projects__project-room__title-room",
+            "title-room": "Residence by the lighthouse",
+            "room-description": "<p class='main-projects__project-room__phrase'><span>Lodz</span><span>16.10.2018</span><span>80 sq.m</span></p>",
+            "picture": "{{> img-media\
+            basePath='/img/main/projects/section3-project-photo4'\
+            sizes=(array 375 768 1024 1440)\
+            mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
+            lastSize=1440\
+            imgType='png'\
+            alt='room example - Eyewear store interior'}}"
+            })
+
+
+                <div class="main-projects__container-more">
+                    <p class="main-projects__container-more__phrase">See more 60 projects</p>
+                    {{> img-media
+                    basePath="./img/main/projects/section3-project-photo5"
+                    sizes=(array 375 768 1024 1440)
+                    mediaQueries=(array "(max-width: 575px)" "(max-width: 768px)" "(max-width: 1024px)" "(min-width: 1025px)")
+                    lastSize=1440
+                    imgType="png"
+                    alt="room example - living room"
+                    pictureClass="main-projects__container-more-img"
+                    }}  
+                </div>
+            </div>
+    </div>
+</section>

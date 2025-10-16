@@ -1,0 +1,372 @@
+@use '../../utils/variables.scss';
+@use '../../utils/mixins' as *;
+
+
+.news-hero {
+    max-width: 1440px;
+    margin: 0 auto;
+        @include respond-to(md) {
+            max-width: 1024px;
+        }
+        @include respond-to(sm) {
+            max-width: 768px;
+        }
+        @include respond-to(xxs) {
+            max-width: 375px;
+        }
+    &__wrapper {
+        padding: 211px 64px 140px;
+        padding-right: 0;
+            @include respond-to(md) {
+                padding: 162px 56px 120px;
+                padding-right: 0;
+            }
+            @include respond-to(sm) {
+                padding: 138px 48px 104px;
+                padding-right: 0;
+            }
+            @include respond-to(xxs) {
+                padding: 117px 24px 80px;
+                padding-right: 0;
+            }
+    }
+
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 133px;
+        margin-bottom: 121px;
+            @include respond-to(md) {
+            padding-left: 102px;
+            max-width: 440px;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 105px;
+            }
+            @include respond-to(sm) {
+                margin-bottom: 98px;
+                padding-left: 77px;
+            }
+            @include respond-to(xxs) {
+                padding-left: 0px;
+                margin-bottom: 79px;
+            }
+            &-title {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-bold;
+            font-size: 36px;
+            margin-right: 413px;
+                @include respond-to(md) {
+                    margin-right: 90px;
+                    font-size: 32px;
+                    margin-bottom: 25px;
+                }
+                @include respond-to(xxs) {
+                    display: none;
+                }
+                &.mobile {
+                    display: block;
+                    font-size: 26px;
+                    margin-bottom: 16px;
+                    @include respond-from(xxs) {
+                    display: none;
+                    }
+                }
+
+            }
+            &__filters {
+            display: flex;
+            flex-direction: row;
+            gap: 32px;
+            max-height: 14px;
+                @include respond-to(md) {
+                    gap: 27px;
+                }
+                @include respond-to(xxs) {
+                flex-direction: column;
+                align-items: flex-start;
+                display: block; 
+                    &-btn {
+                    display: none;
+                    }
+                }
+
+                &-btn {
+                position: relative;
+                background-color: transparent;
+                font-family: variables.$font-family-main;
+                font-weight: variables.$font-weight-semibold;
+                font-size: 11px;
+                letter-spacing: 0.06em;
+                cursor: pointer;
+                color: #828282;
+                    @include respond-to(xxs) {
+                        display: none;
+                    }
+                }
+                .active {
+                    color: variables.$color-main-black;
+                }
+                .active::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: #3A3E4B;
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                }
+
+                &-select-wrapper {
+                    position: relative;
+                    display: none;
+                    width: 129px;
+
+                    @include respond-to(xxs) {
+                    display: block;
+                    }
+
+                    &::before {
+                    content: "";
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    border-right: 1px solid #000;
+                    border-bottom: 1px solid #000;
+                    transform: translateY(-50%) rotate(45deg);
+                    top: 45%;
+                    right: 14px;
+                    pointer-events: none;
+                    }
+                }
+                &-select {
+                display: none;
+                padding: 6px 12px;
+                font-family: variables.$font-family-main;
+                font-weight: variables.$font-weight-semibold;
+                font-size: 11px;
+                letter-spacing: 0.06em;
+                border: 1px solid #C4C4C4;
+                border-radius: 999px;
+                background-color: white;
+                color: #333;
+                appearance: none;
+                cursor: pointer;
+                width: 129px;
+                    @include respond-to(xxs) {
+                    display: block;
+                    }
+                }
+            }
+
+    }
+
+
+    &__news {
+    &-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 92px;
+            @include respond-to(md) {
+                gap: 2px;
+                margin-bottom: 61px;
+            }
+            @include respond-to(sm) {
+                margin-bottom: 52px;
+            }
+            @include respond-to(xxs) {
+                flex-direction: column;
+                gap: 4px;
+                margin-bottom: 46px;
+            }
+    }
+
+    &-container-double {
+        display: flex;
+        flex-direction: row;
+            @include respond-to(xxs) {
+                flex-direction: column-reverse;
+            }
+        &.reverse {
+            @include respond-to(xxs) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    &-container-single {
+        display: block;
+        width: 656px;
+            @include respond-to(md) {
+                width: 456px;
+            }
+            @include respond-to(sm) {
+                width: 337px;
+            }
+    }
+    }
+
+
+    &__content {
+        min-width: 600px;
+        background-color: #F2F2F2;
+        padding-top: 329px;
+        padding-left: 56px;
+            @include respond-to(md) {
+                padding-top: 160px;
+                padding-left: 46px;
+                min-width: 412px;
+            }
+            @include respond-to(sm) {
+                padding-top: 189px;
+                padding-left: 31px;
+                min-width: 308px;
+            }
+            @include respond-to(xxs) {
+                padding-top: 21px;
+                padding-left: 25px;
+                min-width: 114px;
+                width: 302px;
+                min-height: 114px;
+            }
+            &.mobile {
+                 @include respond-to(md) {
+                padding-top: 281px;
+                padding-left: 48px;
+                }
+                @include respond-to(sm) {
+                padding-top: 189px;
+                padding-left: 32px;
+                }
+                @include respond-to(xxs) {
+                padding-top: 20px;
+                padding-left: 25px;
+                min-width: 114px;
+                width: 302px;
+                min-height: 114px;
+                }
+            }
+        &-title {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-bold;
+            font-size: 28px;
+            max-width: 365px;
+            margin-bottom: 24px;
+                @include respond-to(md) {
+                    font-size: 20px;
+                    max-width: 273px;
+                }
+                @include respond-to(sm) {
+                    font-size: 16px;
+                    max-width: 208px;
+                    margin-bottom: 35px;
+                }
+                @include respond-to(xxs) {
+                    max-width: 279px;
+                    margin-bottom: 30px;
+                }
+                &.mobile {
+                    @include respond-to(md) {
+                        margin-bottom: 35px;
+                    }
+                    @include respond-to(xxs) {
+                        margin-bottom: 30px;
+                    }
+                }
+
+        }
+        &-phrase {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-light;
+            font-size: 14px;
+            line-height: 1.71em;
+            max-width: 433px;
+            margin-bottom: 50px;
+                @include respond-to(md) {
+                    max-width: 348px;
+                    margin-bottom: 36px;
+                }
+
+            &.mobile {
+                @include respond-to(md) {
+                    display: none;
+                }
+            }
+
+            &.tabletop {
+                @include respond-to(sm) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__project-room__phrase {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-regular;
+            font-size: 10px;
+            line-height: 1.71em;
+            color: variables.$color-main-white;
+            padding: 32px;
+    }
+
+
+    &__pagination {
+        display: flex;
+        flex-direction: row;
+        max-height: 14px;
+        max-width: 400px;
+        margin-left: 536px;
+        gap: 32px;
+            @include respond-to(md) {
+                margin-left: 336px;
+            }
+            @include respond-to(sm) {
+                margin-left: 227px;
+                gap: 25px;
+            }
+            @include respond-to(xxs) {
+                margin-left: 56px;
+            }
+        &__pages-container {
+            display: flex;
+            flex-direction: row;
+            gap: 21px;
+            cursor: pointer;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-regular;
+            font-size: 11px;
+            letter-spacing: 0.06em;
+                @include respond-to(sm) {
+                    gap: 19px;
+                }
+        }
+
+        &__icon {
+            fill: none;
+            cursor: pointer;
+              &.left {
+                transform: rotate(-180deg);
+                }
+        }
+    }
+
+    &__news-image img {
+    width: 653px;
+    display: block;
+        @include respond-to(md) {
+            width: 453px;
+        }
+        @include respond-to(sm) {
+            width: 333px;
+        }
+        @include respond-to(xxs) {
+            width: 328px;
+        }
+    }
+}

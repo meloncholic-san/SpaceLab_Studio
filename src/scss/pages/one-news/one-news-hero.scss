@@ -1,0 +1,309 @@
+@use '../../utils/variables.scss';
+@use '../../utils/mixins' as *;
+
+
+.one-news-hero {
+    max-width: 1440px;
+    margin: 0 auto;
+        @include respond-to(md) {
+            max-width: 1024px;
+            min-width: 1024px;
+        }
+        @include respond-to(sm) {
+            max-width: 768px;
+            min-width: 768px;
+        }
+        @include respond-to(xxs) {
+            max-width: 375px;
+            min-width: 375px;
+        }
+    &__wrapper {
+        padding: 222px 64px 0;
+        position: relative;
+            @include respond-to(md) {
+                padding: 160px 56px 0;
+                padding-bottom: 125px;
+            }
+            @include respond-to(sm) {
+                padding: 138px 48px;
+                padding-bottom: 107px;
+            }
+            @include respond-to(xxs) {
+                padding: 116px 24px;
+                padding-bottom: 100px;
+            }
+    }
+
+    &__wrapper::after {
+        content: "";
+        border-bottom: 1px solid #828282;
+        width: 1046px;
+        position: absolute;
+        left: 197px;
+            @include respond-to(md) {
+                bottom: 0px;
+                left: 160px;
+                width: 705px;
+            }
+            @include respond-to(sm) {
+                width: 560px;
+            }
+            @include respond-to(xxs) {
+                width: 328px;
+                left: 25px;
+            }
+    }
+    &__content {
+        padding-left: 133px;
+        margin-bottom: 99px;
+            @include respond-to(md) {
+                padding-left: 104px;
+                margin-bottom: 72px;
+            }
+            @include respond-to(sm) {
+                padding-left: 76px;
+                margin-bottom: 65px;
+            }
+            @include respond-to(xxs) {
+                padding-left: 0px;
+                margin-bottom: 56px;
+            }
+    }
+    &__title {
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-bold;
+    font-size: 36px;
+    max-width: 474px;
+    margin-bottom: 19px;
+        @include respond-to(md) {
+            font-size: 32px;
+            max-width: 430px;
+            margin-bottom: 23px;
+        } 
+        @include respond-to(sm) {
+            margin-bottom: 13px;
+        }
+        @include respond-to(xxs) {
+            font-size: 26px;
+            max-width: 375px;
+            margin-bottom: 14px;
+        }
+    }
+
+    &__phrase {
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-light;
+    font-size: 14px;
+    line-height: 1.71em;
+    max-width: 708px;
+    opacity: 0.7;
+        @include respond-to(md) {
+            max-width: 700px;
+        }
+        @include respond-to(sm) {
+            max-width: 520px;
+        }
+    
+    &.desktop {
+        display: block;
+            @include respond-to(md) {
+                display: none;
+            }
+    }
+
+    &.mobile {
+        display: none;
+            @include respond-to(md) {
+                display: block;
+                max-width: 710px;
+            }
+            @include respond-to(sm) {
+                max-width: 520px;
+            }
+    }
+    
+    &.ph-2 {
+        max-width: 715px;
+            @include respond-to(md) {
+                max-width: 695px;
+            }
+            @include respond-to(sm) {
+                max-width: 520px;
+            }
+    }
+
+    &.ph-3 {
+        max-width: 715px;
+            @include respond-to(sm) {
+                max-width: 525px;
+            }
+    }
+
+    &.ph-4 {
+        @include respond-to(md) {
+            max-width: 715px;
+        }
+        @include respond-to(sm) {
+            max-width: 525px;
+        }
+    }
+    }
+
+    &__share {
+            position: absolute;
+            left: 1120px;
+            top: 230px;
+                @include respond-to(md) {
+                    top: auto;
+                    bottom: 85px;
+                    left: 160px;
+                }
+                @include respond-to(sm) {
+                    bottom: 69px;
+                    left: 124px;
+                }
+                @include respond-to(xxs) {
+                    bottom: 60px;
+                    left: 24px;
+                }
+        &-phrase {
+            padding-bottom: 12px;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-regular;
+            font-size: 14px;
+            line-height: 1.71em;
+        }
+
+        &-icons {
+
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+
+        }
+    }
+
+    &__picture { 
+            &-big-1 {
+            margin-bottom: 93px;
+                @include respond-to(md) {
+                    margin-bottom: 84px;
+                }
+                @include respond-to(sm) {
+                    margin-bottom: 67px;
+                }
+                @include respond-to(xxs) {
+                    margin-bottom: 60px;
+                }
+        }
+            &-big-2 {
+                @include respond-to(md) {
+                    margin-top: 80px;
+                }
+                @include respond-to(sm) {
+                    margin-top: 75px;
+                }
+                @include respond-to(xxs) {
+                    margin-top: 67px;
+                }
+            }
+            &-container {
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+                margin-top: 4px;
+                margin-bottom: 91px;
+                    @include respond-to(md) {
+                        margin-bottom: 82px;
+                    }
+                    @include respond-to(sm) {
+                        margin-bottom: 68px;
+                    }
+                    @include respond-to(xxs) {
+                        flex-direction: column;
+                        gap: 0;
+                        margin-bottom: 62px;
+                    }
+            }
+    }
+
+    &__headline {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-bold;
+        font-size: 16px;
+        line-height: 1.37em;
+        max-width: 419px;
+        margin-bottom: 17px;
+            @include respond-to(md) {
+                margin-bottom: 22px;
+            }
+            @include respond-to(xxs) {
+                margin-bottom: 21px;
+            }
+    }
+
+    &__list {
+        &-ordered {
+            list-style: decimal outside;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-light;
+            font-size: 14px;
+            line-height: 1.71em;
+            max-width: 715px;
+            opacity: 0.7;
+            margin-top: 39px;
+            margin-bottom: 39px;
+            margin-left: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+                @include respond-to(md) {
+                    margin-top: 22px;
+                    margin-bottom: 32px;
+                }
+                @include respond-to(sm) {
+                    margin-top: 33px;
+                    margin-bottom: 32px;
+                    max-width: 475px;
+                    gap: 10px;
+                    list-style: decimal inside;
+                    margin-left: -1px;
+                }
+                @include respond-to(xxs) {
+                    margin-top: 22px;
+                    margin-bottom: 33px;
+                }
+        }
+
+        &-unordered {
+            list-style-type: circle;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-light;
+            font-size: 14px;
+            line-height: 1.71em;
+            max-width: 715px;
+            opacity: 0.7;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-left: 1.1em;
+                @include respond-to(md) {
+                    margin-top: 33px;
+                    margin-bottom: 33px;
+                }
+                @include respond-to(sm) {
+                    max-width: 470px;
+                    gap: 10px
+                }
+                @include respond-to(xxs) {
+                    margin-top: 34px;
+                    margin-bottom: 32px;
+                }
+        }
+        &-ordered li::marker {
+            font-weight: 500;
+        }
+    }
+}

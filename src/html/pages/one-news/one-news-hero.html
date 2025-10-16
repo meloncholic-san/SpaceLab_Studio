@@ -1,0 +1,145 @@
+<section class="one-news-hero">
+    <div class="one-news-hero__wrapper">
+        <div class="one-news-hero__share">
+            <p class="one-news-hero__share-phrase">Share:</p>
+            <div class="one-news-hero__share-icons">
+                <a href="https://www.facebook.com"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="one-project-hero__social-icon"
+                         width="24px"
+                         height="24px">
+                        <use href="#icon-news_facebook"></use>
+                    </svg>
+                </a>
+
+                <a href="https://twitter.com"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="one-project-hero__social-icon"
+                         width="24px"
+                         height="24px">
+                        <use href="#icon-news_twitter"></use>
+                    </svg>
+                </a>
+
+                <a href="https://www.linkedin.com"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="one-project-hero__social-icon"
+                         width="24px"
+                         height="24px">
+                        <use href="#icon-news_linkedin"></use>
+                    </svg>
+                </a>
+
+                <a href="https://www.google.com"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="one-project-hero__social-icon"
+                         width="24px"
+                         height="24px">
+                        <use href="#icon-news_share"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="one-news-hero__content">
+            <h2 class="one-news-hero__title">Antrax IT - Italian factory for the production</h2>
+            <p class="one-news-hero__phrase">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel gravida urna. Donec blandit sapien eu diam ullamcorper euismod. Nam tempus pellentesque ligula ut aliquam. Donec et ipsum nec quam posuere maximus eu in erat. Duis laoreet finibus consectetur. Nullam pulvinar ex sit amet leo gravida, sed mattis enim vehicula. Duis purus nisl, consectetur ut est non, placerat eleifend turpis. Duis auctor suscipit arcu. Aenean leo est, rutrum a eleifend eget, tempor nec urna. Proin finibus lobortis arcu dictum convallis. Ut fermentum eu magna vel laoreet. In lacus augue, malesuada id elit sit amet, 
+varius imperdiet ex. Nullam blandit lobortis posuere.</p>
+        </div>
+
+
+        <div class="one-news-hero__picture-big-1">
+            {{> img-media
+            basePath='/img/one-news/hero/one-news-hero-photo1'
+            sizes=(array 375 768 1024 1440)
+            mediaQueries=(array '(max-width: 575px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')
+            lastSize=1440
+            imgType='png'
+            loading='lazy'
+            alt='room example'
+            }}
+        </div>
+
+        <div class="one-news-hero__content">
+            <h3 class="one-news-hero__headline">Donec et ipsum nec quam posuere maximus eu in erat. Duis laoreet finibus consectetur. </h3>
+            <p class="one-news-hero__phrase ph-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel gravida urna. Donec blandit sapien eu diam ullamcorper euismod. Nam tempus pellentesque ligula ut aliquam. Donec et ipsum nec quam posuere maximus eu in erat. Duis laoreet finibus consectetur. Nullam pulvinar ex sit amet leo gravida, sed mattis enim vehicula. Duis purus nisl, consectetur ut est non, placerat eleifend turpis. Duis auctor suscipit arcu. Aenean leo est, rutrum a eleifend eget, tempor nec urna. Proin finibus lobortis arcu dictum convallis. Ut fermentum eu magna vel laoreet. In lacus augue, malesuada id elit sit amet, varius imperdiet ex. Nullam blandit lobortis posuere:</p>
+            <ol class="one-news-hero__list-ordered">
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+                <li>Cras vel gravida urna. Donec blandit sapien eu diam ullamcorper euismod.
+                </li>
+                <li>Nam tempus pellentesque ligula ut aliquam. 
+                </li>
+                <li>Donec et ipsum nec quam posuere maximus eu in erat.
+                </li>
+                <li>Duis laoreet finibus consectetur. 
+                </li>
+
+            </ol>
+            <p class="one-news-hero__phrase desktop">Aliquam iaculis ac urna at consequat. Pellentesque fermentum tellus eu nisi viverra gravida. Sed suscipit vestibulum accumsan. Sed ac magna id sem hendrerit convallis quis a magna. Mauris eget ornare est. Morbi metus justo, posuere vel semper semper, eleifend ut purus. Morbi cursus consequat nibh, a feugiat felis tempor vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam sodales orci nisl, in lacinia risus rhoncus a. Praesent consectetur egestas risus, id consectetur felis.</p>
+            <p class="one-news-hero__phrase mobile">Ut arcu tortor, hendrerit eget sollicitudin sed, tincidunt a lectus. Cras gravida ultricies ante sit amet consectetur. Maecenas sed arcu tempor, posuere odio pharetra, faucibus risus. Etiam fermentum felis quis aliquet viverra. Mauris in odio nec mi pellentesque placerat. Praesent at metus in lacus posuere molestie. Aliquam consequat, neque eget congue feugiat, lectus leo condimentum lorem, scelerisque euismod nisi ipsum nec metus. Mauris semper felis venenatis eros interdum sollicitudin.</p>
+        </div>
+
+        <div class="one-news-hero__picture-big-2">
+            {{> img-media
+            basePath='/img/one-news/hero/one-news-hero-photo2'
+            sizes=(array 375 768 1024 1440)
+            mediaQueries=(array '(max-width: 575px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')
+            lastSize=1440
+            imgType='png'
+            loading='lazy'
+            alt='room example'
+            }}
+        </div>
+
+
+        <div class="one-news-hero__picture-container">
+            <div class="one-news-hero__picture-small">
+                {{> img-media
+                basePath='/img/one-news/hero/one-news-hero-photo3'
+                sizes=(array 375 768 1024 1440)
+                mediaQueries=(array '(max-width: 575px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')
+                lastSize=1440
+                imgType='png'
+                loading='lazy'
+                alt='room example'
+                }}
+            </div>
+
+            <div class="one-news-hero__picture-small">
+                {{> img-media
+                basePath='/img/one-news/hero/one-news-hero-photo4'
+                sizes=(array 375 768 1024 1440)
+                mediaQueries=(array '(max-width: 575px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')
+                lastSize=1440
+                imgType='png'
+                loading='lazy'
+                alt='room example'
+                }}
+            </div>
+
+        </div>
+
+
+        <div class="one-news-hero__content">
+            <h3 class="one-news-hero__headline">Duis laoreet finibus consectetur.  </h3>
+            <p class="one-news-hero__phrase ph-3">Duis laoreet finibus consectetur. Nullam pulvinar ex sit amet leo gravida, sed mattis enim vehicula. Duis purus nisl, consectetur ut est non, placerat eleifend turpis. Duis auctor suscipit arcu. Aenean leo est, rutrum a eleifend eget, tempor nec urna. Proin finibus lobortis arcu dictum convallis. Ut fermentum eu magna vel laoreet. In lacus augue, malesuada id elit sit amet, varius imperdiet ex. Nullam blandit lobortis posuere:</p>
+            <ul class="one-news-hero__list-unordered">
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                </li>
+                <li>Cras vel gravida urna. Donec blandit sapien eu diam ullamcorper euismod.
+                </li>
+                <li>Nam tempus pellentesque ligula ut aliquam. 
+                </li>
+                <li>Donec et ipsum nec quam posuere maximus eu in erat.
+                </li>
+            </ul>
+            <p class="one-news-hero__phrase ph-4">Mauris eget ornare est. Morbi metus justo, posuere vel semper semper, eleifend ut purus. Morbi cursus consequat nibh, a feugiat felis tempor vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam sodales orci nisl, in lacinia risus rhoncus a. </p>
+        </div>
+
+    </div>
+</section>

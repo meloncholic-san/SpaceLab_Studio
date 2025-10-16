@@ -1,0 +1,75 @@
+<section class="hero">
+  <div class="hero__wrapper">
+    <div class="hero__swiper swiper">
+      <div class="swiper-wrapper">
+
+        <div class="hero__swiper-slide swiper-slide">
+          {{> img-media
+            basePath="./img/main/hero/section1-hero-photo1"
+            sizes=(array 375 768 1024 1440)
+            mediaQueries=(array "(max-width: 575px)" "(max-width: 768px)" "(max-width: 1024px)" "(min-width: 1025px)")
+            lastSize=1440
+            imgType="png"
+            alt="room example - kitchen"
+            pictureClass="hero__swiper-image"
+          }}
+        </div>
+
+        <div class="hero__swiper-slide swiper-slide">
+          {{> img-media
+            basePath="./img/main/hero/section1-hero-photo2"
+            sizes=(array 375 768 1024 1440)
+            mediaQueries=(array "(max-width: 575px)" "(max-width: 768px)" "(max-width: 1024px)" "(min-width: 1025px)")
+            lastSize=1440
+            imgType="png"
+            alt="room example - room"
+          }}
+        </div>
+
+         <div class="hero__swiper-slide swiper-slide">
+          {{> img-media
+            basePath="./img/main/hero/section1-hero-photo3"
+            sizes=(array 375 768 1024 1440)
+            mediaQueries=(array "(max-width: 575px)" "(max-width: 768px)" "(max-width: 1024px)" "(min-width: 1025px)")
+            lastSize=1440
+            imgType="png"
+            alt="room example - hall"
+          }}
+        </div>
+        
+        <div class="hero__swiper-slide swiper-slide">
+          {{> img-media
+            basePath="./img/main/hero/section1-hero-photo4"
+            sizes=(array 375 768 1024 1440)
+            mediaQueries=(array "(max-width: 575px)" "(max-width: 768px)" "(max-width: 1024px)" "(min-width: 1025px)")
+            lastSize=1440
+            imgType="png"
+            alt="room example - living room"
+          }}
+        </div>
+
+      </div>
+    </div>
+
+
+    @@include('../../components/swiper-pagination.html', {"class": "swiper-navigation__hero"})
+
+    <div class="hero__title">
+        <h1 class="hero__title-phrase">Thoughtful making of space</h1>
+        @@include('../../components/discover-btn.html', {"class":"discover-btn_white", "text":"Discover more"})
+    </div>
+
+
+    @@include('../../components/contact-block.html', {"class":"contact-block__main-hero"})
+
+
+    <div class="hero__phrase">
+      <p class="hero__phrase-small">Next Project</p>
+      <p class="hero__phrase-big">Perfect proportions</p>
+    </div>
+
+
+
+  </div>
+
+</section>

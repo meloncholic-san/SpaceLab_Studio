@@ -1,0 +1,118 @@
+@use "../utils/variables" as variables;
+@use '../utils/mixins' as *;
+
+
+.swiper-navigation{
+    width: 300px; 
+    display: flex;
+    align-items: center;
+
+
+    &__progressbar{
+    position: relative;
+    display: inline-block;
+    width: 186px;
+    height: 1px;
+    background-color: variables.$color-progressbar;
+
+        @include respond-to(md) {
+        width: 149px;
+    }
+        @include respond-to(xxs) {
+        width: 88px;
+        }
+    }
+
+    &__fill-progressbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background-color: variables.$color-main-white;
+    transition: width 0.8s ease;
+    }
+
+
+    &__slide-current,
+    &__slide-total {
+        font-size: 11px;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-light;
+        color: variables.$color-main-white;
+        letter-spacing: 0.06em;
+    }
+
+    &__slide-current {
+        margin-right: 16px;
+    }
+    &__slide-total {
+        margin-left: 9px;
+
+        @include respond-to(md) {
+        margin-left: 11px;
+        }
+    }
+
+    &__arrow {
+        cursor: pointer;
+        color: variables.$color-main-white;
+    }
+
+    &__arrow_left {
+        margin-right: 11px;
+    }
+    &__arrow_right {
+    transform: rotate(180deg);
+    margin-left: 12px;
+        @include respond-to(md) {
+        margin-left: 11px;
+        }
+
+    }
+
+
+
+
+    &__hero {
+        position: absolute;
+        z-index: 3;
+        bottom: 277px;
+        right: 131px;
+
+            @include respond-to(md) {
+            bottom: 273px;
+            right: 84px;
+            }
+
+            @include respond-to(sm) {
+            bottom: 373px;
+            right: 57px;
+            }
+            @include respond-to(xxs) {
+            bottom: 388px;
+            right: 37px;
+            }
+    }
+
+    &__about {
+
+        .swiper-navigation__slide-current,
+        .swiper-navigation__slide-total {
+            color: variables.$color-main-black;
+        }
+        .swiper-navigation__arrow {
+            color: variables.$color-main-black;
+        }
+
+        .swiper-navigation__progressbar {
+              background-color: rgba(130, 130, 130, 0.32);
+
+        }
+        .swiper-navigation__fill-progressbar {
+            background-color: rgba(130, 130, 130, 0.5); 
+        }
+    }
+
+}
+

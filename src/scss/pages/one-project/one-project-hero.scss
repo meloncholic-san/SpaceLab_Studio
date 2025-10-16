@@ -1,0 +1,171 @@
+@use '../../utils/variables.scss';
+@use '../../utils/mixins' as *;
+
+.one-project-hero {
+    background: url("../img/one-project/hero/one-project-hero-photo1-1440.png") no-repeat center/cover;
+    min-height: 744px;
+    min-width: 375px;
+        @include respond-to(md) {
+                min-height: 703px;
+                background: url("../img/one-project/hero/one-project-hero-photo1-1024.png") no-repeat center/cover;
+        }
+        @include respond-to(sm) {
+                min-height: 959px;
+                background: url("../img/one-project/hero/one-project-hero-photo1-768.png") no-repeat center/cover;
+        }
+        @include respond-to(xxs) {
+                min-height: 542px;
+                background: url("../img/one-project/hero/one-project-hero-photo1-375.png") no-repeat center/cover;
+        }
+    &__wrapper {
+        position: relative;
+        padding: 0 64px;
+        margin: 0 auto;
+        max-width: 1440px;
+            @include respond-to(md) {
+                max-width: 1024px;
+                padding: 0 56px;
+        }
+            @include respond-to(sm) {
+                max-width: 768px;
+                padding: 0 48px;
+            }
+            @include respond-to(xxs) {
+                max-width: 375px;
+                padding: 0 22px;
+            }
+    }
+    
+    &__content {
+        padding-top: 262px;
+        padding-left: 133px;
+        margin-bottom: 160px;
+        color: variables.$color-main-white;
+
+            @include respond-to(md) {
+            padding-top: 233px;
+            padding-left: 104px;
+            margin-bottom: 138px;
+            }
+            @include respond-to(sm) {
+            padding-top: 368px;
+            padding-left: 76px;
+            margin-bottom: 275px;
+            }
+            @include respond-to(xxs) {
+            padding-top: 106px;
+            padding-left: 2px;
+            margin-bottom: 57px;
+            }
+        &_title {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-bold;
+            font-size: 36px;
+            margin-bottom: 22px;
+                @include respond-to(md) {
+                    display: none;
+                }
+            &-mobile {
+            display: none;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-bold;
+            font-size: 32px;
+            max-width: 330px;
+            margin-bottom: 22px;
+                @include respond-to(md) {
+                display: flex;
+                flex-direction: column;
+                }
+                @include respond-to(xxs) {
+                    font-size: 26px;
+                    margin-bottom: 14px;
+                }
+            }
+        }
+
+        &_phrase {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-regular;
+            font-size: 14px;
+            line-height: 1.71em;
+            margin-bottom: 68px;
+            max-width: 462px;
+                @include respond-to(md) {
+                    margin-bottom: 52px;
+                }
+                @include respond-to(sm) {
+                    margin-bottom: 35px;
+                }
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        gap: 29px;
+            @include respond-to(xxs) {
+            flex-direction: column;
+            gap: 22px;
+            }
+        &_item {
+            display: flex;
+            flex-direction: row;
+            min-height: 53px;
+            gap: 14px;
+
+            @include respond-to(xxs) {
+            min-height: 12px;
+            gap: 12px
+            }
+        }
+
+        &_phrase {
+            align-self: flex-start;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-bold;
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            opacity: 0.7;
+
+        }
+        &_icon {
+            align-self: flex-end;
+                @include respond-to(md) {
+                    align-self: flex-start;
+                }
+        }
+    }
+
+
+
+    &__socials {
+        display: flex;
+        flex-direction: row;
+        gap: 111px;
+        position: relative;
+        left: -22px;
+            @include respond-to(md) {
+                gap: 58px;
+                left: 0px;
+            }
+            @include respond-to(sm) {
+                gap: 32px;
+            }
+            @include respond-to(xxs) {
+                gap: 15px;
+                left: 3px;
+            }
+        &_list {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+        }
+        &_phrase {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-semibold;
+            font-size: 14px;
+            line-height: 1.71em;
+            color: variables.$color-main-white;
+        }
+    }
+}

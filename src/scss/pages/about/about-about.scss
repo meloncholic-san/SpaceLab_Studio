@@ -1,0 +1,185 @@
+@use '../../utils/variables.scss';
+
+.about-about {
+    color: variables.$color-main-black;
+    &__wrapper {
+        padding: 140px 64px;
+        padding-right: 0;
+        position: relative;
+    }
+
+    &__swiper {
+        position: relative;
+        max-width: 662px;
+
+        &-title {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-bold;
+        font-size: 36px;
+        margin-bottom: 24px;
+        }
+
+        &-phrase {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-light;
+        font-size: 14px;
+        line-height: 1.71em;
+        max-width: 383px;
+        margin-bottom: 49px;
+        }
+        &-container {
+            display: flex;
+            flex-direction: row;
+            margin-top: 22px;
+            gap: 132px;
+        }
+
+        &-content {
+            margin-left: 199px;
+            margin-top: 120px;
+        }
+
+        &-slide {
+        width: 100%;
+        max-width: 552px;
+            img {
+                height: 444px;
+                width: 552px;
+            }
+        }
+    }
+
+    &__inner {
+        padding-left: 66px;
+        position: relative;
+        margin-top: 140px;
+        margin-bottom: 180px;
+        display: flex;
+        flex-direction: row;
+        &_phrase {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-light;
+            font-size: 14px;
+            line-height: 1.32em;
+            max-width: 382px;
+        }
+        &__container {
+            padding-left: 132px;
+        }
+    }
+
+    &__statistic {
+        &-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 31px;
+            max-width: 312px;
+            justify-content: space-between;
+            margin: 76px 0 75px;
+        }
+
+        &-title {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-bold;
+            font-size: 56px;
+        }
+        &-phrase {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-light;
+            font-size: 14px;
+            line-height: 1.32em;
+        }
+    }
+
+    &_photo-mini {
+        height: 216px;
+        width: 163px;
+        position: absolute;
+        right: 0;
+        bottom: -40px;
+    }
+
+
+    &__founder {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 100px;
+    &__container {
+        margin-top: 40px;
+        margin-left: 149px;
+        margin-right: 132px;
+    }
+
+
+    &__name {
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-bold;
+    font-size: 36px;
+    margin-bottom: 36px;
+    }
+
+    &__title {
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-bold;
+    font-size: 16px;
+    line-height: 1.37em;
+    margin-bottom: 53px;
+
+    }
+    &__quote {
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-light;
+    font-size: 20px;
+    line-height: 1.71em;
+    opacity: 0.7;
+    position: relative;
+    max-width: 380px;
+        &::before {
+            content: "“";
+            position: absolute;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-bold;
+            font-size: 36px;
+            left: -32px;
+            top: 8px;
+        }
+    }
+
+    }
+
+
+
+    &__company {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+
+        &_photo {
+            position: absolute;
+            margin-left: 134px;
+            top: -165px;
+
+        }
+
+        &-content {
+            margin-left: auto;
+            margin-right: 186px;
+        }
+        &-container {
+            display: flex;
+            flex-direction: row;
+            gap: 79px;
+            margin-bottom: 56px;
+        }
+
+    
+        &_phrase {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-light;
+            font-size: 14px;
+            line-height: 1.32em;
+            max-width: 516px;
+        }
+    }
+}

@@ -1,0 +1,95 @@
+@use '../utils/variables.scss';
+@use '../utils/mixins' as *;
+
+
+.discover-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    text-transform: uppercase;
+    background-color: transparent;
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-bold;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+}
+
+.discover-btn::before {
+    content: "";
+    top: 40%;
+    left: -16px;
+    width: 8px;
+    height: 1px;
+    background-color: #31313133;
+    
+}
+
+.discover-btn::after {
+    content: "";
+    top: 49%;
+    right: -65px;
+    width: 56px;
+    height: 1px;
+    background-color: #31313133;
+}
+
+.discover-btn_white::after {
+    background-color: #FFFFFF66;
+}
+.discover-btn_white::before {
+    background-color: #FFFFFF66;
+}
+
+.discover-btn_white {
+    color: variables.$color-main-white;
+}
+
+.discover-btn_white:hover {
+    color: variables.$color-main-black;
+}
+
+.discover-btn_white:hover::after,
+.discover-btn_white:hover::before {
+    background-color: variables.$color-main-black;
+}
+
+
+.discover-btn_black {
+    color: variables.$color-main-black;
+}
+
+.discover-btn_black:hover {
+    color: rgb(0 0 0 / 32%)
+}
+
+.project-room-btn {
+    display: none;
+
+    @include respond-to(md) {
+        display: block;
+        margin-left: 10px;
+
+        &::before {
+        position: relative;
+        z-index: 10;
+        display: block;
+        top: 6px;
+        }
+
+        &::after {
+        position: relative;
+        z-index: 10;
+        display: block;
+        top: -7px;  
+        right: -112px;
+        }
+    }
+
+    @include respond-to(xxs) {
+        margin-left: 17px;
+    }
+
+}

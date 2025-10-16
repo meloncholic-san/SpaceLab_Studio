@@ -1,0 +1,28 @@
+@use "utils/variables";
+@use "components/header";
+@use "utils/reset.scss";
+@use "pages/main/main-hero.scss";
+@use "components/discover-btn.scss";
+@use "components/contact-block.scss";
+@use "components/swiper-pagination.scss";
+@use "pages/main/main-about.scss";
+@use "components/gallery.scss";
+@use "components/lorem.scss";
+@use "components/contacts.scss";
+@use "components/footer.scss";
+@use "pages/main/main-projects.scss";
+
+
+@use "pages/one-project/one-project-hero.scss";
+@use "pages/one-project/one-project-projects.scss";
+@use "pages/one-project/one-project-next-project.scss";
+
+@use "pages/about/about-hero.scss";
+@use "pages/about/about-about.scss";
+@use "pages/about/about-contacts.scss";
+
+@use "pages/one-news/one-news-hero.scss";
+@use "pages/one-news/one-news-latest.scss";
+
+@use 'pages/news/news-hero.scss';
+@use 'pages/news/news-contacts.scss';

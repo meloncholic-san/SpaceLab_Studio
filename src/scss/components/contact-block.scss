@@ -1,0 +1,188 @@
+@use '../utils/variables.scss';
+@use '../utils/mixins' as *;
+
+
+.contact-block {
+    display: flex;
+
+
+    &__socials {
+    max-width: 100px;
+    margin-right: 98px;
+    margin-top: 2px;
+
+    @include respond-to(md) {
+    margin-right: 55px;
+    }
+    @include respond-to(sm) {
+    margin-right: 41px;
+    }
+    @include respond-to(xxs) {
+    display: none;
+    }
+    }
+
+
+
+    &__socials-list {
+        margin-right: 141px;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        li {
+            a {
+            font-size: 11px;
+            font-weight: variables.$font-weight-semibold;
+            font-family: variables.$font-family-main;
+            letter-spacing: 0.06em;
+            text-decoration: none;
+            color: variables.$color-main-white;
+            }
+        }
+
+    }
+
+
+    &__select {
+
+        position: relative;
+        margin-right: 73px;
+
+        @include respond-to(md) {
+        margin-right: 40px;
+        }
+        @include respond-to(sm) {
+        margin-right: 32px;
+        }
+        @include respond-to(xxs) {
+        margin-right: 32px;
+        margin-top: 5px;
+        }
+            &::before{
+                position: absolute;
+                content: "";
+                top: 8px;
+                left: 13px;
+                width: 10px;
+                height: 10px;
+                background: url("../img/svg/maps-and-flags.svg");
+                z-index: 3;
+                @include respond-to(md) {
+                    top: 6px;
+                    left: 12px;
+                }
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                top: 10px;
+                right: 12px;
+                width: 9px;
+                height: 6px;
+                z-index: 3;
+                background: url("../img/svg/arrow-down.svg");
+            }
+            select{
+                font-family: variables.$font-family-main;
+                width: 100%;
+                font-size: 11px;
+                font-weight: variables.$font-weight-semibold;
+                letter-spacing: 0.06em;
+                color: variables.$color-main-white;
+                backdrop-filter: blur(2px);
+                box-shadow: inset 0 -0px 0px 0 #FFFFFF3B, 0 1px 1px 0 #00000033;
+                background: #C1C1C0;
+                border-radius: 9px;
+                border: none;
+                cursor: pointer;
+                appearance: none;
+                padding: 5px 51px 5px 29px;
+
+                    @include respond-to(md) {
+                    background: transparent;
+                    border: 1px solid #C4C4C4;
+                    border-radius: 88px;
+                    padding: 4px 50px 4px 27px;
+                    }
+
+
+            }
+    }
+
+
+    &__contacts {
+        display: flex;
+        align-items: center;
+
+        @include respond-to(xxs) {
+            margin-left: 18px;
+            margin-bottom: 12px;
+        }
+    }
+
+    &__list-data_full {
+        display: flex;
+        flex-direction: row;
+        gap: 33px;
+        margin-top: -3px;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-medium;
+        color: variables.$color-main-white;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+            @include respond-to(md) {
+                display: none;
+            }
+    }
+
+    &__list-data_small {
+    display: none;
+        @include respond-to(md) {
+        display: flex;
+        flex-direction: row;
+        gap: 41px;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-semibold;
+        color: variables.$color-main-white;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        }
+
+        @include respond-to(sm) {
+            gap: 32px;
+        }
+        @include respond-to(xxs) {
+            flex-direction: column;
+            gap: 4px;
+
+            li:first-child {
+                margin-left: 4px;
+            }
+        }
+    }
+
+
+
+
+    &__main-hero {
+        position: absolute;
+        bottom: 40px;
+        left: 64px;
+        z-index: 3;
+            @include respond-to(md) {
+            bottom: 37px;
+            left: 56px;
+            }
+
+            @include respond-to(sm) {
+            bottom: 32px;
+            left: 46px;
+            }
+            @include respond-to(xxs) {
+            bottom: 9px;
+            left: 24px
+            }
+
+
+    }
+}

@@ -1,0 +1,220 @@
+@use '../../utils/variables.scss';
+@use '../../utils/mixins' as *;
+   
+.main-about {
+    margin: 0 auto;
+    margin-top: 220px;
+    margin-bottom: 246px;
+    max-width: 1440px;
+
+
+    @include respond-to(md) {
+    margin-top: 175px;
+    margin-bottom: 196px;
+    }
+
+    @include respond-to(sm) {
+    margin-top: 105px;
+    margin-bottom: 95px;
+    }
+    @include respond-to(xxs) {
+    margin-top: 80px;
+    margin-bottom: 63px;
+    }
+
+    &__wrapper {
+        position: relative;
+        padding: 0 64px;
+        margin: 0 auto;
+
+        @include respond-to(xxs) {
+            padding: 0 24px;
+            padding-right: 5px;
+        }
+    }
+
+    &__picture-1 {
+        position: absolute;
+        top: -80px;
+        right: -15px;
+
+        @include respond-to(md) {
+            top: -56px;
+        }
+        @include respond-to(sm) {   
+            display: none;
+        }
+    }
+
+    &__picture-2 {
+        position: absolute;
+        bottom: 235px;
+        left: 433px;
+        z-index: 3;
+
+        @include respond-to(md) {
+            bottom: 138px;
+            left: 313px;
+        }
+
+        @include respond-to(sm) {
+            bottom: 220px;
+            left: 261px;
+        }
+        @include respond-to(xxs) {
+            bottom: 299px;
+            left: 87px;
+        }
+    }
+
+    &__picture-3 {
+        position: absolute;
+        bottom: -111px;
+        left: 196px;
+        z-index: 2;
+
+        @include respond-to(md) {
+            bottom: -77px;
+            left: 159px;
+        }
+        @include respond-to(sm) {
+            bottom: 125px;
+            left: 124px;
+        }
+        @include respond-to(xxs) {
+            bottom: 181px;
+            left: 23px;
+        }
+    }
+
+    &__headline {
+        margin-left: 133px;
+        margin-bottom: 411px;
+            @include respond-to(md) {
+                margin-left: 95px;
+                margin-bottom: 246px;
+            }
+            @include respond-to(sm) {
+                margin-left: 60px;
+                margin-bottom: 415px;
+            }
+            @include respond-to(xxs) {
+                margin-left: 0px;
+                margin-bottom: 438px;
+            }
+
+    }
+
+    &__title {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-bold;
+        font-size: 36px;
+        margin-bottom: 24px;
+            @include respond-to(md) {
+                font-size: 32px;
+                margin-bottom: 14px;
+            }
+
+            @include respond-to(sm) {
+                margin-bottom: 13px;
+            }
+
+            @include respond-to(xxs) {
+                font-size: 26px;
+                margin-bottom: 15px;
+            }
+
+    }
+
+    &__phrase {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-light;
+        font-size: 14px;
+        line-height: 1.71em;
+        opacity: 0.7;
+        max-width: 515px;
+        margin-bottom: 50px;
+            @include respond-to(md) {
+                max-width: 448px;
+                max-height: 109px;
+                margin-bottom: 39px;
+            }
+                @include respond-to(sm) {
+                max-width: 520px;
+                max-height: 109px;
+                margin-bottom: 24px;
+            }
+            @include respond-to(xxs) {
+                width: 327px;
+                margin-bottom: 60px;
+            }
+    }
+
+    &__phrase.phrase-1 {
+        margin-bottom: 14px;
+
+        @include respond-to(md) {
+            margin-bottom: 23px;
+        }
+
+        @include respond-to(sm) {
+            margin-bottom: 13px;
+        }
+
+        @include respond-to(xxs) {
+            margin-bottom: 71px;
+        }
+    }
+
+
+    &__quote {
+
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-light;
+        font-size: 20px;
+        line-height: 1.71em;
+        opacity: 0.7;
+        position: relative;
+        margin-left: 781px;
+        max-width: 380px;
+        &::before {
+            content: "“";
+            position: absolute;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-bold;
+            font-size: 36px;
+            left: -50px;
+            top: 7px;
+        }
+
+        @include respond-to(md) {
+            font-size: 16px;
+            max-width: 313px;
+            margin-left: 492px;
+                &::before {
+                    font-size: 25.5px;
+                    left: -31px;
+                    top: 6px;
+                }
+            }
+        
+        @include respond-to(sm) {
+            max-width: 290px;
+            margin-left: 290px;
+                &::before {
+                    left: -29px;
+                    top: 5px;
+                }
+        }
+
+        @include respond-to(xxs) {
+            max-width: 288px;
+            margin-left: 42px;
+                &::before {
+                    left: -42px;
+                    top: 6px;
+                }
+        }
+    }
+
+}

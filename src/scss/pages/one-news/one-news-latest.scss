@@ -1,0 +1,93 @@
+@use '../../utils/variables.scss';
+@use '../../utils/mixins' as *;
+
+
+.one-news-latest {
+    max-width: 1440px;
+    margin: 0 auto;
+        @include respond-to(md) {
+            max-width: 1024px;
+            min-width: 1024px;
+        }
+        @include respond-to(sm) {
+            max-width: 768px;
+            min-width: 768px
+        }
+        @include respond-to(xxs) {
+            max-width: 375px;
+            min-width: 375px;
+        }
+    &__wrapper {
+        padding: 140px 64px 190px;
+        padding-right: 0;
+
+        @include respond-to(md) {
+            padding: 124px 56px 150px;
+            padding-right: 0;
+        }
+        @include respond-to(sm) {
+            padding: 104px 48px 70px;
+            padding-right: 0;
+        }
+        @include respond-to(xxs) {
+            padding: 80px 24px 90px;
+            padding-right: 0;
+        }
+    }
+
+    &__title {
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-bold;
+    font-size: 36px;
+    margin-bottom: 72px;
+        @include respond-to(md) {
+            font-size: 32px;
+            margin-bottom: 56px;
+        }
+        @include respond-to(sm) {
+            margin-bottom: 48px;
+        }
+        @include respond-to(xxs) {
+            font-size: 26px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__inner {
+    padding-left: 138px;
+        @include respond-to(md) {
+            padding-left: 103px;
+            margin-bottom: 56px;
+        }
+        @include respond-to(sm) {
+            padding-left: 76px;
+        }
+        @include respond-to(xxs) {
+            padding-left: 0px;
+        }
+    }
+    &__swiper {
+        &-slide {
+            width: 316px;
+              flex-shrink: 0;
+        }
+        &-phrase {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-bold;
+        font-size: 14px;
+        line-height: 1.37em;
+        margin-bottom: 13px;
+        margin-top: 18px;
+        max-width: 293px;
+            @include respond-to(md) {
+                margin-top: 20px;
+            }
+        }
+        &-date {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-light;
+        font-size: 10px;
+        line-height: 1.71em;
+        }
+    }
+}

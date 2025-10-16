@@ -1,0 +1,99 @@
+@use '../../utils/variables.scss';
+@use '../../utils/mixins' as *;
+
+
+.news-contacts {
+        background: url("../img/news/contacts/news-footer-photo-1440.png") no-repeat center/cover;
+        min-height: 654px;
+    &__wrapper {
+        position: relative;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    &__container {
+        position: absolute;
+        top: 316px;
+        right: 197px;
+    }
+    &__title {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-bold;
+        color: variables.$color-main-white;
+        font-size: 36px;
+        line-height: 1.42em;
+        max-width: 424px;
+        position: absolute;
+        top: 137px;
+        left: 200px;
+    }
+
+    &__phrase {
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-light;
+    color: variables.$color-main-white;
+    font-size: 14px;
+    line-height: 1.71em;
+    max-width: 366px;
+    margin-bottom: 40px;
+    }
+    &__form {
+    position: relative;
+    max-width: 382px;
+    width: 382px;
+    
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 38px;
+    border-bottom: 1px solid variables.$color-main-white;
+    position: relative;
+        ::placeholder {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-light;
+    color: variables.$color-main-white;
+    padding-bottom: 10px;
+    font-size: 20px;
+    line-height: 1.71em;
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-left: -2px;
+    padding-bottom: 6px;
+  }
+
+  &__submit {
+    flex-shrink: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateX(2px);
+    }
+  }
+
+    &__icon {
+        fill: none;
+        margin-bottom: 4px;
+        margin-right: 3px;
+    }
+
+}

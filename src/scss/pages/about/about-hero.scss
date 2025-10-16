@@ -1,0 +1,35 @@
+@use '../../utils/variables.scss';
+
+.about-hero {
+    background: url("../img/about/hero/section1-hero-photo1-1440.png") no-repeat center/cover;
+    min-height: 648px;
+    &__wrapper {
+        position: relative;
+        padding: 0 64px;
+    }
+
+    &__content {
+        padding-top: 230px;
+        color: variables.$color-main-white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__title {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-bold;
+        font-size: 36px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    &__phrase {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-light;
+        font-size: 14px;
+        line-height: 1.71em;
+        margin-bottom: 65px;
+        max-width: 383px;
+        text-align: center;
+    }
+}

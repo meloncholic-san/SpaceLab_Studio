@@ -1,0 +1,148 @@
+@use '../utils/variables.scss';
+@use '../utils/mixins' as *;
+
+
+.gallery {
+    background-color: variables.$color-main-black;
+    min-height: 700px;
+    min-width: 700px;
+    position: relative;
+    overflow: hidden;
+    @include respond-to(md) {
+        max-width: 1024px;
+        min-height: 618px;
+    }
+    @include respond-to(sm) {
+        max-width: 768px;
+        min-height: 570px;
+    }
+
+    @include respond-to(xxs) {
+        max-width: 375px;
+        min-width: 375px;
+        min-height: 486px;
+    }
+
+    &__wrapper {
+    padding: 180px 182px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1440px;
+
+        @include respond-to(md) {
+        padding: 133px 269px;
+        }
+        @include respond-to(sm) {
+        padding: 119px 141px;
+        }
+        @include respond-to(xxs) {
+        padding: 95px 22px;
+        }
+    }
+
+    .gallery__image-trail {
+    position: absolute;
+    pointer-events: none;
+    will-change: transform, opacity;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95) rotate(0deg);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .gallery__image-trail--visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(var(--rotation, 0deg));
+    }
+
+
+    &__phrase {
+    font-size: 36px;
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-bold;
+    line-height: 1.42em;
+    color: variables.$color-main-white;
+    max-width: 424px;
+    z-index: 4;
+    margin-bottom: 25px;
+    margin-top: -7px;
+    margin-left: 15px;
+
+        @include respond-to(md) {
+            font-size: 32px;
+            width: 360px;
+            text-align: center;
+            margin-top: 1px;
+            margin-left: 61px;
+        }
+
+        @include respond-to(sm) {
+            margin-left: 61px;
+        }
+
+        @include respond-to(xxs) {
+            font-size: 26px;
+            width: 294px;
+            text-align: left;
+            margin-left: 5px;
+            line-height: 31.5px;
+            margin-bottom: 22px;
+            margin-left: 2px;
+        }
+    }
+
+
+    &__phrase-sm {
+    font-size: 14px;
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-light;
+    line-height: 1.71em;
+    color: variables.$color-main-white;
+    max-width: 339px;
+    z-index: 4;
+    align-self: flex-end;
+    margin-bottom: 45px;
+        @include respond-to(md) {
+            max-width: 455px;
+            text-align: center;
+            margin-bottom: 67px;
+        }
+
+        @include respond-to(sm) {
+            margin-bottom: 51px;
+
+        }
+        @include respond-to(xxs) {
+            max-width: 327px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+    }
+
+
+    &__request-button {
+        max-width: 183px;
+        background-color: variables.$color-main-white;
+        padding: 17px 48px;
+        color: variables.$color-main-black;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-semibold;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        align-self: flex-end;
+        margin-right: 156px;
+        z-index: 4;
+        cursor: pointer;
+        position: relative;
+
+        @include respond-to(md) {
+            margin-right: 137px;
+            padding: 14px 48px;
+        }
+        @include respond-to(xxs) {
+            margin-right: 145px;
+        }
+    }
+
+}

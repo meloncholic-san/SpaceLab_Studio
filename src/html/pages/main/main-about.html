@@ -1,0 +1,51 @@
+<section class="main-about">
+    <div class="main-about__wrapper">
+        <div class="main-about__headline">
+            <h2 class="main-about__title">Company Philosophy</h2>
+            <p class="main-about__phrase phrase-1">The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by  lightning-fast development of projects employing unique styles and architecture. Even if you don't have a ready sketch of what you want - we will help you get the result.</p>
+            <p class="main-about__phrase ">We can also help you create harmony out of seemingly completely incompatible elements in the interior or the exterior design. Do you want to combine classics and abstract art? Modern and retro? Love everything associated with the 1940's? No problem! </p>
+            @@include('../../components/discover-btn.html', {"class":"discover-btn_black", "text":"Discover more"})
+        </div>
+
+
+        <p class="main-about__quote">
+            We can also help you create harmony out of seemingly completely incompatible elements in the interior or the exterior design. 
+        </p>
+
+        <div class="main-about__picture-1">
+            {{> img-media
+            basePath='./img/main/about/section2-about-photo1'
+            sizes=(array 1024 1440)
+            mediaQueries=(array '(max-width: 1024px)' '(min-width: 1025px)')
+            lastSize=1440
+            imgType='png'
+            alt='room example - room'
+            }}
+        </div>
+
+        <div class="main-about__picture-2">
+            {{> img-media
+            basePath='/img/main/about/section2-about-photo2'
+            sizes=(array 375 768 1024 1440)
+            mediaQueries=(array '(max-width: 575px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')
+            lastSize=1440
+            imgType='png'
+            alt='room example - hall'
+            }}
+        </div>
+
+        <div class="main-about__picture-3">
+            {{> img-media
+            basePath='/img/main/about/section2-about-photo3'
+            sizes=(array 375 768 1024 1440)
+            mediaQueries=(array '(max-width: 575px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')
+            lastSize=1440
+            imgType='png'
+            alt='room example - kitchen'
+            }}
+        </div>
+
+
+
+    </div>
+</section>

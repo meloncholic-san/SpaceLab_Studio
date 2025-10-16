@@ -1,0 +1,253 @@
+@use '../utils/variables.scss';
+@use '../utils/mixins' as *;
+
+
+.lorem {
+    height: 814px;
+    position: relative;
+    overflow: hidden;
+
+    @include respond-to(md) {
+    height: 790px;
+    width: 1024px;
+    }
+    @include respond-to(sm) {
+    width: 768px;
+    height: 831px;
+    }
+    @include respond-to(xxs) {
+    width: 375px;
+    height: 675px;
+    }
+    &__wrapper {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    &__title {
+        margin-top: 345px;
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-bold;
+    color: variables.$color-main-black;
+    font-size: 56px;
+    margin-bottom: 18px;
+    margin-left: 13px;
+
+        @include respond-to(md) {
+            font-size: 48px;
+            margin-top: 337px;
+            margin-left: 13px;
+            margin-bottom: 19px;
+        }
+
+        @include respond-to(sm) {
+            font-size: 44px;
+            margin-top: 358px;
+            margin-left: 28px;
+            margin-bottom: 22px;
+        }
+
+        @include respond-to(xxs) {
+            display: none;
+        }
+
+        &-mobile {
+        display: none;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-bold;
+        font-size: 32px;
+        margin-top: 291px;
+        margin-left: 14px;
+        margin-bottom: 14px;
+            @include respond-to(xxs) {
+                display: block;
+            }
+        }
+    }
+
+    &__phrase {
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-light;
+    font-size: 14px;
+    line-height: 1.71em;
+    text-align: center;
+    max-width: 390px;
+    margin-left: 32px;
+        @include respond-to(md) {
+            margin-left: 2px;
+        }
+        @include respond-to(sm) {
+            margin-left: 0;
+        }
+        @include respond-to(xxs) {
+            display: none;
+        }
+
+        &-mobile {
+            display: none;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-light;
+        font-size: 14px;
+        line-height: 1.71em;
+        text-align: center;
+        max-width: 288px;
+        margin-left: 3px;
+            @include respond-to(xxs) {
+                display: block;
+            }
+        }
+    }
+
+
+    &__picture {
+        position: absolute;
+
+        &.picture-1{
+        top: 183px;
+        left: -141px;
+        z-index: 1;
+            @include respond-to(md) {
+            top: 219px;
+            left: -236px;
+            }
+            @include respond-to(sm) {
+            top: 199px;
+            left: -164px;
+            }
+            @include respond-to(xxs) {
+            top: 99px;
+            left: -89px;
+            }
+        }
+        &.picture-2{
+        top: 62px;
+        left: 144px;
+        z-index: 0;
+            @include respond-to(md) {
+            top: 114px;
+            left: 5px;
+            }
+            @include respond-to(sm) {
+            top: 112px;
+            left: 40px;
+            }
+            @include respond-to(xxs) {
+            top: 38px;
+            left: 53px;
+            }
+        }
+        &.picture-3{
+        top: -143px;
+        right: 305px;
+        z-index: 1;
+            @include respond-to(md) {
+            top: -59px;
+            right: 275px;
+            }
+            @include respond-to(sm) {
+            top: -30px;
+            right: 89px;
+            }
+            @include respond-to(xxs) {
+            top: 113px;
+            right: -93px;
+            }
+        }
+        &.picture-4{
+        right: 96px;
+        top: 62px;
+        z-index: 0;
+            @include respond-to(md) {
+            right: 99px;
+            top: 114px;
+            }
+            @include respond-to(sm) {
+            right: -74px;
+            top: 133px;
+            }
+            @include respond-to(xxs) {
+                display: none;
+            }
+        }
+        &.picture-5{
+        right: -102px;
+        bottom: 99px;
+            @include respond-to(md) {
+            right: -153px;
+            bottom: 123px;
+            }
+            @include respond-to(sm) {
+            right: -251px;
+            bottom: 123px;
+            }
+            @include respond-to(xxs) {
+            right: -140px;
+            bottom: 117px;
+            }
+        }
+        &.picture-6{
+        bottom: -50px;
+        right: 438px;
+            @include respond-to(md) {
+            bottom: -5px;
+            right: 304px;
+            }
+            @include respond-to(sm) {
+            bottom: -26px;
+            right: 159px;
+            }
+            @include respond-to(xxs) {
+            bottom: -18px;
+            right: 39px;
+            }
+        }
+        &.picture-7{
+        bottom: 58px;
+        left: 277px;
+
+            @include respond-to(md) {
+            bottom: 88px;
+            left: 57px;
+            }
+            @include respond-to(sm) {
+            bottom: 59px;
+            left: 45px;
+            }
+            @include respond-to(xxs) {
+            bottom: 139px;
+            left: 22px;
+            z-index: 3;
+            }
+        }
+        &.picture-8{
+        left: -127px;
+        bottom: -94px;
+            @include respond-to(md) {
+                display: none;
+            }
+            @include respond-to(sm) {
+                display: none;
+            }
+            @include respond-to(xxs) {
+                display: block;
+                left: -59px;
+                bottom: 64px;
+                z-index: 1;
+            }
+        }
+    }
+
+
+    &__about {
+        background-color: variables.$color-main-black;
+        .lorem__title {
+            color: variables.$color-main-white;
+        }
+        .lorem__phrase {
+            color: variables.$color-main-white;
+            opacity: 0.6;
+        }
+    }
+}

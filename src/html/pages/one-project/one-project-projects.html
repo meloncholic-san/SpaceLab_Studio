@@ -1,0 +1,68 @@
+<section class="one-project-projects">
+    <div class="one-project-projects__wrapper">
+        <div class="one-project-projects__content">
+            <p class="one-project-projects-title">Donec et ipsum nec quam posuere maximus eu in erat. Duis laoreet finibus consectetur. </p>
+            <p class="one-project-projects-phrase">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel gravida urna. Donec blandit sapien eu diam ullamcorper euismod. Nam tempus pellentesque ligula ut aliquam. Donec et ipsum nec quam posuere maximus eu in erat. Duis laoreet finibus consectetur. Nullam pulvinar ex sit amet leo gravida, sed mattis enim vehicula. Duis purus nisl, consectetur ut est non, placerat eleifend turpis. Duis auctor suscipit arcu. Aenean leo est, rutrum a eleifend eget, tempor nec urna. Proin finibus lobortis arcu dictum convallis. Ut fermentum eu magna vel laoreet. In lacus augue, malesuada id elit sit amet, varius imperdiet ex. Nullam blandit lobortis posuere:</p>
+            @@include('../../components/discover-btn.html', {"class":"discover-btn_black", "text":"Discover more"})
+        </div>
+
+
+        <div class="one-project-projects__gallery">
+        <div class="one-project-projects__photo">
+          {{> img-media
+            basePath="./img/one-project/projects/one-project-main-photo1"
+            sizes=(array 375 768 1024 1440)
+            mediaQueries=(array "(max-width: 575px)" "(max-width: 768px)" "(max-width: 1024px)" "(min-width: 1025px)")
+            lastSize=1440
+            imgType="png"
+            alt="room example - kitchen"
+            pictureClass="one-project-image"
+          }}
+        </div>
+
+        <div class="one-project-projects__gallery-group">
+            <div class="one-project-projects__photo">
+            {{> img-media
+                basePath="./img/one-project/projects/one-project-main-photo2"
+                sizes=(array 375 768 1024 1440)
+                mediaQueries=(array "(max-width: 575px)" "(max-width: 768px)" "(max-width: 1024px)" "(min-width: 1025px)")
+                lastSize=1440
+                imgType="png"
+                alt="room example - kitchen"
+                pictureClass="one-project-image"
+            }}
+            </div> 
+
+            <div class="one-project-projects__photo">
+            {{> img-media
+                basePath="./img/one-project/projects/one-project-main-photo3"
+                sizes=(array 375 768 1024 1440)
+                mediaQueries=(array "(max-width: 575px)" "(max-width: 768px)" "(max-width: 1024px)" "(min-width: 1025px)")
+                lastSize=1440
+                imgType="png"
+                alt="room example - kitchen"
+                pictureClass="one-project-image"
+            }}
+            </div> 
+
+        </div>
+
+        <div class="one-project-projects__photo">
+          {{> img-media
+            basePath="./img/one-project/projects/one-project-main-photo4"
+            sizes=(array 375 768 1024 1440)
+            mediaQueries=(array "(max-width: 575px)" "(max-width: 768px)" "(max-width: 1024px)" "(min-width: 1025px)")
+            lastSize=1440
+            imgType="png"
+            alt="room example - kitchen"
+            pictureClass="one-project-image"
+          }}
+        </div> 
+        </div>
+
+        <button class="one-project-projects__button" type="button">
+            View more photo
+        </button>
+    </div>
+
+</section>

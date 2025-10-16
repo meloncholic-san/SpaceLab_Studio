@@ -1,0 +1,107 @@
+@use '../../utils/variables.scss';
+
+.about-contacts {
+    padding: 140px 64px 190px;
+
+
+    &__title {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-bold;
+        font-size: 36px;
+        line-height: 1.42em;
+        max-width: 426px;
+        padding-left: 135px;
+        margin-bottom: 130px;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+  &__form {
+    padding-left: 135px;
+    position: relative;
+    max-width: 382px;
+    width: 382px;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #515151;
+    position: relative;
+  }
+
+  &__input {
+    flex: 1;
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-light;
+    font-size: 20px;
+    line-height: 1.71em;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+
+  &__submit {
+    flex-shrink: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateX(2px);
+    }
+  }
+
+    &__icon {
+        fill: none;
+    }
+
+
+    &__phrase {
+        max-width: 366px;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-light;
+        font-size: 14px;
+        line-height: 1.71em;
+        margin-bottom: 20px;
+    }
+
+    &__socials {
+
+        &-container {
+            padding-right: 149px;
+        }
+        &-content {
+            display: flex;
+            flex-direction: row;
+            gap: 179px;
+        }
+
+        &-mail,
+        &-list {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            li a {
+            color: variables.$color-main-black;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-semibold;
+            font-size: 11px;
+            letter-spacing: .06em;
+            text-decoration: none;
+            }
+        }
+    }
+
+}

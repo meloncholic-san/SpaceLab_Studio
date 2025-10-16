@@ -1,0 +1,305 @@
+@use '../../utils/variables.scss';
+@use '../../utils/mixins' as *;
+
+.main-projects {
+    position: relative;
+    bottom: -1px;
+    background-color: variables.$color-main-black;
+    color: variables.$color-main-white;
+    &__wrapper {
+        padding: 140px 64px 0px 63px;
+        margin: 0 auto;
+        max-width: 1440px;
+
+        @include respond-from(lg) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include respond-to(md) {
+            padding: 124px 56px 0px;
+        }
+
+        @include respond-to(sm) {
+            padding: 103px 47px 0;
+        }
+
+        @include respond-to(xxs) {
+            padding: 81px 23px 0;
+        }
+
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 133px;
+
+        @include respond-to(md) {
+            padding-bottom: 115px;
+        }
+
+        @include respond-to(sm) {
+            padding-bottom: 95px;
+        }
+
+        @include respond-to(xxs) {
+            align-items: flex-start;
+            padding-bottom: 78px;
+        }
+    }
+
+    &__title {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-bold;
+        font-size: 36px;
+        margin-bottom: 31px;
+        margin-left: 16px;
+
+        @include respond-to(md) {
+            font-size: 32px;
+            margin-bottom: 23px;
+        }
+
+        @include respond-to(xxs) {
+            font-size: 26px;
+            margin-left: 0px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__phrase {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-light;
+        color: variables.$color-secondary-grey;
+        font-size: 14px;
+        line-height: 1.71em;
+        text-align: center;
+        max-width: 449px;
+        margin-left: 15px;
+
+        @include respond-to(xxs) {
+            width: 327px;
+            text-align: start;
+            margin-left: 0;
+        }
+    }
+
+    &__container-double {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+
+        @include respond-to(sm) {
+            flex-direction: column;
+            gap: 2px
+        }
+
+    }
+
+    
+
+    &__container-more {
+        background-color: variables.$color-main-white;
+        height: 538px;
+        padding: 113px 204px 0px;
+        display: flex;
+        flex-direction: column;
+
+        @include respond-to(md) {
+            height: 386px;
+            padding: 63px 114px 0;
+        }
+
+        @include respond-to(sm) {
+            width: 222px;
+            height: 528px;
+            padding: 145px 225px 0;
+        }
+
+        @include respond-to(xxs) {
+            width: 220px;
+            height: 265px;
+            padding: 60px 54px 0;
+        }
+
+        &__phrase {
+            color: variables.$color-main-black;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-bold;
+            font-size: 21.9px;
+            line-height: 1.27em;
+            margin-bottom: 24px;
+
+            @include respond-to(md) {
+                width: 222px;
+                font-size: 20px;
+            }
+
+            @include respond-to(sm) {
+                margin-bottom: 24px;
+            }
+
+            @include respond-to(xxs) {
+                margin-bottom: 15px
+            }
+        }
+
+        &-img {
+
+            @include respond-to(md) {
+                margin-left: 26px;  
+            }
+            @include respond-to(sm) {
+                margin-left: -14px;
+            }
+
+            @include respond-to(xxs) {
+                margin-left: 49px;
+            }
+        }
+    }
+
+    &__project-room {
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            // transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        &__room-big {
+            margin-top: 4px;
+            margin-bottom: 4px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+                &:hover {
+                // transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+                }
+                &:hover .project-room__description {
+                opacity: 1;
+                visibility: visible;
+                }
+            
+            @include respond-to(md) {
+            margin-bottom: 2px;
+            }
+        }
+
+        &.room-mobile {
+            display: none;
+            @include respond-to(xxs) {
+                display: block;
+            }
+        }
+
+        &__description {
+            position: absolute;
+            min-height: 653px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+
+
+            @include respond-to(md) {
+                min-height: 452px;
+            }
+
+            @include respond-to(sm) {
+                min-height: 672px;
+            }
+
+            @include respond-to(xxs) {
+                min-height: 327px;
+            }
+        }
+            &:hover .project-room__description {
+                opacity: 1;
+                visibility: visible;
+            }
+
+        &__phrase {
+            padding: 32px;
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-regular;
+            font-size: 10px;
+            line-height: 1.71em;
+            color: variables.$color-main-white;
+
+            @include respond-to(xxs) {
+                padding: 24px;
+            }
+        }
+        &__title-room {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-bold;
+            font-size: 22px;
+            line-height: 1.27em;
+            color: variables.$color-main-white;
+
+            @include respond-to(md) {
+                font-size: 20px;
+                margin-bottom: 24px;
+                max-width: 273px;
+            }
+
+            @include respond-to(xxs) {
+                margin-bottom: 8px;
+            }
+            &.container-big {
+                @include respond-to(md) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__container {
+            padding: 32px;
+
+            @include respond-to(xxs) {
+            padding: 24px;
+            }
+
+            &.container-big {
+
+
+                @include respond-to(md) {
+                    display: flex;
+                    flex-direction: row;
+
+                    .discover-btn.project-room-btn {
+                        margin-left: 352px;
+                        margin-top: 32px;
+                    }
+                }
+
+                @include respond-to(sm) {
+                    flex-direction: column;
+                    .discover-btn.project-room-btn {
+                        margin-left: -132px;
+                        margin-top: 0;
+
+                        &::before {
+                            left: 133px;
+                            top: 7px;
+                        }
+                        &::after {
+                            right: -265px;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+
+
+
+}
