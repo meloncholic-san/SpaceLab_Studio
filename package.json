@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "spacelab_studio_project",
   "type": "module",
+  "homepage": "https://meloncholic-san.github.io/SpaceLab_Studio/",
   "scripts": {
-    "dev": "gulp"
+    "dev": "gulp",
+    "deploy": "gh-pages -d dist"
   },
   "author": "panchenko_denis",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^3.0.4",
     "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
     "gulp": "^5.0.1",
     "gulp-clean-css": "^4.3.0",
     "gulp-file-include": "^2.3.0",
