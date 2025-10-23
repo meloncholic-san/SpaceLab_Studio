@@ -197,26 +197,14 @@
 
         &__description {
             position: absolute;
-            min-height: 653px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.4s ease, visibility 0.4s ease;
-
-
-            @include respond-to(md) {
-                min-height: 452px;
-            }
-
-            @include respond-to(sm) {
-                min-height: 672px;
-            }
-
-            @include respond-to(xxs) {
-                min-height: 327px;
-            }
+            height: 100%;
+            width: 100%;
         }
             &:hover .project-room__description {
                 opacity: 1;

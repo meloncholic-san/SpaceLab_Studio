@@ -1,22 +1,35 @@
 @use '../../utils/variables.scss';
+@use '../../utils/mixins' as *;
+
 
 .about-about {
     color: variables.$color-main-black;
+    max-width: 1440px;
+    margin: 0 auto;
     &__wrapper {
-        padding: 140px 64px;
+        padding: 120px 64px;
+        padding-bottom: 70px;
         padding-right: 0;
         position: relative;
+            @include respond-to(md) {
+                padding: 70px 48px;
+            }
     }
 
     &__swiper {
         position: relative;
         max-width: 662px;
+        max-height: 444px;
+        margin-right: 0 !important;
+            @include respond-to(md) {
+                margin-right: auto !important;
+            }
 
         &-title {
         font-family: variables.$font-family-main;
         font-weight: variables.$font-weight-bold;
         font-size: 36px;
-        margin-bottom: 24px;
+        margin-bottom: 11px;
         }
 
         &-phrase {
@@ -25,27 +38,44 @@
         font-size: 14px;
         line-height: 1.71em;
         max-width: 383px;
-        margin-bottom: 49px;
+        margin-bottom: 42px;
         }
         &-container {
             display: flex;
             flex-direction: row;
             margin-top: 22px;
-            gap: 132px;
+            // gap: 132px;
+                @include respond-to(md) {
+                    flex-direction: column;
+                    align-items: center;
+                }
         }
 
         &-content {
             margin-left: 199px;
-            margin-top: 120px;
+            margin-top: 97px;
+                @include respond-to(xmd) {
+                    margin-left: 100px;
+                }
+                @include respond-to(md) {
+                    margin-left: 0;
+                    margin-top: 0;
+                    margin-bottom: 40px;
+                }
         }
 
         &-slide {
         width: 100%;
         max-width: 552px;
-            img {
-                height: 444px;
-                width: 552px;
+        flex: 0 0 83%;
+            @include respond-to(md) {
+                 aspect-ratio: 4 / 3;
             }
+            img {
+                height: 100%;
+                width: 100%;
+            }
+            
         }
     }
 
@@ -56,33 +86,71 @@
         margin-bottom: 180px;
         display: flex;
         flex-direction: row;
+            @include respond-to(md) {
+                flex-direction: column;
+                align-items: center;
+                padding-left: 0px;
+            }
+            @include respond-to(xxs) {
+                margin-top: 90px;
+                margin-bottom: 40px;
+            }
         &_phrase {
             font-family: variables.$font-family-main;
             font-weight: variables.$font-weight-light;
             font-size: 14px;
-            line-height: 1.32em;
+            line-height: 1.71em;
             max-width: 382px;
         }
         &__container {
-            padding-left: 132px;
+            margin-left: auto;
+            margin-right: 204px;
+            flex: 0 1 35%;
+                @include respond-to(xmd) {
+                    margin-right: 20px;
+                }
+                @include respond-to(md) {
+                    margin-right: auto;
+                }
+        }
+         &-photo-wrapper {
+            flex: 1 1 40%;
+            max-width: 516px;
+            overflow: hidden;
+                img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                }
         }
     }
 
     &__statistic {
         &-container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 31px;
-            max-width: 312px;
-            justify-content: space-between;
-            margin: 76px 0 75px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 48px;
+        max-width: 312px;
+        justify-content: space-between;
+        margin: 90px 0 73px;
+            @include respond-to(md) {
+                gap: 32px;
+            }
         }
 
         &-title {
             font-family: variables.$font-family-main;
             font-weight: variables.$font-weight-bold;
             font-size: 56px;
+            margin-bottom: 3px;
+                @include respond-to(md) {
+                    font-size: 48px;
+                }
+                @include respond-to(xxs) {
+                    font-size: 36px;
+                }
         }
         &-phrase {
             font-family: variables.$font-family-main;
@@ -96,8 +164,11 @@
         height: 216px;
         width: 163px;
         position: absolute;
-        right: 0;
-        bottom: -40px;
+        right: 5px;
+        bottom: -39px;
+            @include respond-to(xmd) {
+                display: none;
+            }
     }
 
 
@@ -105,10 +176,21 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 100px;
+        @include respond-to(md) {
+            flex-direction: column-reverse;
+        }
     &__container {
-        margin-top: 40px;
-        margin-left: 149px;
-        margin-right: 132px;
+    margin-top: 64px;
+    margin-left: 198px;
+    margin-right: 136px;
+        @include respond-to(md) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @include respond-to(xxs) {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
 
@@ -116,7 +198,13 @@
     font-family: variables.$font-family-main;
     font-weight: variables.$font-weight-bold;
     font-size: 36px;
-    margin-bottom: 36px;
+    margin-bottom: 21px;
+            @include respond-to(md) {
+            font-size: 32px;
+        }
+        @include respond-to(sm) {
+            font-size: 24px;
+        }
     }
 
     &__title {
@@ -124,8 +212,14 @@
     font-weight: variables.$font-weight-bold;
     font-size: 16px;
     line-height: 1.37em;
-    margin-bottom: 53px;
-
+    margin-bottom: 51px;
+    max-width: 160px;
+            @include respond-to(md) {
+            font-size: 14px;
+        }
+        @include respond-to(sm) {
+            font-size: 12px;
+        }
     }
     &__quote {
     font-family: variables.$font-family-main;
@@ -135,17 +229,46 @@
     opacity: 0.7;
     position: relative;
     max-width: 380px;
+                @include respond-to(md) {
+            font-size: 16px;
+            max-width: 270px;
+        }
+        @include respond-to(sm) {
+            font-size: 14px;
+            max-width: 250px;
+        }
         &::before {
             content: "“";
             position: absolute;
             font-family: variables.$font-family-main;
             font-weight: variables.$font-weight-bold;
             font-size: 36px;
-            left: -32px;
-            top: 8px;
+            left: -49px;
+            top: 6px;
+                @include respond-to(md) {
+                    font-size: 32px;
+                }
+                @include respond-to(sm) {
+                    font-size: 24px;
+                    left: -24px;
+                }
         }
     }
-
+  &__photo-wrapper {
+    flex: 1 1 47%;
+    max-width: 516px;
+    overflow: hidden;
+    margin-right: 10px;
+        @include respond-to(md) {
+            margin: 0 auto;
+        }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
     }
 
 
@@ -154,23 +277,45 @@
         position: relative;
         display: flex;
         flex-direction: row;
-
+            @include respond-to(md) {
+                flex-direction: column;
+                align-items: center;
+            }
         &_photo {
-            position: absolute;
+            position: relative;
             margin-left: 134px;
-            top: -165px;
-
+            top: -179px;
+                @include respond-to(xmd) {
+                    top: -65px;
+                    margin-right: 10px;
+                }
+                @include respond-to(md) {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                @include respond-to(xxs) {
+                    width: 270px;
+                }
         }
 
         &-content {
             margin-left: auto;
-            margin-right: 186px;
+            margin-right: 146px;
+                @include respond-to(xmd) {
+                    margin-right: 26px;
+                }
+                @include respond-to(md) {
+                    margin-right: auto;
+                }
         }
         &-container {
             display: flex;
             flex-direction: row;
-            gap: 79px;
+            gap: 83px;
             margin-bottom: 56px;
+                @include respond-to(sm) {
+                    gap: 50px;
+                }
         }
 
     
@@ -178,8 +323,14 @@
             font-family: variables.$font-family-main;
             font-weight: variables.$font-weight-light;
             font-size: 14px;
-            line-height: 1.32em;
+            line-height: 1.71em;
             max-width: 516px;
+                @include respond-to(md) {
+                    max-width: 410px;
+                }
+                @include respond-to(sm) {
+                    max-width: 330px;
+                }
         }
     }
 }

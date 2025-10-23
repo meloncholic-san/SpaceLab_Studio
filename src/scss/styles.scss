@@ -1,5 +1,6 @@
 @use "utils/variables";
 @use "components/header";
+@use "components/mobile-menu.scss";
 @use "utils/reset.scss";
 @use "pages/main/main-hero.scss";
 @use "components/discover-btn.scss";
@@ -26,3 +27,5 @@
 
 @use 'pages/news/news-hero.scss';
 @use 'pages/news/news-contacts.scss';
+
+@use 'pages/projects/projects-hero.scss';

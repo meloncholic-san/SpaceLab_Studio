@@ -17,7 +17,7 @@
     @include respond-to(sm) {
     margin-right: 41px;
     }
-    @include respond-to(xxs) {
+    @include respond-to(xs) {
     display: none;
     }
     }
@@ -54,7 +54,7 @@
         @include respond-to(sm) {
         margin-right: 32px;
         }
-        @include respond-to(xxs) {
+        @include respond-to(xs) {
         margin-right: 32px;
         margin-top: 5px;
         }
@@ -114,7 +114,7 @@
         display: flex;
         align-items: center;
 
-        @include respond-to(xxs) {
+        @include respond-to(xs) {
             margin-left: 18px;
             margin-bottom: 12px;
         }
@@ -151,7 +151,7 @@
         @include respond-to(sm) {
             gap: 32px;
         }
-        @include respond-to(xxs) {
+        @include respond-to(xs) {
             flex-direction: column;
             gap: 4px;
 
@@ -178,11 +178,24 @@
             bottom: 32px;
             left: 46px;
             }
-            @include respond-to(xxs) {
+            @include respond-to(xs) {
             bottom: 9px;
             left: 24px
             }
 
 
+    }
+
+
+    &__mobile-menu {
+        position: relative;
+        z-index: 7;
+        margin-left: 56px;
+        margin-bottom: 40px;
+            @include respond-to(xs) {
+                margin-left: 24px;
+                margin-right: 24px;
+                margin-bottom: 24px;
+            }
     }
 }

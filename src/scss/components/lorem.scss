@@ -6,17 +6,14 @@
     height: 814px;
     position: relative;
     overflow: hidden;
-
+    width: 100%;
     @include respond-to(md) {
     height: 790px;
-    width: 1024px;
     }
     @include respond-to(sm) {
-    width: 768px;
     height: 831px;
     }
     @include respond-to(xxs) {
-    width: 375px;
     height: 675px;
     }
     &__wrapper {
@@ -24,6 +21,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    }
+
+    &__content {
+        margin-left: -48px;
     }
 
     &__title {
@@ -74,7 +75,7 @@
     line-height: 1.71em;
     text-align: center;
     max-width: 390px;
-    margin-left: 32px;
+    margin-left: 49px;
         @include respond-to(md) {
             margin-left: 2px;
         }
@@ -140,7 +141,7 @@
         }
         &.picture-3{
         top: -143px;
-        right: 305px;
+        right: 320px;
         z-index: 1;
             @include respond-to(md) {
             top: -59px;
@@ -156,7 +157,7 @@
             }
         }
         &.picture-4{
-        right: 96px;
+        right: 111px;
         top: 62px;
         z-index: 0;
             @include respond-to(md) {
@@ -172,7 +173,7 @@
             }
         }
         &.picture-5{
-        right: -102px;
+        right: -87px;
         bottom: 99px;
             @include respond-to(md) {
             right: -153px;
@@ -189,7 +190,7 @@
         }
         &.picture-6{
         bottom: -50px;
-        right: 438px;
+        right: 453px;
             @include respond-to(md) {
             bottom: -5px;
             right: 304px;
@@ -245,7 +246,14 @@
         .lorem__title {
             color: variables.$color-main-white;
         }
+        .lorem__title-mobile {
+            color: variables.$color-main-white;
+        }
         .lorem__phrase {
+            color: variables.$color-main-white;
+            opacity: 0.6;
+        }
+        .lorem__phrase-mobile {
             color: variables.$color-main-white;
             opacity: 0.6;
         }

@@ -13,19 +13,13 @@
 
     
 </head>
-<body id="main-page">
+<body id="one-news-page">
 
   
-
-@@include('./html/components/header.html',)
-@@include('./html/pages/main/main-hero.html')
-@@include('./html/pages/main/main-about.html')
-@@include('./html/pages/main/main-projects.html')
-@@include('./html/components/gallery.html', {"class":"gallery__main"})
-@@include('./html/components/lorem.html', {"class":"lorem__main"})
-@@include('./html/components/contacts.html')
-@@include('./html/components/footer.html', {"class":"footer__dark"})
-
+@@include('./html/components/header.html', {class:"header-black"})
+@@include('./html/pages/one-news/one-news-hero.html')
+@@include('./html/pages/one-news/one-news-latest.html')
+@@include('./html/components/footer.html', {"class":"footer__white"})
 
   <script src="./js/bundle.js" defer></script>
 

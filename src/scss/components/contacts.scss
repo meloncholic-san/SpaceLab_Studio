@@ -19,21 +19,21 @@
         padding-bottom: 170px;
         margin: 0 auto;
         max-width: 1440px;
-
+        box-sizing: border-box;
         @include respond-to(md) {
-        width: 1024px;
+        max-width: 1024px;
         padding: 106px 29px;
         padding-bottom: 165px;
         }
         @include respond-to(sm) {
-        width: 768px;
+        max-width: 768px;
         padding: 90px 0px;
         padding-bottom: 43px;
         }
         @include respond-to(xxs) {
-            padding: 59px 0;
-            width: 375px;
-            padding-bottom: 117px;
+        padding: 59px 0;
+        max-width: 375px;
+        padding-bottom: 117px;
         }
     }
 
@@ -184,7 +184,7 @@
         margin-right: 115px;
 
         @include respond-to(md) {
-            margin-right: 186px;
+            margin-right: 113px;
         }
 
         @include respond-to(sm) {

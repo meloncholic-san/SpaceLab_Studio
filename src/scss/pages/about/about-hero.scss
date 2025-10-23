@@ -1,6 +1,7 @@
 @use '../../utils/variables.scss';
 
 .about-hero {
+    margin-top: 96px;
     background: url("../img/about/hero/section1-hero-photo1-1440.png") no-repeat center/cover;
     min-height: 648px;
     &__wrapper {

@@ -1,19 +1,60 @@
 @use '../utils/variables.scss';
+@use '../utils/mixins' as *;
 
 .footer {
-    padding: 0 64px;
-    padding-right: 0;
-    display: flex;
-    flex-direction: row;
-    margin-top: -48px;
-    gap: 889px;
+    margin-top: -50px;
     height: 19px;
-    align-items: center;
-    &__dark {
     position: relative;
+        @include respond-to(md) {
+            margin-top: -56px;
+        }
+        @include respond-to(sm) {
+            margin-top: -45px;
+        }
+        @include respond-to(xs) {
+            margin-top: -75px;
+        }
+    &__dark {
     color: variables.$color-main-white;
     }
-
+    
+    &__white {
+        .footer__copyright {
+            color: #828282;
+        }
+        .footer__phrase_left {
+            color: #828282;
+        }
+        .footer__phrase_right {
+            color: black;
+        }
+    }
+    &__wrapper {
+        height: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding-left: 64px;
+        padding-right: 59px;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+            @include respond-to(md) {
+            padding-left: 58px;
+            padding-right: 54px;
+            }
+            @include respond-to(sm) {
+            padding-left: 48px;
+            padding-right: 45px;
+            }
+            @include respond-to(xs) {
+            padding-left: 26px;
+            padding-right: 26px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            }
+    }
     &__copyright {
         font-family: variables.$font-family-main;
         font-weight: variables.$font-weight-light;
@@ -25,7 +66,10 @@
         display: flex;
         flex-direction: row;
         gap: 26px;
-        
+            @include respond-to(md) {
+                margin-bottom: 6px;
+                gap: 31px;
+            }
             &_left {
             color: variables.$color-secondary-grey;
             font-family: variables.$font-family-main;
@@ -55,6 +99,12 @@
                     line-height: 0.8em;
                     padding-top: 1px;
                     padding-right: 6px;
+                        @include respond-to(md) {
+                            padding-right: 5px;
+                        }
+                        @include respond-to(xs) {
+                            padding-right: 8px;
+                        }
                     }
                 }
 

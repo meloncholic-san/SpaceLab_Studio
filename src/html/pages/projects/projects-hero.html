@@ -1,0 +1,166 @@
+<section class="projects">
+    <div class="projects__wrapper">
+        <div class="projects__header">
+            <h2 class="projects__header-title">Our Projects</h2>
+            <div class="projects__header__filters-container">
+                <p class="projects__header__filters-phrase">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.</p>
+                <div class="projects__header__filters">
+                    <button class="projects__header__filters-btn active" data-filter="House">House</button>
+                    <button class="projects__header__filters-btn" data-filter="Apartments">Apartments</button>
+                    <button class="projects__header__filters-btn" data-filter="Commerce">Commerce</button>
+                    <button class="projects__header__filters-btn" data-filter="Architecture">Architecture</button>
+
+                    <div class="projects__header__filters-select-wrapper">
+                        <select class="projects__header__filters-select">
+                            <option value="House">House</option>
+                            <option value="Apartments">Apartments</option>
+                            <option value="Commerce">Commerce</option>
+                            <option value="Architecture">Architecture</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+    
+
+        <div class="projects__news-container">
+
+            <div class="projects__news-container-single" data-category="House">
+
+                @@include('../../components/project-room.html', {
+                "class": "main-projects__project-room",
+                "data-link": "one-news",
+                "class-description": "main-projects__project-room__description",
+                "class-container": "main-projects__project-room__container",
+                "class-title": "main-projects__project-room__title-room",
+                "title-room": "Non-standard <br> plinth options",
+                "room-description": "<p class='projects__project-room__phrase'>House</p>",
+                "picture": "{{> img-media\
+                basePath='/img/main/projects/section3-project-photo1'\
+                sizes=(array 375 768 1024 1440)\
+                mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
+                lastSize=1440\
+                imgType='png'\
+                pictureClass='projects__news-image'\
+                alt='room example - Eyewear store interior'}}"
+                })
+
+            </div>
+
+            <div class="projects__news-container-single" data-category="Apartments">
+
+                @@include('../../components/project-room.html', {
+                "class": "main-projects__project-room",
+                "data-link": "one-news",
+                "class-description": "main-projects__project-room__description",
+                "class-container": "main-projects__project-room__container",
+                "class-title": "main-projects__project-room__title-room",
+                "title-room": "Non-standard <br> plinth options",
+                "room-description": "<p class='projects__project-room__phrase'>Apartments</p>",
+                "picture": "{{> img-media\
+                basePath='/img/main/projects/section3-project-photo2'\
+                sizes=(array 375 768 1024 1440)\
+                mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
+                lastSize=1440\
+                imgType='png'\
+                pictureClass='projects__news-image'\
+                alt='room example - Eyewear store interior'}}"
+                })
+
+            </div>
+
+            <div class="projects__news-container-single-big" data-category="House">
+            @@include('../../components/project-room.html', {
+            "class": "main-projects__project-room",
+            "data-link": "one-news",
+            "class-description": "main-projects__project-room__description",
+            "class-container": "main-projects__project-room__container",
+            "class-title": "main-projects__project-room__title-room",
+            "title-room": "Interior design, <br> LCD Rybalsky",
+            "room-description": "<p class='projects__project-room__phrase'>House</p>",
+            "picture": "{{> img-media\
+            basePath='/img/projects/project-hero-photo3'\
+            sizes=(array 375 768 1024 1440)\
+            mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
+            lastSize=1440\
+            imgType='png'\
+            pictureClass='projects__news-image'\
+            alt='room example - Eyewear store interior'}}"
+            })
+
+            </div>
+
+            <div class="projects__news-container-single" data-category="Commerce">
+
+                @@include('../../components/project-room.html', {
+                "class": "main-projects__project-room",
+                "data-link": "one-news",
+                "class-description": "main-projects__project-room__description",
+                "class-container": "main-projects__project-room__container",
+                "class-title": "main-projects__project-room__title-room",
+                "title-room": "Non-standard <br> plinth options",
+                "room-description": "<p class='projects__project-room__phrase'>Commerce</p>",
+                "picture": "{{> img-media\
+                basePath='/img/projects/project-hero-photo4'\
+                sizes=(array 375 768 1024 1440)\
+                mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
+                lastSize=1440\
+                imgType='png'\
+                pictureClass='projects__news-image'\
+                alt='room example - Eyewear store interior'}}"
+                })
+
+            </div>
+
+            <div class="projects__news-container-single" data-category="Architecture">
+
+                @@include('../../components/project-room.html', {
+                "class": "main-projects__project-room",
+                "data-link": "one-news",
+                "class-description": "main-projects__project-room__description",
+                "class-container": "main-projects__project-room__container",
+                "class-title": "main-projects__project-room__title-room",
+                "title-room": "Interior design, <br> LCD Rybalsky",
+                "room-description": "<p class='projects__project-room__phrase'>Architecture</p>",
+                "picture": "{{> img-media\
+                basePath='/img/projects/project-hero-photo5'\
+                sizes=(array 375 768 1024 1440)\
+                mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
+                lastSize=1440\
+                imgType='png'\
+                pictureClass='projects__news-image'\
+                alt='room example - Eyewear store interior'}}"
+                })
+    
+            </div>
+
+            
+            <div class="projects__news-container-single-big" data-category="Commerce">
+            @@include('../../components/project-room.html', {
+            "class": "main-projects__project-room",
+            "data-link": "one-news",
+            "class-description": "main-projects__project-room__description",
+            "class-container": "main-projects__project-room__container",
+            "class-title": "main-projects__project-room__title-room",
+            "title-room": "House on a Hillside",
+            "room-description": "<p class='projects__project-room__phrase'>Commerce</p>",
+            "picture": "{{> img-media\
+            basePath='/img/projects/project-hero-photo6'\
+            sizes=(array 375 768 1024 1440)\
+            mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
+            lastSize=1440\
+            imgType='png'\
+            pictureClass='projects__news-image'\
+            alt='room example - Eyewear store interior'}}"
+            })
+            </div>
+
+
+        </div>
+
+
+        
+    </div>
+</section>

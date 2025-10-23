@@ -5,60 +5,63 @@
 .one-news-hero {
     max-width: 1440px;
     margin: 0 auto;
+    width: 100%;
         @include respond-to(md) {
             max-width: 1024px;
-            min-width: 1024px;
         }
         @include respond-to(sm) {
             max-width: 768px;
-            min-width: 768px;
         }
         @include respond-to(xxs) {
             max-width: 375px;
-            min-width: 375px;
         }
     &__wrapper {
-        padding: 222px 64px 0;
+        padding: 208px 64px 0;
         position: relative;
+        display: flex;
+        flex-direction: column;
             @include respond-to(md) {
-                padding: 160px 56px 0;
+                padding: 143px 56px 0;
                 padding-bottom: 125px;
+                &::after {
+                    left: 56px;
+                    right: 56px;
+                    }
             }
             @include respond-to(sm) {
                 padding: 138px 48px;
                 padding-bottom: 107px;
+                    &::after {
+                    left: 48px;
+                    right: 48px;
+                    }
             }
             @include respond-to(xxs) {
                 padding: 116px 24px;
                 padding-bottom: 100px;
+                    &::after {
+                    left: 24px;
+                    right: 24px;
+                    }
             }
     }
 
-    &__wrapper::after {
+        &__wrapper::after {
         content: "";
-        border-bottom: 1px solid #828282;
-        width: 1046px;
         position: absolute;
-        left: 197px;
-            @include respond-to(md) {
-                bottom: 0px;
-                left: 160px;
-                width: 705px;
-            }
-            @include respond-to(sm) {
-                width: 560px;
-            }
-            @include respond-to(xxs) {
-                width: 328px;
-                left: 25px;
-            }
+        bottom: 0;
+        left: 64px;
+        right: 64px;
+        height: 1px;
+        background-color: #828282;
     }
+
     &__content {
         padding-left: 133px;
         margin-bottom: 99px;
             @include respond-to(md) {
                 padding-left: 104px;
-                margin-bottom: 72px;
+                margin-bottom: 70px;
             }
             @include respond-to(sm) {
                 padding-left: 76px;
@@ -151,8 +154,8 @@
 
     &__share {
             position: absolute;
-            left: 1120px;
-            top: 230px;
+            right: 200px;
+            top: 217px;
                 @include respond-to(md) {
                     top: auto;
                     bottom: 85px;
@@ -185,9 +188,10 @@
 
     &__picture { 
             &-big-1 {
+            width: 100%;
             margin-bottom: 93px;
                 @include respond-to(md) {
-                    margin-bottom: 84px;
+                    margin-bottom: 86px;
                 }
                 @include respond-to(sm) {
                     margin-bottom: 67px;
@@ -195,17 +199,40 @@
                 @include respond-to(xxs) {
                     margin-bottom: 60px;
                 }
-        }
+                img {
+                    width: 100%;
+                }
+            }
             &-big-2 {
+            width: 100%;
                 @include respond-to(md) {
-                    margin-top: 80px;
+                    margin-top: 9px;
                 }
                 @include respond-to(sm) {
-                    margin-top: 75px;
+                    margin-top: 8px;
                 }
                 @include respond-to(xxs) {
-                    margin-top: 67px;
+                    margin-top: 9px;
                 }
+                img {
+                    width: 100%;
+                }
+            }
+            &-small {
+            flex: 1 1 calc(50% - 4px);
+            max-width: calc(50% - 4px);
+
+            img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            }
+
+            @include respond-to(xxs) {
+            flex: 1 1 100%;
+            max-width: 100%;
+            }
             }
             &-container {
                 display: flex;
@@ -214,14 +241,14 @@
                 margin-top: 4px;
                 margin-bottom: 91px;
                     @include respond-to(md) {
-                        margin-bottom: 82px;
+                        margin-bottom: 88px;
                     }
                     @include respond-to(sm) {
-                        margin-bottom: 68px;
+                        margin-bottom: 73px;
                     }
                     @include respond-to(xxs) {
                         flex-direction: column;
-                        gap: 0;
+                        gap: 10px;
                         margin-bottom: 62px;
                     }
             }

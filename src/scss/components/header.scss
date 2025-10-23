@@ -1,21 +1,70 @@
 @use '../utils/variables.scss';
 @use '../utils/mixins' as *;
-.header {
 
+.header {
 position: fixed;
 top: 0;
 left: 0;
-width: 100%;
+width: 100vw;
 z-index: 10;
 background-color: transparent;
+    &.scroll {
+        background-color: variables.$color-main-black;
+    }
 
+    &.modal-open {
+        background-color: variables.$color-main-black;
+            .header__burger-phrase {
+                display: none;
+            }
+            .header__wrapper {
+                padding-top: 32px;
+            }
+            .header__burger-icon {
+                &::before {
+                transform: rotate(45deg);
+                top: 50%;
+                }
+
+                &::after {
+                transform: rotate(-45deg);
+                bottom: auto;
+                top: 50%;
+                }
+            }
+            .header__logo {
+                @include respond-to(sm) {
+                    margin-right: 81px;
+                }
+            }
+            .contact-block__mobile-menu {
+                @include respond-to(xs) {
+                    justify-content: space-between;
+                }
+            }
+    }
     &__wrapper {
+    box-sizing: border-box;
     max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
-    padding: 23px 48px 24px 64px;
+    padding: 23px 63px 24px 63px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: padding 0.4s ease;
+        @include respond-to(md) {
+            max-width: 1024px;
+            padding: 16px 56px 24px 54px;
+        }
+        @include respond-to(sm) {
+            max-width: 768px;
+            padding: 23px 48px 23px 48px;
+        }
+        @include respond-to(xs) {
+            max-width: 375px;
+            padding: 21px 25px 22px 24px
+        }
     }
 
     &__logo {
@@ -27,17 +76,100 @@ background-color: transparent;
         text-decoration: none;
         color: variables.$color-main-white;
         margin-right: 140px;
+        transition: margin 0.4s ease;
+            @include respond-to(md) {
+                margin-right: 99px;
+            }
+            @include respond-to(sm) {
+                margin-right: 93px;
+            }
+            @include respond-to(xs) {
+                margin-right: 0;
+            }
+    }
+
+    &__burger-container {
+    display: none;
+
+    @include respond-to(md) {
+        display: flex;
+        align-items: center;
+        gap: 23px;
+        cursor: pointer;
+        max-height: 20px;
+        margin-top: 10px;
+    }
+    @include respond-to(sm) {
+        margin-top: 13px;
+    }
+    @include respond-to(xs) {
+        margin-top: 0;
+    }
+    }
+
+    &__burger-icon {
+    position: relative;
+    width: 28px;
+    height: 8px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: white;
+        transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+    }
+
+    &::before {
+        top: 0;
+    }
+
+    &::after {
+        bottom: 0;
+    }
+
+    @include respond-to(md) {
+        display: block;
+    }
+    @include respond-to(xs) {
+        margin-left: 52px;
+    }
+    }
+
+    &__burger-phrase {
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-semibold;
+    color: variables.$color-main-white;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+        @include respond-to(xs) {
+            display: none;
+        }
     }
 
 
     &__nav {
         display: flex;
         flex-direction: row;
+        flex: 1;
+                @include respond-to(xs) {
+                    flex-direction: row-reverse;
+                }
             &-list{
             display: flex;
             flex-direction: row; 
             gap: 48px;
             align-items: center;
+                @include respond-to(md) {
+                    display: none;
+                }
             }
 
             &-item {
@@ -62,7 +194,13 @@ background-color: transparent;
             }
             
             &-actions {
-                margin-left: 495px;
+            display: flex;
+            align-items: center;
+            gap: 83px;
+            margin-left: auto;
+                @include respond-to(md) {
+                    gap: 56px;
+                }
             }
     }
 
@@ -77,6 +215,12 @@ background-color: transparent;
         font-weight: variables.$font-weight-semibold;
         font-size: 11px;
         letter-spacing: 0.06em;
+            @include respond-to(md) {
+                padding: 12px 34px 14px 35px;
+            }
+            @include respond-to(xs) {
+                display: none;
+            }
     }
 
     &__lang-select {
@@ -87,6 +231,55 @@ background-color: transparent;
         font-weight: variables.$font-weight-semibold;
         font-size: 11px;
         letter-spacing: 0.06em;
-        margin-right: 77px;
+    }
+
+    &-black {
+        .header__logo {
+            color: variables.$color-main-black;
+        }
+        .header__burger-icon {
+            &::after,
+            &::before {
+                background-color: black;
+            }
+        }
+        .header__burger-phrase {
+            color: variables.$color-main-black;
+        }
+        .header__lang-select {
+            color: variables.$color-main-black;
+        }
+        .header__request-button {
+            color: variables.$color-main-black;
+            border: 1px solid #080808;
+        }
+        .header__nav-item a {
+            color: variables.$color-main-black;
+        }
+
+            &.scroll, &.modal-open {
+                .header__logo {
+                color: variables.$color-main-white;
+            }
+            .header__burger-icon {
+                &::after,
+                &::before {
+                    background-color: white;
+                }
+            }
+            .header__burger-phrase {
+                color: variables.$color-main-white;
+            }
+            .header__lang-select {
+                color: variables.$color-main-white;
+            }
+            .header__nav-item a {
+                color: variables.$color-main-white;
+            }
+            .header__request-button {
+                color: variables.$color-main-white;
+                border: 1px solid white;
+            }
+        }
     }
 }

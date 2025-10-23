@@ -7,26 +7,23 @@
     margin: 0 auto;
         @include respond-to(md) {
             max-width: 1024px;
-            min-width: 1024px;
         }
         @include respond-to(sm) {
             max-width: 768px;
-            min-width: 768px
         }
         @include respond-to(xxs) {
             max-width: 375px;
-            min-width: 375px;
         }
     &__wrapper {
-        padding: 140px 64px 190px;
+        padding: 144px 64px 190px;
         padding-right: 0;
 
         @include respond-to(md) {
-            padding: 124px 56px 150px;
+            padding: 124px 56px 122px;
             padding-right: 0;
         }
         @include respond-to(sm) {
-            padding: 104px 48px 70px;
+            padding: 104px 48px 90px;
             padding-right: 0;
         }
         @include respond-to(xxs) {
@@ -68,19 +65,34 @@
     }
     &__swiper {
         &-slide {
-            width: 316px;
-              flex-shrink: 0;
+        max-width: 316px;
+
+        width: auto !important;
+        flex-shrink: 1;
+        flex-grow: 0;
+        @include respond-to(md) {
+            max-width: 293px;
+            
         }
+        @include respond-to(sm) {
+            max-width: 366px;
+        }
+
+        @include respond-to(xxs) {
+            max-width: 290px;
+        }
+        }
+
         &-phrase {
         font-family: variables.$font-family-main;
         font-weight: variables.$font-weight-bold;
         font-size: 14px;
         line-height: 1.37em;
         margin-bottom: 13px;
-        margin-top: 18px;
+        margin-top: 25px;
         max-width: 293px;
             @include respond-to(md) {
-                margin-top: 20px;
+                margin-top: 26px;
             }
         }
         &-date {
@@ -91,3 +103,12 @@
         }
     }
 }
+    .one-news__swiper-image {
+        img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; 
+        }
+
+    }

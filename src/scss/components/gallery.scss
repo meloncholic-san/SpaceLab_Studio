@@ -5,7 +5,7 @@
 .gallery {
     background-color: variables.$color-main-black;
     min-height: 700px;
-    min-width: 700px;
+    width: 100%;
     position: relative;
     overflow: hidden;
     @include respond-to(md) {
@@ -19,10 +19,8 @@
 
     @include respond-to(xxs) {
         max-width: 375px;
-        min-width: 375px;
         min-height: 486px;
     }
-
     &__wrapper {
     padding: 180px 182px;
     display: flex;
@@ -32,6 +30,7 @@
 
         @include respond-to(md) {
         padding: 133px 269px;
+        align-items: center;
         }
         @include respond-to(sm) {
         padding: 119px 141px;
@@ -72,12 +71,12 @@
             font-size: 32px;
             width: 360px;
             text-align: center;
-            margin-top: 1px;
-            margin-left: 61px;
+            margin-top: 0px;
+            margin-left: 0px;
         }
 
         @include respond-to(sm) {
-            margin-left: 61px;
+            margin-left: 0px;
         }
 
         @include respond-to(xxs) {
@@ -106,6 +105,7 @@
             max-width: 455px;
             text-align: center;
             margin-bottom: 67px;
+            align-self: auto;
         }
 
         @include respond-to(sm) {
@@ -139,10 +139,63 @@
         @include respond-to(md) {
             margin-right: 137px;
             padding: 14px 48px;
+            align-self: auto;
+            margin-right: 0;
         }
         @include respond-to(xxs) {
             margin-right: 145px;
         }
     }
 
+
+    &__projects {
+        background-color: white;
+            @include respond-to(md) {
+                min-height: 583px;
+            }
+            @include respond-to(sm) {
+                min-height: 535px;
+            }
+            @include respond-to(xxs) {
+                min-height: 505px;
+            }
+        .gallery__wrapper {
+
+                @include respond-to(md) {
+                    padding: 56px 56px;
+                }
+                @include respond-to(sm) {
+                    padding: 54px 48px;
+                }
+                @include respond-to(xxs) {
+                    padding: 50px 24px;
+                }
+        }
+        .gallery__phrase {
+            color: variables.$color-main-black;
+                @include respond-to(sm) {
+                    width: 370px;
+                }
+                @include respond-to(xxs) {
+                    width: 290px;
+                    margin-bottom: 11px;
+                    margin-right: auto;
+                }
+        }
+        .gallery__phrase-sm {
+            color: variables.$color-main-black;
+        }
+        .gallery__request-button {
+            border: 1px solid #080808;
+            padding: 14px 47px;
+        }
+    }
+
+    &__one-project {
+        .gallery__phrase {
+            @include respond-to(xxs) {
+                margin-left: -33px;
+            }
+        }
+    }
 }

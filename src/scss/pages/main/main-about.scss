@@ -6,7 +6,7 @@
     margin-top: 220px;
     margin-bottom: 246px;
     max-width: 1440px;
-
+    overflow: hidden;
 
     @include respond-to(md) {
     margin-top: 175px;

@@ -4,9 +4,8 @@
 .one-project-hero {
     background: url("../img/one-project/hero/one-project-hero-photo1-1440.png") no-repeat center/cover;
     min-height: 744px;
-    min-width: 375px;
         @include respond-to(md) {
-                min-height: 703px;
+                min-height: 694px;
                 background: url("../img/one-project/hero/one-project-hero-photo1-1024.png") no-repeat center/cover;
         }
         @include respond-to(sm) {
@@ -43,7 +42,7 @@
         color: variables.$color-main-white;
 
             @include respond-to(md) {
-            padding-top: 233px;
+            padding-top: 222px;
             padding-left: 104px;
             margin-bottom: 138px;
             }
@@ -103,7 +102,7 @@
         display: flex;
         flex-direction: row;
         gap: 29px;
-            @include respond-to(xxs) {
+            @include respond-to(xs) {
             flex-direction: column;
             gap: 22px;
             }

@@ -28,7 +28,6 @@
         @include respond-to(xxs) {
         padding: 79px 24px;
         padding-bottom: 80px;
-        padding-right: 6px;
         }
     }
 
@@ -36,8 +35,10 @@
         padding-left: 133px;
         margin-bottom: 141px;   
             @include respond-to(md) {
-                padding-left: 103px;
+                margin-right: auto;
+                max-width: 613px;
                 margin-bottom: 124px;
+                padding-left: 103px;
             }
             @include respond-to(sm) {
                 padding-left: 77px;
@@ -104,11 +105,34 @@
         }
     }
 
+    &__photo {
+        flex: 1 1 calc(50% - 4px); 
+        max-width: calc(50% - 4px); 
+
+        @include respond-to(sm) {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+            .one-project-image {
+            img {
+                width: 100%;
+            }
+          }
+            &-big {
+            width: 100%;  
+                .one-project-image {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+    }
     &__button {
         padding: 17px 47px;
         margin-top: 73px;
-        margin-left: 554px;
-        
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
         font-family: variables.$font-family-main;
         font-weight: variables.$font-weight-semibold;
         font-size: 11px;
@@ -117,16 +141,13 @@
         border: 1px solid #080808;
             @include respond-to(md) {
                 margin-top: 59px;
-                margin-left: 354px;
             }
             @include respond-to(sm) {
                 margin-top: 51px;
-                margin-left: 230px;
             }
             @include respond-to(xxs) {
                 padding: 13px 37px;
-                margin-top: 43px;
-                margin-left: 71px;
+                margin-top: 44px;
             }
     }
 }

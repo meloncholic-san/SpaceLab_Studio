@@ -26,7 +26,7 @@ const bs = browserSync.create();
 
 const paths = {
   html: {
-    src: ["src/index.html", "src/html/**/*.html"],
+    src: ["src/*.html", "src/html/**/*.html"],
     dest: "dist",
   },
   styles: {

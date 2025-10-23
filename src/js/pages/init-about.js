@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { swiperProgressbarChangeSlide, swiperProgressbarInit } from "../components/swiper-pagination.js";
 
-export function initSwiperAbout() {
+export function initAbout() {
   return new Swiper(".about-about__swiper", {
       modules : [Navigation],
       loop : true,

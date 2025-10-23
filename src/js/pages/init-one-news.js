@@ -1,7 +1,7 @@
 import Swiper from "swiper";
 import 'swiper/css';
 
-export function initSwiperOneNews() {
+export function initOneNews() {
     return new  Swiper('.one-news-latest__swiper', {
     loop: true,
     grabCursor: true,
