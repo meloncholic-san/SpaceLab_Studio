@@ -42,5 +42,5 @@ export function initProjects() {
     });
   }
 
-  filterProjects('all');
+  filterProjects('House');
 }

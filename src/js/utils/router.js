@@ -1,4 +1,4 @@
-import { initHeader } from "../components/header.js";
+import { initHeader } from "../components/init-header.js";
 // import { initFooter } from "./components/footer/footer.js";
 import { initMain } from "../pages/initMain.js";
 import { loadComponent } from "./load-component.js";

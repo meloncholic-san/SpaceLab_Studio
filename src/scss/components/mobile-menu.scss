@@ -4,33 +4,42 @@
 .mobile-menu {
     position: fixed;
     width: 100vw;
-    // height: 100vh;
     height: calc(100vh - var(--header-height, 0px));
     background-color: variables.$color-main-black;
     transform: translateY(-110%);
     opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s linear 0.4s;
     z-index: 5;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     .header.modal-open & {
         transform: translateY(0);
         opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s;
     }
     
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1; 
+    }
     &__list {
-        margin-top: 111px;
         margin-left: 211px;
         display: flex;
         flex-direction: column;
         gap: 34px;
             @include respond-to(sm) {
-            margin-top: 265px;
             margin-left: 188px;
             }
             @include respond-to(xs) {
-            margin-top: 91px;
             margin-left: 0;
             gap: 27px;
             align-items: center;

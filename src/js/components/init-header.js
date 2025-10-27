@@ -45,8 +45,8 @@ export function initHeader() {
 
     setHeaderHeightVariable();
 
-    // const resizeObserver = new ResizeObserver(setHeaderHeightVariable);
-    // resizeObserver.observe(headerLink);
+    const resizeObserver = new ResizeObserver(setHeaderHeightVariable);
+    resizeObserver.observe(headerLink);
 }
 
 function setHeaderHeightVariable() {

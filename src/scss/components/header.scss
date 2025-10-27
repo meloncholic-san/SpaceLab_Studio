@@ -17,9 +17,9 @@ background-color: transparent;
             .header__burger-phrase {
                 display: none;
             }
-            .header__wrapper {
-                padding-top: 32px;
-            }
+            // .header__wrapper {
+            //     padding-top: 32px;
+            // }
             .header__burger-icon {
                 &::before {
                 transform: rotate(45deg);
@@ -234,16 +234,40 @@ background-color: transparent;
     }
 
     &-black {
+        .header__wrapper {
+                @include respond-to(sm) {
+                    padding: 24px 48px 23px 54px;
+                }
+                @include respond-to(xs) {
+                    padding: 21px 25px 23px 24px;
+                }
+        }
         .header__logo {
             color: variables.$color-main-black;
+                @include respond-to(md) {
+                    margin-right: 98px;
+                }
+                @include respond-to(sm) {
+                    margin-right: 76px;
+                }
         }
         .header__burger-icon {
+                @include respond-to(md) {
+                        margin-bottom: -2px;
+                }
+                @include respond-to(sm) {
+                        margin-bottom: 5px;
+                }
+                @include respond-to(xs) {
+                        margin-bottom: 0px;
+                }
             &::after,
             &::before {
                 background-color: black;
             }
         }
         .header__burger-phrase {
+            display: none;
             color: variables.$color-main-black;
         }
         .header__lang-select {
@@ -256,7 +280,16 @@ background-color: transparent;
         .header__nav-item a {
             color: variables.$color-main-black;
         }
-
+            &.modal-open {
+                .header__wrapper {
+                    @include respond-to(sm) {
+                        padding: 24px 48px 23px 49px;
+                    }
+                    @include respond-to(xs) {
+                        padding: 21px 25px 23px 24px;
+                    }
+                }
+            }
             &.scroll, &.modal-open {
                 .header__logo {
                 color: variables.$color-main-white;
