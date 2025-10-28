@@ -17,9 +17,10 @@
     &__wrapper {
         padding: 180px 64px 140px;
         padding-right: 64px;
+        padding-bottom: 0;
             @include respond-to(md) {
-                padding: 147px 54px 0;
-                padding-right: 54px;
+                padding: 147px 56px 0;
+                padding-right: 55px;
             }
             @include respond-to(sm) {
                 padding: 138px 48px 0;
@@ -165,7 +166,7 @@
                     max-width: 449px;
                     margin-bottom: 32px;
                         @include respond-to(md) {
-                            margin-bottom: 35px;
+                            margin-bottom: 32px;
                         }
                         @include respond-to(sm) {
                             max-width: 501px;
@@ -173,7 +174,7 @@
                         }
                         @include respond-to(xs) {
                             max-width: 327px;
-                            margin-bottom: 24px;
+                            margin-bottom: 27px;
                         }
                     }
                 &-container {
@@ -191,71 +192,79 @@
 
     &__news {
     &-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 92px;
-        justify-content: center;
-            @include respond-to(md) {
-                gap: 5px;
-                margin-bottom: 61px;
-            }
-            @include respond-to(sm) {
-                margin-bottom: 52px;
-            }
-            @include respond-to(xs) {
-                flex-direction: column;
-                gap: 6px;
-                margin-bottom: 46px;
-            }
-    }
-    &-container-single {
-        flex: 1 1 calc(50% - 4px); 
-        max-width: calc(50% - 4px); 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+    justify-items: center;
+    
+        @include respond-to(md) {
+            gap: 6px;
+            column-gap: 8px;
+            margin-bottom: 63px;
+        }
 
         @include respond-to(sm) {
-            flex: 1 1 100%;
-            max-width: 100%;
+            gap: 6px;
+            grid-template-columns: 1fr;
+            margin-bottom: 46px;
         }
+
+        @include respond-to(xs) {
+            grid-template-columns: 1fr;
+            gap: 6px;
+            margin-bottom: 46px;
+        }
+    }
+        &-container-single {
+        width: 100%;
+        grid-column: span 1;
 
         .projects__project-room__phrase {
             @include respond-to(xs) {
-                padding: 24px;
+            padding: 24px;
             }
         }
             &-big {
-            flex: 1 1 100%;
-            max-width: 100%;
+            width: 100%;
+            grid-column: 1 / -1;
+
             .project-room__container {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                    @include respond-to(sm) {
-                        flex-direction: column;
-                    }
+
+                @include respond-to(sm) {
+                flex-direction: column;
+                }
             }
+
             .project-room-btn {
                 margin-right: 118px;
                 margin-top: 34px;
-                    @include respond-to(sm) {
-                        max-width: 106px;
-                        margin-right: 0;
-                        margin-top: 24px;
-                    }
-                    @include respond-to(xs) {
-                        margin-top: 8px;
-                    }
+
+                @include respond-to(sm) {
+                max-width: 106px;
+                margin-right: 0;
+                margin-top: 24px;
+                }
+
+                @include respond-to(xs) {
+                margin-top: 8px;
+                }
             }
+
             .project-room__title-room {
                 margin-bottom: 0;
             }
+
             .projects__project-room__phrase {
                 @include respond-to(xs) {
-                    padding: 24px;
+                padding: 24px;
                 }
             }
         }
-    }
+        }
     }
 
 
@@ -275,4 +284,21 @@
         height: auto;
         display: block;
     }
+}
+
+.projects__news-container-single,
+.projects__news-container-single-big {
+      will-change: opacity, transform;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(50px) scale(0.95);
+  transition: 
+    opacity 0.3s ease-out, 
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.projects__news-container-single.show,
+.projects__news-container-single-big.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }

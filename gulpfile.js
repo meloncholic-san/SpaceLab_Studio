@@ -59,6 +59,7 @@ export function html() {
         .helpers({
           array: (...args) => args.slice(0, -1),
           lookup: (obj, idx) => (obj && obj[idx]) ?? '',
+          eq: (a, b) => a === b,
         })
     )
     .pipe(gulp.dest("dist"))

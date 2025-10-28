@@ -3,11 +3,20 @@
     <source
       type="image/{{../imgType}}"
       media="{{lookup ../mediaQueries @index}}"
-      srcset="{{../basePath}}-{{this}}.{{../imgType}}" />
+      {{#if (eq ../loading "eager")}}
+        srcset="{{../basePath}}-{{this}}.{{../imgType}}"
+      {{else}}
+        data-srcset="{{../basePath}}-{{this}}.{{../imgType}}"
+      {{/if}} />
   {{/each}}
 
   <img
-    src="{{basePath}}-{{lastSize}}.{{imgType}}"
+    {{#if (eq loading "eager")}}
+      src="{{basePath}}-{{lastSize}}.{{imgType}}"
+    {{else}}
+      data-src="{{basePath}}-{{lastSize}}.{{imgType}}"
+    {{/if}}
     alt="{{alt}}"
-    loading="{{#if loading}}{{loading}}{{else}}lazy{{/if}}" />
+    loading="{{#if loading}}{{loading}}{{else}}lazy{{/if}}"
+  />
 </picture>

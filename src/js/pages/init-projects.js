@@ -15,17 +15,28 @@ export function initProjects() {
   const filterSelect = document.querySelector('.projects__header__filters-select');
   const projectContainers = document.querySelectorAll('.projects__news-container > div');
 
-  function filterProjects(selectedCategory) {
-    filterButtons.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.filter === selectedCategory);
-    });
+function filterProjects(selectedCategory) {
+  filterButtons.forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.filter === selectedCategory);
+  });
 
-    projectContainers.forEach(container => {
-      const matches = selectedCategory === 'all' || container.dataset.category === selectedCategory;
+  projectContainers.forEach((container, index) => {
+    const matches = selectedCategory === 'all' || container.dataset.category === selectedCategory;
 
-      container.style.display = matches ? 'block' : 'none';
-    });
-  }
+    if (matches) {
+      container.style.display = 'block';
+      setTimeout(() => {
+        container.classList.add('show');
+      }, index * 100 + 50);
+    } else {
+      container.classList.remove('show');
+      setTimeout(() => {
+        container.style.display = 'none';
+      }, 300);
+    }
+  });
+}
+
 
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {

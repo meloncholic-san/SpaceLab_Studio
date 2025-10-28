@@ -70,7 +70,7 @@
 
     @include respond-to(md) {
         display: block;
-        margin-left: 10px;
+        margin-left: 16px;
 
         &::before {
         position: relative;

@@ -5,9 +5,11 @@ import { initNews } from "../pages/init-news.js";
 import { initOneNews } from "../pages/init-one-news.js";
 import { initOneProject } from "../pages/init-one-project.js";
 import { initProjects } from "../pages/init-projects.js";
+import { initLazyImages } from "./load-images.js";
 document.addEventListener("DOMContentLoaded", () => {
 
     initHeader();
+    initLazyImages();
     if (document.body.id === "main-page") {
         initMain();
     } 

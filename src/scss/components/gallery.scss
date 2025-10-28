@@ -23,6 +23,7 @@
     }
     &__wrapper {
     padding: 180px 182px;
+    padding-right: 198px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -160,7 +161,7 @@
                 min-height: 505px;
             }
         .gallery__wrapper {
-
+                padding-bottom: 236px;
                 @include respond-to(md) {
                     padding: 56px 56px;
                 }

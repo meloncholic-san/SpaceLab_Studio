@@ -212,7 +212,7 @@
             }
 
         &__phrase {
-            padding: 32px;
+            padding: 30px;
             display: flex;
             flex-direction: row;
             gap: 24px;
@@ -221,9 +221,16 @@
             font-size: 10px;
             line-height: 1.71em;
             color: variables.$color-main-white;
-
+            @include respond-to(md) {
+            padding: 32px;
+            padding-top: 29px;
+            gap: 26px;
+            font-size: 11px;
+            }
             @include respond-to(xxs) {
-                padding: 24px;
+            padding: 24px;
+            padding-top: 21px;
+            gap: 18px;
             }
         }
         &__title-room {
