@@ -14,8 +14,162 @@
     
 </head>
 <body id="one-news-page">
+<div class="preloader">
+    <div class="preloader__wrapper">
+        <p class="preloader__text">
+            <span class="preloader__hi-text">
+                Hi
+            </span>
 
-  
+            <span class="preloader__percent">
+            </span>
+        </p>
+    </div>
+</div>
+<div class="pop-up-modal" id="pop-up-modal">
+  <div class="pop-up-modal__overlay"></div>
+
+  <div class="pop-up-modal__content">
+    <button class="pop-up-modal__close" aria-label="Close modal">✕</button>
+
+    <form class="pop-up-modal__form form" id="modal-form" novalidate>
+      <div class="form__section">
+        <h3 class="form__title">Calculate the cost of work</h3>
+        <h3 class="form__title">Make request</h3>
+
+        <div class="form__fields">
+          <div class="form__field">
+            <input id="modalName" name="name" type="text" placeholder="Name" />
+            <label for="modalName">Name</label>
+            <span class="form__error form__error_required">This field is required</span>
+            <span class="form__error form__error_pattern">Only letters, more than 2</span>
+          </div>
+
+          <div class="form__field">
+            <input id="modalLastName" name="lastName" type="text" placeholder="Last name" />
+            <label for="modalLastName">Last name</label>
+            <span class="form__error form__error_required">This field is required</span>
+            <span class="form__error form__error_pattern">Only letters, more than 2</span>
+          </div>
+
+          <div class="form__field">
+            <input id="modalPhone" name="phone" type="tel" placeholder="Phone" />
+            <label for="modalPhone">Phone</label>
+            <span class="form__error form__error_required">This field is required</span>
+            <span class="form__error form__error_pattern">Enter phone in international format</span>
+          </div>
+
+          <div class="form__field">
+            <input id="modalCity" name="city" type="text" placeholder="Your city" />
+            <label for="modalCity">Your city</label>
+            <span class="form__error form__error_required">This field is required</span>
+            <span class="form__error form__error_pattern">Only letters, more than 2</span>
+          </div>
+
+          <div class="form__field">
+            <input id="modalEmail" name="email" type="email" placeholder="Email" />
+            <label for="modalEmail">Email</label>
+            <span class="form__error form__error_required">This field is required</span>
+            <span class="form__error form__error_pattern">Please enter a valid email</span>
+          </div>
+
+          <div class="form__field form__field_select">
+            <select id="modalPropertyType" name="propertyType" required>
+              <option value="" disabled selected hidden>Property type</option>
+              <option value="apartments">Apartments</option>
+              <option value="flat">Flat</option>
+              <option value="townhouse">Townhouse</option>
+            </select>
+            <label for="modalPropertyType">Property type</label>
+            <span class="form__error form__error_required">This field is required</span>
+          </div>
+
+          <div class="form__field form__field_comment">
+            <input id="modalComment" name="comment" type="text" placeholder="Your comment" />
+            <label for="modalComment">Your comment</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form__section">
+        <p class="form__subtitle">Area (m2)</p>
+
+        <div class="form__radio-group">
+          <label class="form__radio">
+            <input type="radio" name="area" value="to 50" />
+            <span class="form__radio-label">to 50</span>
+            <span class="form__radio-icon"></span>
+          </label>
+
+          <label class="form__radio">
+            <input type="radio" name="area" value="50-150" />
+            <span class="form__radio-label">50-150</span>
+            <span class="form__radio-icon"></span>
+          </label>
+
+          <label class="form__radio">
+            <input type="radio" name="area" value="150-250" />
+            <span class="form__radio-label">150-250</span>
+            <span class="form__radio-icon"></span>
+          </label>
+
+          <label class="form__radio">
+            <input type="radio" name="area" value="250-400" />
+            <span class="form__radio-label">250-400</span>
+            <span class="form__radio-icon"></span>
+          </label>
+
+          <label class="form__radio">
+            <input type="radio" name="area" value="400-600" />
+            <span class="form__radio-label">400-600</span>
+            <span class="form__radio-icon"></span>
+          </label>
+
+          <label class="form__radio">
+            <input type="radio" name="area" value="600-800" />
+            <span class="form__radio-label">600-800</span>
+            <span class="form__radio-icon"></span>
+          </label>
+
+          <label class="form__radio">
+            <input type="radio" name="area" value="800-1000" />
+            <span class="form__radio-label">800-1000</span>
+            <span class="form__radio-icon"></span>
+          </label>
+
+          <label class="form__radio">
+            <input type="radio" name="area" value="1000+" />
+            <span class="form__radio-label">1000+</span>
+            <span class="form__radio-icon"></span>
+          </label>
+
+          <span class="form__error form__error_required">This field is required</span>
+        </div>
+
+        <div class="form__actions">
+          <div class="form__file">
+            <input id="modalFile" type="file" name="file" />
+            <label for="modalFile"><span class="form__add-plus">+</span></label>
+            <div class="form__file-info">
+              <p>Attach your file</p>
+              <p>File size not more than 10 MB</p>
+            </div>
+          </div>
+
+          <button class="form__submit" type="submit">Send Request</button>
+        </div>
+
+        <p class="form__afterword">
+          It is a long established fact that a reader will be distracted by the readable content of a page
+          <span>when looking</span> at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+;
+
+
 <header class="header header-black">
     <div class="header__wrapper">
         <a class="header__logo"
@@ -39,7 +193,7 @@
         
             <div class="header__nav-actions">
                 <button type="button" class="header__lang-select"> En </button>
-                <button type="button" class="header__request-button">
+                <button type="button" class="header__request-button" id="popup-request">
     Send Request
 </button>
 
