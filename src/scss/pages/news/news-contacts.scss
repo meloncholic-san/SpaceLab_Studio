@@ -5,16 +5,49 @@
 .news-contacts {
         background: url("../img/news/contacts/news-footer-photo-1440.png") no-repeat center/cover;
         min-height: 654px;
+          @include respond-to(md) {
+            min-height: 591px;
+            background: url("../img/news/contacts/news-footer-photo-1024.png") no-repeat center/cover;
+          }
+          @include respond-to(sm) {
+            min-height: 540px;
+            background: url("../img/news/contacts/news-footer-photo-768.png") no-repeat center/cover;
+          }
+          @include respond-to(xs) {
+            min-height: 518px;
+            background: url("../img/news/contacts/news-footer-photo-375.png") no-repeat center/cover;
+          }
     &__wrapper {
         position: relative;
         max-width: 1440px;
         margin: 0 auto;
+          @include respond-to(sm) {
+            padding: 0 122px;
+          }
+          @include respond-to(xs) {
+            padding: 0 23px
+          }
     }
 
     &__container {
         position: absolute;
         top: 316px;
         right: 197px;
+          @include respond-to(md) {
+            top: 261px;
+            right: 156px;
+          }
+          @include respond-to(sm) {
+            top: 242px;
+            right: unset;
+            margin-right: auto;
+            margin-left: auto;
+            width: 68.3%;
+          }
+          @include respond-to(xs) {
+            width: 88.3%;
+            top: 197px;
+          }
     }
     &__title {
         font-family: variables.$font-family-main;
@@ -26,6 +59,24 @@
         position: absolute;
         top: 137px;
         left: 200px;
+          @include respond-to(md) {
+            font-size: 32px;
+            line-height: 39px;
+            max-width: 360px;
+            top: 122px;
+            left: 159px;
+          }
+          @include respond-to(sm) {
+            top: 104px;
+            left: 124px;
+          }
+          @include respond-to(xs) {
+            font-size: 26px;
+            line-height: 31.7px;
+            max-width: 290px;
+            top: 81px;
+            left: 24px;
+          }
     }
 
     &__phrase {
@@ -36,11 +87,44 @@
     line-height: 1.71em;
     max-width: 366px;
     margin-bottom: 40px;
+      @include respond-to(md) {
+        display: none;
+      }
+      &-mobile {
+        display: none; 
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-light;
+        color: variables.$color-main-white;
+        font-size: 14px;
+        line-height: 1.71em;
+        max-width: 366px;
+        margin-bottom: 40px;
+          @include respond-to(md) {
+            display: block;
+            max-width: 340px;
+            margin-left: 2px;
+            margin-bottom: 21px;
+          }
+          @include respond-to(sm) {
+            max-width: 495px;
+            margin-bottom: 34px;
+          }
+          @include respond-to(xs) {
+            max-width: 370px;
+          }
+      }
     }
     &__form {
     position: relative;
     max-width: 382px;
     width: 382px;
+      @include respond-to(md) {
+        max-width: 348px;
+      }
+      @include respond-to(sm) {
+        width: 100%;
+        max-width: none;
+      }
     
   }
 
@@ -51,10 +135,16 @@
     height: 38px;
     border-bottom: 1px solid variables.$color-main-white;
     position: relative;
+      @include respond-to(md) {
+        width: 99%;
+      }
         ::placeholder {
         color: white;
         font-size: 20px;
         margin-bottom: 20px;
+          @include respond-to(md) {
+            font-size: 16px;
+          }
     }
   }
 
@@ -71,6 +161,9 @@
     outline: none;
     margin-left: -2px;
     padding-bottom: 6px;
+      @include respond-to(sm) {
+        margin-left: 0;
+      }
   }
 
   &__submit {
@@ -94,6 +187,10 @@
         fill: none;
         margin-bottom: 4px;
         margin-right: 3px;
+          @include respond-to(md) {
+            margin-bottom: -8px;
+            margin-right: 3px;
+          }
     }
 
 }

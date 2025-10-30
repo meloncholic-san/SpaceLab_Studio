@@ -78,20 +78,23 @@
         position: absolute;
         z-index: 3;
         bottom: 277px;
-        right: 131px;
-
+        right: 145px;
             @include respond-to(md) {
-            bottom: 273px;
-            right: 84px;
+            bottom: 275px;
+            right: 99px;
             }
-
             @include respond-to(sm) {
             bottom: 373px;
             right: 57px;
             }
-            @include respond-to(xxs) {
-            bottom: 388px;
-            right: 52px;
+            @include respond-to(xsm) {
+            bottom: 340px;
+            }
+            @include respond-to(xs) {
+            bottom: unset;
+            top: 140px;
+            left: 24px;
+            position: absolute;
             }
     }
 

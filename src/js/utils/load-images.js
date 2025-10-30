@@ -1,10 +1,5 @@
 export function initLazyImages(container = document) {
-  const lazyPictures = container.querySelectorAll('picture img[loading="lazy"]');
-
-  if (!('IntersectionObserver' in window)) {
-    lazyPictures.forEach(img => loadPicture(img.closest('picture')));
-    return;
-  }
+  const lazyPictures = container.querySelectorAll('img[loading="lazy"]');
 
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -14,7 +9,8 @@ export function initLazyImages(container = document) {
       }
     });
   }, {
-    rootMargin: '500px 500px',
+    root: null, 
+    rootMargin: '100px 100px',
     threshold: 0.1
   });
 
@@ -23,7 +19,6 @@ export function initLazyImages(container = document) {
 
 export function loadPicture(picture) {
   if (!picture) return;
-
   const img = picture.querySelector('img');
   const sources = picture.querySelectorAll('source');
 

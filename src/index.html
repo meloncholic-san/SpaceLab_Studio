@@ -7,7 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet"> 
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/fonts/fonts.css">
 
@@ -15,9 +17,10 @@
 </head>
 <body id="main-page">
 
-  
+@@include('./html/components/preloader.html')
+@@include('./html/components/pop-up-modal.html')
 
-@@include('./html/components/header.html',)
+@@include('./html/components/header.html', {"class":"header__hero"})
 @@include('./html/pages/main/main-hero.html')
 @@include('./html/pages/main/main-about.html')
 @@include('./html/pages/main/main-projects.html')

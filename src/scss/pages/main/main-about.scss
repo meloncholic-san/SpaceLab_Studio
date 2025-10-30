@@ -1,13 +1,13 @@
 @use '../../utils/variables.scss';
 @use '../../utils/mixins' as *;
-   
+
 .main-about {
     margin: 0 auto;
     margin-top: 220px;
     margin-bottom: 246px;
     max-width: 1440px;
-    overflow: hidden;
-
+    overflow: visible;
+    clip-path: inset(-183px 0px -170px 0px);
     @include respond-to(md) {
     margin-top: 175px;
     margin-bottom: 196px;
@@ -17,7 +17,7 @@
     margin-top: 105px;
     margin-bottom: 95px;
     }
-    @include respond-to(xxs) {
+    @include respond-to(xs) {
     margin-top: 80px;
     margin-bottom: 63px;
     }
@@ -27,22 +27,38 @@
         padding: 0 64px;
         margin: 0 auto;
 
-        @include respond-to(xxs) {
+        @include respond-to(xs) {
             padding: 0 24px;
             padding-right: 5px;
+            max-width: 375px;
+            margin: 0 auto;
         }
     }
 
     &__picture-1 {
         position: absolute;
         top: -80px;
-        right: -15px;
-
+        right: 0;
+        width: 35.6vw;
+        @include respond-from(lg) {
+            right: -12vw;
+            right: 0vw;
+        }
+        @include respond-from(xl) {
+            right: -10vw;
+        }
         @include respond-to(md) {
             top: -56px;
+            width: 34vw;
         }
         @include respond-to(sm) {   
             display: none;
+        }
+        img {
+            width: 100%;
+                @include respond-from(lg) {
+                    width: auto;
+                }
         }
     }
 
@@ -59,11 +75,17 @@
 
         @include respond-to(sm) {
             bottom: 220px;
-            left: 261px;
+            left: 34vw;
         }
-        @include respond-to(xxs) {
+        @include respond-to(xs) {
             bottom: 299px;
             left: 87px;
+        }
+
+        img {
+            @include respond-to(sm) {
+                width: 100%;
+            }
         }
     }
 
@@ -78,10 +100,11 @@
             left: 159px;
         }
         @include respond-to(sm) {
+            width: 50vw;
             bottom: 125px;
             left: 124px;
         }
-        @include respond-to(xxs) {
+        @include respond-to(xs) {
             bottom: 181px;
             left: 23px;
         }
@@ -89,18 +112,26 @@
 
     &__headline {
         margin-left: 133px;
-        margin-bottom: 411px;
+        margin-bottom: clamp(230px, 29vw, 411px);
+        max-width: 515px;
+            @include respond-to(xmd) {
+                margin-left: clamp(60px, 9vw, 133px);
+            }
             @include respond-to(md) {
                 margin-left: 95px;
-                margin-bottom: 246px;
+                margin-bottom: clamp(150px, 24vw, 246px);
+                max-width: clamp(300px, 43vw, 441px);
             }
             @include respond-to(sm) {
+                max-width: clamp(300px, 70vw, 521px);
                 margin-left: 60px;
                 margin-bottom: 415px;
+                margin-bottom: clamp(100px, 54vw, 415px);
             }
-            @include respond-to(xxs) {
+            @include respond-to(xs) {
+                max-width: clamp(108px, 87vw, 327px);
                 margin-left: 0px;
-                margin-bottom: 438px;
+                margin-bottom: clamp(80px, 115vw, 438px);
             }
 
     }
@@ -112,14 +143,14 @@
         margin-bottom: 24px;
             @include respond-to(md) {
                 font-size: 32px;
-                margin-bottom: 14px;
+                margin-bottom: 11px;
             }
 
             @include respond-to(sm) {
                 margin-bottom: 13px;
             }
 
-            @include respond-to(xxs) {
+            @include respond-to(xs) {
                 font-size: 26px;
                 margin-bottom: 15px;
             }
@@ -144,9 +175,9 @@
                 max-height: 109px;
                 margin-bottom: 24px;
             }
-            @include respond-to(xxs) {
-                width: 327px;
-                margin-bottom: 60px;
+            @include respond-to(xs) {
+                // width: 327px;
+            margin-bottom: calc(60px + (100vw - 375px) * -0.4);
             }
     }
 
@@ -156,13 +187,18 @@
         @include respond-to(md) {
             margin-bottom: 23px;
         }
-
+        @include respond-to(lsm) {
+            margin-bottom: 50px;
+        }
         @include respond-to(sm) {
-            margin-bottom: 13px;
+            margin-bottom: calc(13px + (100vw - 768px) * -0.2);
+        }
+        @include respond-to(xs) {
+            margin-bottom: 71px;
         }
 
-        @include respond-to(xxs) {
-            margin-bottom: 71px;
+        @include respond-to(xss) {
+            margin-bottom: calc(71px + (100vw - 375px) * -0.4);
         }
     }
 
@@ -175,7 +211,7 @@
         line-height: 1.71em;
         opacity: 0.7;
         position: relative;
-        margin-left: 781px;
+        margin-left: clamp(300px, 55vw, 781px);
         max-width: 380px;
         &::before {
             content: "“";
@@ -201,13 +237,14 @@
         @include respond-to(sm) {
             max-width: 290px;
             margin-left: 290px;
+            margin-left: clamp(150px, 38vw, 290px);
                 &::before {
                     left: -29px;
                     top: 5px;
                 }
         }
 
-        @include respond-to(xxs) {
+        @include respond-to(xs) {
             max-width: 288px;
             margin-left: 42px;
                 &::before {

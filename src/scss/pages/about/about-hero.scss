@@ -1,9 +1,15 @@
 @use '../../utils/variables.scss';
-
+@use '../../utils/mixins' as *;
 .about-hero {
     margin-top: 96px;
     background: url("../img/about/hero/section1-hero-photo1-1440.png") no-repeat center/cover;
     min-height: 648px;
+        @include respond-to(md) {
+            margin-top: 72px;
+        }
+        @include respond-to(sm) {
+            margin-top: 64px;
+        }
     &__wrapper {
         position: relative;
         padding: 0 64px;

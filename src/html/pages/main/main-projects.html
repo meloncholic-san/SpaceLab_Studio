@@ -23,6 +23,7 @@
                 mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
                 lastSize=1440\
                 imgType='png'\
+                pictureClass='main-projects__project-room__image'\
                 alt='room example - Eyewear store interior'}}"
                 })
 
@@ -35,7 +36,7 @@
                 "class-title": "main-projects__project-room__title-room",
                 "title-room": "Minimalist style home",
                 "room-description": "<p class='main-projects__project-room__phrase'><span>Lodz</span><span>16.10.2018</span><span>80 sq.m</span></p>",
-                "picture": "<img src='./img/main/projects/section3-project-photo6-375.png'></img>"
+                "picture": "<img src='./img/main/projects/section3-project-photo6-375.png' class='main-projects__project-room__image'></img>"
                 })
 
                 @@include('../../components/project-room.html', {
@@ -52,6 +53,7 @@
                 mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
                 lastSize=1440\
                 imgType='png'\
+                pictureClass='main-projects__project-room__image'\
                 alt='room example - Eyewear store interior'}}"
                 })
             </div>
@@ -71,12 +73,13 @@
                 mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
                 lastSize=1440\
                 imgType='png'\
+                pictureClass='main-projects__project-room__image'\
                 alt='room example - Eyewear store interior'}}"
                 })
 
 
 
-            <div class="main-projects__container-double">
+            <div class="main-projects__container-double more">
 
             @@include('../../components/project-room.html', {
             "class": "main-projects__project-room",
@@ -92,21 +95,24 @@
             mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
             lastSize=1440\
             imgType='png'\
+            pictureClass='main-projects__project-room__image'\
             alt='room example - Eyewear store interior'}}"
             })
 
 
                 <div class="main-projects__container-more">
-                    <p class="main-projects__container-more__phrase">See more 60 projects</p>
-                    {{> img-media
-                    basePath="./img/main/projects/section3-project-photo5"
-                    sizes=(array 375 768 1024 1440)
-                    mediaQueries=(array "(max-width: 575px)" "(max-width: 768px)" "(max-width: 1024px)" "(min-width: 1025px)")
-                    lastSize=1440
-                    imgType="png"
-                    alt="room example - living room"
-                    pictureClass="main-projects__container-more-img"
-                    }}  
+                    <div class="main-projects__container-more__wrapper">
+                        <p class="main-projects__container-more__phrase">See more 60 projects</p>
+                        {{> img-media
+                        basePath="./img/main/projects/section3-project-photo5"
+                        sizes=(array 375 768 1024 1440)
+                        mediaQueries=(array "(max-width: 575px)" "(max-width: 768px)" "(max-width: 1024px)" "(min-width: 1025px)")
+                        lastSize=1440
+                        imgType="png"
+                        alt="room example - living room"
+                        pictureClass="main-projects__container-more-img"
+                        }}  
+                    </div>
                 </div>
             </div>
     </div>

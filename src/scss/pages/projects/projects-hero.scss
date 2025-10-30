@@ -288,7 +288,7 @@
 
 .projects__news-container-single,
 .projects__news-container-single-big {
-      will-change: opacity, transform;
+cursor: pointer;
   opacity: 0;
   overflow: hidden;
   transform: translateY(50px) scale(0.95);
@@ -302,3 +302,4 @@
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+

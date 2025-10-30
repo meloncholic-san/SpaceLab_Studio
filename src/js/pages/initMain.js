@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { swiperProgressbarChangeSlide, swiperProgressbarInit } from "../components/swiper-pagination.js";
 import { initGallery } from "../components/gallery.js";
+import { loadPicture } from "../utils/load-images.js";
 
 function heroSwiper() {
     const swiperHeroMain = new Swiper(".hero__swiper", {

@@ -28,19 +28,23 @@
 
             <div class="news-hero__news-container-double"
             data-category="blog">
-            
+
+
                 <div class="news-hero__content">
-                    <p class="news-hero__content-title">5 smart tips for productive collaboration with the designer</p>
-                    <p class="news-hero__content-phrase tabletop">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel gravida urna. Donec blandit sapien eu diam ullamcorper euismod. Nam tempus pellentesque ligula ut aliquam.</p>
-                    @@include('../../components/discover-btn.html', {"class":"discover-btn_black", "text":"Discover more"})
+                        <div class="news-hero__content-wrapper">
+                        <p class="news-hero__content-title">5 smart tips for productive collaboration with the designer</p>
+                        <p class="news-hero__content-phrase tabletop">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel gravida urna. Donec blandit sapien eu diam ullamcorper euismod. Nam tempus pellentesque ligula ut aliquam.</p>
+                        @@include('../../components/discover-btn.html', {"class":"discover-btn_black", "text":"Discover more"})
+                    </div>
                 </div>
+
 
             @@include('../../components/project-room.html', {
             "class": "main-projects__project-room",
             "data-link": "one-news",
-            "class-description": "main-projects__project-room__description",
-            "class-container": "main-projects__project-room__container",
-            "class-title": "main-projects__project-room__title-room",
+            "class-description": "main-projects__project-room__description news",
+            "class-container": "news-hero__project-room__container",
+            "class-title": "news-hero__project-room__title-room",
             "title-room": "5 smart tips <br> for designers",
             "room-description": "<p class='news-hero__project-room__phrase'>Blog</p>",
             "picture": "{{> img-media\
@@ -48,6 +52,7 @@
             sizes=(array 375 768 1024 1440)\
             mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
             lastSize=1440\
+            pictureClass='news-hero__news-image'\
             imgType='png'\
             alt='room example - Eyewear store interior'}}"
             })
@@ -60,9 +65,9 @@
                 @@include('../../components/project-room.html', {
                 "class": "main-projects__project-room",
                 "data-link": "one-news",
-                "class-description": "main-projects__project-room__description",
-                "class-container": "main-projects__project-room__container",
-                "class-title": "main-projects__project-room__title-room",
+                "class-description": "main-projects__project-room__description news",
+                "class-container": "news-hero__project-room__container",
+                "class-title": "news-hero__project-room__title-room",
                 "title-room": "Non-standard <br> plinth options",
                 "room-description": "<p class='news-hero__project-room__phrase'>News</p>",
                 "picture": "{{> img-media\
@@ -82,9 +87,9 @@
                 @@include('../../components/project-room.html', {
                 "class": "main-projects__project-room",
                 "data-link": "one-news",
-                "class-description": "main-projects__project-room__description",
-                "class-container": "main-projects__project-room__container",
-                "class-title": "main-projects__project-room__title-room",
+                "class-description": "main-projects__project-room__description news",
+                "class-container": "news-hero__project-room__container",
+                "class-title": "news-hero__project-room__title-room",
                 "title-room": "Interior design, <br> LCD Rybalsky",
                 "room-description": "<p class='news-hero__project-room__phrase'>News</p>",
                 "picture": "{{> img-media\
@@ -93,6 +98,7 @@
                 mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
                 lastSize=1440\
                 imgType='png'\
+                pictureClass='news-hero__news-image'\
                 alt='room example - Eyewear store interior'}}"
                 })
     
@@ -105,9 +111,9 @@
             @@include('../../components/project-room.html', {
             "class": "main-projects__project-room",
             "data-link": "one-news",
-            "class-description": "main-projects__project-room__description",
-            "class-container": "main-projects__project-room__container",
-            "class-title": "main-projects__project-room__title-room",
+            "class-description": "main-projects__project-room__description news",
+            "class-container": "news-hero__project-room__container",
+            "class-title": "news-hero__project-room__title-room",
             "title-room": "5 smart tips <br> for designers",
             "room-description": "<p class='news-hero__project-room__phrase'>Advices</p>",
             "picture": "{{> img-media\
@@ -116,13 +122,17 @@
             mediaQueries=(array '(max-width: 375px)' '(max-width: 768px)' '(max-width: 1024px)' '(min-width: 1025px)')\
             lastSize=1440\
             imgType='png'\
+            pictureClass='news-hero__news-image'\
             alt='room example - Eyewear store interior'}}"
             })
 
             <div class="news-hero__content mobile">
-                <p class="news-hero__content-title mobile">5 smart tips for productive collaboration with the designer</p>
-                <p class="news-hero__content-phrase mobile">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel gravida urna. Donec blandit sapien eu diam ullamcorper euismod. Nam tempus pellentesque ligula ut aliquam.</p>
-                @@include('../../components/discover-btn.html', {"class":"discover-btn_black", "text":"Discover more"})
+                <div class="news-hero__content-wrapper">
+                    <p class="news-hero__content-title mobile">5 smart tips for productive collaboration with the designer</p>
+                    <p class="news-hero__content-phrase mobile">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel gravida urna. Donec blandit sapien eu diam ullamcorper euismod. Nam tempus pellentesque ligula ut aliquam.</p>
+                    @@include('../../components/discover-btn.html', {"class":"discover-btn_black", "text":"Discover more"})
+                </div>
+
             </div>
 
             </div>

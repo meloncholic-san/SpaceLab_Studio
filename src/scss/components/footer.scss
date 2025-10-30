@@ -110,5 +110,13 @@
 
             }
     }
+
+
+    &.news {
+        margin-top: -44px;
+            @include respond-to(xs) {
+                margin-top: -76px;
+            }
+    }
 }
 

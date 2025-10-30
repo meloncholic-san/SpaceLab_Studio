@@ -10,7 +10,7 @@
         @include respond-to(sm) {
             background: url("../img/contacts/footer-bg-768.png") no-repeat center/cover;
         }
-        @include respond-to(xxs) {
+        @include respond-to(xs) {
             background: url("../img/contacts/footer-bg-375.png") no-repeat center/cover;
         }
 
@@ -21,37 +21,39 @@
         max-width: 1440px;
         box-sizing: border-box;
         @include respond-to(md) {
-        max-width: 1024px;
-        padding: 106px 29px;
-        padding-bottom: 165px;
+        max-width: 764px;
+        margin: 0 auto;
+        padding: 104px 28px;
+        padding-bottom: 176px;
         }
         @include respond-to(sm) {
-        max-width: 768px;
+        max-width: 530px;
         padding: 90px 0px;
         padding-bottom: 43px;
         }
-        @include respond-to(xxs) {
-        padding: 59px 0;
-        max-width: 375px;
+        @include respond-to(xs) {
+        padding: 58px 10px;
+        max-width: 346px;
         padding-bottom: 117px;
         }
     }
 
-
+    &__content {
+        width: 100%;
+    }
     &__headline {
         margin-bottom: 62px;
         margin-left: 130px;
 
             @include respond-to(md) {
                 margin-bottom: 54px;
+                margin-left: 0;
             }
 
             @include respond-to(sm) {
-                margin-left: 124px;
                 margin-bottom: 48px;
             }
-            @include respond-to(xxs) {
-                margin-left: 25px;
+            @include respond-to(xs) {
                 margin-bottom: 38px;
             }
         &__title {
@@ -75,8 +77,9 @@
                     display: block;
                     margin-bottom: 12px;
                 }
-                @include respond-to(xxs) {
+                @include respond-to(xs) {
                     font-size: 26px;
+                    margin-bottom: 14px;
                 }
             }
         }
@@ -90,7 +93,7 @@
         max-width: 390px;
         opacity: 0.6;
 
-                @include respond-to(xxs) {
+                @include respond-to(xs) {
                     max-width: 315px;
                 }
         }
@@ -103,15 +106,12 @@
         margin-left: 130px;
 
         @include respond-to(md) {
-            margin-bottom: 59px;
+            margin-left: 0;
+            margin-bottom: 58px;
         }
         @include respond-to(sm) {
-            margin-left: 124px;
             gap: 49px;
             flex-direction: column;
-        }
-        @include respond-to(xxs) {
-            margin-left: 25px;
         }
     }
 
@@ -127,7 +127,7 @@
             @include respond-to(sm) {
                 gap: 35px;
             }
-            @include respond-to(xxs) {
+            @include respond-to(xs) {
                 gap: 34px;
                 flex-wrap: wrap;
                 width: 335px;
@@ -136,7 +136,7 @@
 
         &:nth-child(1) {
             min-width: 133px;
-                @include respond-to(xxs) {
+                @include respond-to(xs) {
                     margin-right: 6px;
                 }
         }
@@ -155,7 +155,7 @@
             font-size: 16px;
             line-height: 1.37em;
             margin-bottom: 18px;
-                @include respond-to(xxs) {
+                @include respond-to(xs) {
                     margin-bottom: 13px;
                 }
             }
@@ -181,16 +181,13 @@
 
     &__socials-desktop {
         margin-top: 4px;
-        margin-right: 115px;
+        margin-right: 131px;
 
         @include respond-to(md) {
-            margin-right: 113px;
         }
-
         @include respond-to(sm) {
-            margin-left: 366px;
         }
-        @include respond-to(xxs) {
+        @include respond-to(xs) {
             margin-left: 0px;
             margin-top: -14px;
         }
@@ -238,22 +235,81 @@
         z-index: 4;
         cursor: pointer;
         position: relative;
-
+        @include respond-to(md) {
+            margin-left: 0;
+            padding: 13px 48px;
+        }
         @include respond-to(sm) {
         top: -103px;
         left: -7px;
         padding: 14px 48px;
         }
 
-        @include respond-to(xxs) {
+        @include respond-to(xs) {
         top: -15px;
-        left: -106px;
+        left: 0px;
         margin-left: 26px;
         margin-right: 0;
         }
     }
 
     &__button {
-        margin-left: 132px;
+            margin-left: 131px;
+            @include respond-to(md) {
+                margin-left: 2px;
+            }
     }
 }
+
+
+
+.contacts-page {
+    min-height: 100vh;
+        .contacts__wrapper {
+            padding: 182px 64px;
+            padding-bottom: 170px;
+                @include respond-to(md) {
+                    padding: 209px 27px;
+                    padding-bottom: 0;
+                }
+                @include respond-to(sm) {
+                    padding: 344px 5px;
+                    padding-bottom: 0;
+                }
+                @include respond-to(xs) {
+                    padding: 95px 10px;
+                }
+        }
+        .contacts__socials-desktop {
+            margin-right: 131px;
+                @include respond-to(md) {
+                    margin-right: 0;
+                }
+        }
+        .contacts__button {
+                @include respond-to(md) {
+                    margin-left: 0;
+                    padding: 14px 48px;
+                }
+                @include respond-to(sm) {
+                    margin-left: 8px;
+                }
+                @include respond-to(xs) {
+                    margin-left: 7px;
+                    top: -13px;
+                    left: -7px;
+                }
+        }
+        .contacts__inner {
+            @include respond-to(md) {
+                margin-left: 0;
+            }
+        }
+        .contacts__headline {
+            @include respond-to(sm) {
+                margin-right: auto;
+                max-width: 390px;
+            }
+        }
+}
+

@@ -54,4 +54,15 @@ function filterProjects(selectedCategory) {
   }
 
   filterProjects('House');
+
+  projectContainers.forEach(container => {
+    const linkElement = container.querySelector('[data-link]');
+    const linkTarget = linkElement.dataset.link;
+    if (linkTarget) {
+      container.addEventListener('click', () => {
+        window.location.href = `${linkTarget}.html`;
+      });
+    }
+  });
+
 }

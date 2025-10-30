@@ -178,6 +178,9 @@
             bottom: 32px;
             left: 46px;
             }
+            @include respond-to(xsm) {
+            bottom: 15px;
+            }
             @include respond-to(xs) {
             bottom: 9px;
             left: 24px

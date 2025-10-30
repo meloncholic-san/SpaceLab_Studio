@@ -104,6 +104,7 @@ background-color: transparent;
     }
     @include respond-to(xs) {
         margin-top: 0;
+        margin-left: 52px;
     }
     }
 
@@ -137,9 +138,6 @@ background-color: transparent;
 
     @include respond-to(md) {
         display: block;
-    }
-    @include respond-to(xs) {
-        margin-left: 52px;
     }
     }
 
@@ -312,6 +310,61 @@ background-color: transparent;
             .header__request-button {
                 color: variables.$color-main-white;
                 border: 1px solid white;
+            }
+        }
+    }
+
+    &.header__hero {
+        .header__wrapper {
+            @include respond-to(md) {
+                padding: 18px 56px 24px 54px;
+            }
+            @include respond-to(sm) {
+                padding: 23px 48px 24px 48px;
+            }
+            @include respond-to(xs) {
+                padding: 21px 25px 25px 24px;
+            }
+        }
+    }
+
+    &.news {
+        .header__wrapper {
+            @include respond-to(md) {
+                padding-top: 32px;
+            }
+            @include respond-to(sm) {
+                padding-top: 24px;
+            }
+            @include respond-to(xs) {
+                padding-top: 22px;
+            }
+        }
+    }
+
+    &.contacts-page__header {
+        .header__wrapper {
+            @include respond-to(md) {
+                padding-top: 33px;
+            }
+            @include respond-to(sm) {
+                padding: 24px 48px 23px 54px;
+            }
+            @include respond-to(xs) {
+                padding: 21px 25px 22px 23px;
+            }
+        }
+        .header__logo {
+            @include respond-to(sm) {
+                margin-right: 75px;
+            }
+        }
+        .header__burger-container {
+            @include respond-to(sm) {
+                margin-top: 11px;
+            }
+            @include respond-to(xs) {
+                margin-top: 3px;
             }
         }
     }

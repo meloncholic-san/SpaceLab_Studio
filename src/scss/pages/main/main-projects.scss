@@ -36,7 +36,9 @@
         flex-direction: column;
         align-items: center;
         padding-bottom: 133px;
-
+        max-width: 500px;
+        padding-right: 16px;
+        margin: 0 auto;
         @include respond-to(md) {
             padding-bottom: 115px;
         }
@@ -81,7 +83,7 @@
         margin-left: 15px;
 
         @include respond-to(xxs) {
-            width: 327px;
+            width: clamp(250px, 90vw, 327px);
             text-align: start;
             margin-left: 0;
         }
@@ -97,32 +99,37 @@
             gap: 2px
         }
 
+        &.more {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+                @include respond-to(sm) {
+                    grid-template-columns: 1fr;
+                }
+        }
     }
 
     
 
     &__container-more {
         background-color: variables.$color-main-white;
-        height: 538px;
-        padding: 113px 204px 0px;
+        height: auto;
+        /* padding: 113px 204px 0; */
         display: flex;
         flex-direction: column;
-
-        @include respond-to(md) {
-            height: 386px;
-            padding: 63px 114px 0;
-        }
-
-        @include respond-to(sm) {
-            width: 222px;
-            height: 528px;
-            padding: 145px 225px 0;
-        }
-
-        @include respond-to(xxs) {
-            width: 220px;
-            height: 265px;
-            padding: 60px 54px 0;
+        justify-content: center;
+        align-items: center;
+            @include respond-to(sm) {
+                aspect-ratio: 1 / 1;
+            }
+        
+        &__wrapper {
+            margin-top: -47px;
+                @include respond-to(sm) {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-top: unset;
+                }
         }
 
         &__phrase {
@@ -153,11 +160,10 @@
                 margin-left: 26px;  
             }
             @include respond-to(sm) {
-                margin-left: -14px;
+                margin-left: unset;
             }
 
             @include respond-to(xxs) {
-                margin-left: 49px;
             }
         }
     }
@@ -171,6 +177,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
         &__room-big {
+            position: relative;
             margin-top: 4px;
             margin-bottom: 4px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -185,6 +192,9 @@
             
             @include respond-to(md) {
             margin-bottom: 2px;
+            }
+            @include respond-to(sm) {
+            margin-bottom: -4px;
             }
         }
 
@@ -205,6 +215,12 @@
             transition: opacity 0.4s ease, visibility 0.4s ease;
             height: 100%;
             width: 100%;
+        
+            &.news {
+                .project-room-btn {
+                    display: none;
+                }
+            }
         }
             &:hover .project-room__description {
                 opacity: 1;
@@ -226,6 +242,10 @@
             padding-top: 29px;
             gap: 26px;
             font-size: 11px;
+            }
+            @include respond-to(sm) {
+            padding-top: 32px;
+            gap: 20px;
             }
             @include respond-to(xxs) {
             padding: 24px;
@@ -264,35 +284,58 @@
 
             &.container-big {
 
-
                 @include respond-to(md) {
                     display: flex;
                     flex-direction: row;
-
+                    justify-content: space-between;
                     .discover-btn.project-room-btn {
-                        margin-left: 352px;
+                        margin-right: 117px;
                         margin-top: 32px;
                     }
                 }
 
                 @include respond-to(sm) {
                     flex-direction: column;
+                    padding-bottom: 42px;
+                        @include respond-to(xxs) {
+                            padding-bottom: 35px;
+                        }
                     .discover-btn.project-room-btn {
-                        margin-left: -132px;
-                        margin-top: 0;
-
+                        margin-left: -135px;
+                        margin-top: 0px;
+                        max-width: 410px;
+                            @include respond-to(xxs) {
+                            margin-left: -25px;
+                            max-width: 200px;
+                            }
                         &::before {
                             left: 133px;
                             top: 7px;
+                                @include respond-to(xxs) {
+                                    left: 25px;
+                                    top: 7px;
+                                }
                         }
                         &::after {
                             right: -265px;
+                                @include respond-to(xxs) {
+                                    right: -156px;
+                                }
                         }
                     }
                     
                 }
             }
         }
+    
+    &__image {
+        width: 100%;
+        img {
+        width: 100%;
+        }
+
+    }
+    
     }
 
 

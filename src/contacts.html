@@ -13,14 +13,14 @@
 
     
 </head>
-<body id="news-page">
+<body id="main-page">
 @@include('./html/components/preloader.html')
 @@include('./html/components/pop-up-modal.html');
 
-@@include('./html/components/header.html', {class:"header-black news"})
-@@include('./html/pages/news/news-hero.html')
-@@include('./html/pages/news/news-contacts.html')
-@@include('./html/components/footer.html', {"class":"footer__black news"})
+@@include('./html/components/header.html', {"class": "contacts-page__header"})
+@@include('html/components/contacts.html', {"class":"contacts-page"})
+@@include('./html/components/footer.html', {"class":"footer__dark"})
+
 
   <script src="./js/bundle.js" defer></script>
 

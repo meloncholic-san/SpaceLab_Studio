@@ -1,0 +1,41 @@
+@use "../utils/variables" as variables;
+@use '../utils/mixins' as *;
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: variables.$color-main-black;
+  opacity: 1;
+  transition: transform 0.5s ease;
+  transform: translateX(0);
+
+  &.loaded {
+    transform: translateX(-100%);
+    pointer-events: none;
+  }
+
+  &__text{
+    font-family: variables.$font-family-main;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: variables.$font-weight-light;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: variables.$color-main-white;
+  }
+}
+
+body.loading .loading-content{
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+body:not(.loading) .loading-content{
+  opacity: 1;
+  pointer-events: auto;
+}

@@ -6,10 +6,13 @@ import { initOneNews } from "../pages/init-one-news.js";
 import { initOneProject } from "../pages/init-one-project.js";
 import { initProjects } from "../pages/init-projects.js";
 import { initLazyImages } from "./load-images.js";
+import { initPreloader } from "../components/init-preloader.js";
 document.addEventListener("DOMContentLoaded", () => {
 
     initHeader();
     initLazyImages();
+    initPreloader();
+    
     if (document.body.id === "main-page") {
         initMain();
     } 

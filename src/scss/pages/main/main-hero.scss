@@ -14,8 +14,9 @@
             @include respond-to(sm) {
                 height: 959px;
             }
-            @include respond-to(xxs) {
-                height: 542px;
+            @include respond-to(xs) {
+                // height: 542px;
+                height: 100%;
             }
     }
 
@@ -34,9 +35,10 @@
                 height: 959px;
             }
         }
-            @include respond-to(xxs) {
+            @include respond-to(xs) {
         img {
-            height: 542px;
+            // height: 542px;
+            height: 100vh;
         }
         }
     }
@@ -51,7 +53,7 @@
 
 
         @include respond-to(md) {
-            bottom: 274px;
+            bottom: 276px;
             left: 159px;
             }
 
@@ -59,9 +61,10 @@
             bottom: 373px;
             left: 124px;
         }
-        @include respond-to(xxs) {
-            bottom: 156px;
+        @include respond-to(xs) {
+            bottom: unset;
             left: 24px;
+            top: 220px;
         }
 
             &-phrase {
@@ -82,7 +85,7 @@
                 max-width: 261px;
                 margin-bottom: 22px;
             }
-                @include respond-to(xxs) {
+                @include respond-to(xs) {
                 font-size: 40px;
                 max-width: 285px;
                 line-height: 0.98em;
@@ -97,22 +100,24 @@
 
     &__phrase {
         position: absolute;
-        right: 49px;
+        right: 64px;
         bottom: 39px;
         z-index: 3;
         transform: rotate(-90deg);
 
         @include respond-to(md) {
-        right: 17px;
-        bottom: 50px;
+        right: 33px;
+        bottom: 53px;
             }
 
         @include respond-to(sm) {
         right: -123px;
         bottom: 183px;
             }
-
-        @include respond-to(xxs) {
+        @include respond-to(xsm) {
+            bottom: 190px;
+        }
+        @include respond-to(xs) {
         right: -70px;
         bottom: 115px;
         }
@@ -128,7 +133,7 @@
             @include respond-to(sm) {
                 margin-left: 2px;
             }
-            @include respond-to(xxs) {
+            @include respond-to(xs) {
                 display: none;
             }
         }
@@ -148,7 +153,7 @@
                 @include respond-to(sm) {
                 max-width: none;
                 }
-                @include respond-to(xxs) {
+                @include respond-to(xs) {
                 font-size: 18px;
                 line-height: 0.96em;
                 letter-spacing: 0.04em;
