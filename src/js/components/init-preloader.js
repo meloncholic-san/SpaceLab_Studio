@@ -45,7 +45,7 @@ export function initPreloader() {
                         preloader.remove()
                     }, {once: true})
                         },500)
-            }, 500)
+            }, 800)
         }
     }
 

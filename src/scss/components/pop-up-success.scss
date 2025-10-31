@@ -1,0 +1,93 @@
+@use "../utils/variables.scss" as variables;
+@use "../utils/mixins" as *;
+
+.pop-up-success {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  transition: opacity 0.3s ease;
+
+  &.active {
+    display: flex;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  &__content {
+    position: relative;
+    background: #fff;
+    padding: 40px 30px;
+    width: 90%;
+    height: 80%;
+    box-sizing: border-box;
+    max-width: 706px;
+    max-height: 405px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+        @include respond-to(md) {
+        max-width: 521px;
+        max-height: 294px;
+        }
+        @include respond-to(xs) {
+        max-width: 327px;
+        max-height: 339px;
+        padding: 39px 23px;
+        }
+  }
+
+  &__title {
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-bold;
+    font-size: 24px;
+    text-align: center;
+    color: variables.$color-modal-main;
+    margin-top: 68px;
+    margin-bottom: 17px;
+        @include respond-to(md) {
+            margin-top: 17px;
+        }
+        @include respond-to(xs) {
+            margin-top: 0px;
+        }
+  }
+
+  &__text {
+    font-family: variables.$font-family-main;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.71em;
+    text-align: center;
+    color: variables.$color-modal-main;
+    opacity: 0.7;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-bottom: 31px;
+        @include respond-to(md) {
+            margin-bottom: 22px;
+        }
+  }
+
+  &__btn {
+    color: white;
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-semibold;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 14px 57px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: variables.$color-modal-main;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

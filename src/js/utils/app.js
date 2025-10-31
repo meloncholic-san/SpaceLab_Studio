@@ -7,11 +7,13 @@ import { initOneProject } from "../pages/init-one-project.js";
 import { initProjects } from "../pages/init-projects.js";
 import { initLazyImages } from "./load-images.js";
 import { initPreloader } from "../components/init-preloader.js";
+import { initPopUp } from "../components/init-pop-up.js";
 document.addEventListener("DOMContentLoaded", () => {
 
     initHeader();
     initLazyImages();
     initPreloader();
+    initPopUp();
     
     if (document.body.id === "main-page") {
         initMain();

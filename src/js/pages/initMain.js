@@ -61,6 +61,7 @@ function heroSwiper() {
 
 export function initMain() {
 
+
     const images = [
     'img/gallery/gallery-photo1.png',
     'img/gallery/gallery-photo2.png',
@@ -69,6 +70,17 @@ export function initMain() {
     'img/gallery/gallery-photo5.png',
     ];
 
+
+
+
+  document.querySelectorAll('[data-link]').forEach(linkElement => {
+    linkElement.addEventListener('click', () => {
+      const linkTarget = linkElement.dataset.link;
+      if (linkTarget) {
+        window.location.href = `${linkTarget}.html`;
+      }
+    });
+  });
 
 
     heroSwiper();
