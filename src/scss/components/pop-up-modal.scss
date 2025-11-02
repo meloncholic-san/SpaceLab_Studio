@@ -23,7 +23,6 @@
   }
 
   &__content {
-    overflow-y: scroll;
     position: relative;
     background-color: #F2F2F2;
     box-shadow: 0 2px 24px 0 rgba(0, 0, 0, .04);
@@ -45,12 +44,14 @@
         padding: 34px 41px calc(34px + var(--extra-padding, 0px));
         max-width: 62.3%;
         max-height: 862px;
+        overflow-y: scroll;
     }
     @include respond-to(xs) {
         background-color: #080808;
         padding: 0 0 calc(0px + var(--extra-padding, 0px));
         max-width: 88%;
         max-height: 892px;
+
     }
   }
 
@@ -69,14 +70,19 @@
         // right: 17px;
         top: 50px;
         right: 70px;
+        &:active {
+          transform: rotate(90deg);
+        }
         }
         @include respond-to(xs) {
         top: 16px;
         right: 16px;
         }
-    &:hover {
-      transform: rotate(90deg);
-    }
+      @include respond-to(lg) {
+        &:hover {
+          transform: rotate(90deg);
+        }
+      }
 
   }
 
@@ -228,6 +234,7 @@
         position: relative;
         cursor: pointer;
             select {
+            background-color: white;
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -393,7 +400,7 @@
             outline: none;
           }
         }
-        
+
         .form__radio-icon {
           position: relative;
           width: 18px;
