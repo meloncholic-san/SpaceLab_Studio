@@ -23,6 +23,7 @@
   }
 
   &__content {
+    overflow-y: scroll;
     position: relative;
     background-color: #F2F2F2;
     box-shadow: 0 2px 24px 0 rgba(0, 0, 0, .04);
@@ -64,8 +65,10 @@
     cursor: pointer;
     transition: transform 0.3s ease;
         @include respond-to(md) {
-        top: 6px;
-        right: 17px;
+        // top: 6px;
+        // right: 17px;
+        top: 50px;
+        right: 70px;
         }
         @include respond-to(xs) {
         top: 16px;
@@ -335,6 +338,9 @@
                 }
             }
         }
+      input[type="radio"]:focus {
+        outline: none;
+      }
       .form__radio {
         position: relative;
         display: flex;
@@ -382,8 +388,12 @@
         letter-spacing: 0.06em;
         text-align: center;
         color: #3A3E4B73;
+        outline: none;
+          &:focus {
+            outline: none;
+          }
         }
-
+        
         .form__radio-icon {
           position: relative;
           width: 18px;

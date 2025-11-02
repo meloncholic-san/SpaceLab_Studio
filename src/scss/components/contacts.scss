@@ -313,3 +313,8 @@
         }
 }
 
+.contacts__navigation__item_number:focus,
+.contacts__navigation__item_number:active {
+  outline: none;
+  color: variables.$color-main-white;
+}

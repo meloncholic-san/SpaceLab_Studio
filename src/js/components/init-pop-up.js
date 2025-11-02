@@ -164,7 +164,7 @@ export function initPopUp() {
 
   //Blur/Change actions
   form.querySelectorAll("input, select").forEach(input => {
-    input.addEventListener("blur", () => {
+    input.addEventListener("input", () => {
       if (input.id === "modalPropertyType") {
         const err = input.parentElement.querySelector(".form__error_required");
         if (!!input.value) err.classList.remove("visible");
