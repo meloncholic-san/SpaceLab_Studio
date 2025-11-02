@@ -1,3 +1,5 @@
+
+
 export function initPopUp() {
   const modal = document.getElementById("pop-up-modal");
   const overlay = modal.querySelector(".pop-up-modal__overlay");
@@ -44,12 +46,45 @@ export function initPopUp() {
 
   //Validation
   const fieldsConfig = {
-    modalName: /^[A-Za-z\s]{2,}$/,
-    modalLastName: /^[A-Za-z\s]{2,}$/,
-    modalCity: /^[A-Za-z\s]{2,}$/,
+    modalName: /^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s'-]{2,}$/,
+    modalLastName: /^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s'-]{2,}$/,
+    modalCity: /^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ\s'-]{2,}$/,
     modalPhone: /^\+\d{10,15}$/,
     modalEmail: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
   };
+
+  function adjustModalHeight() {
+    const content = modal.querySelector(".pop-up-modal__content");
+    const visibleErrors = Array.from(modal.querySelectorAll(".form__error.visible"));
+    const screenWidth = window.innerWidth;
+    const extraPerError = 20;
+
+    if (screenWidth <= 768) {
+      const totalErrors = visibleErrors.length;
+      content.style.setProperty("--extra-padding", `${totalErrors * extraPerError}px`);
+      return;
+    }
+
+    const groups = {
+      group1: ["modalName", "modalLastName"],
+      group2: ["modalPhone", "modalCity"],
+      group3: ["modalEmail", "modalPropertyType"],
+    };
+
+    let groupCount = 0;
+    Object.values(groups).forEach(fields => {
+      const hasError = fields.some(id => {
+        const field = modal.querySelector(`#${id}`);
+        return (
+          field?.parentElement.querySelector(".form__error.visible") !== null
+        );
+      });
+      if (hasError) groupCount++;
+    });
+
+    content.style.setProperty("--extra-padding", `${groupCount * extraPerError}px`);
+  }
+
 
   function validateField(field) {
     const value = field.value.trim();
@@ -60,14 +95,17 @@ export function initPopUp() {
     if (!value) {
       errorRequired?.classList.add("visible");
       errorPattern?.classList.remove("visible");
+            adjustModalHeight()
       return false;
     } else if (regex && !regex.test(value)) {
       errorRequired?.classList.remove("visible");
       errorPattern?.classList.add("visible");
+            adjustModalHeight()
       return false;
     } else {
       errorRequired?.classList.remove("visible");
       errorPattern?.classList.remove("visible");
+            adjustModalHeight()
       return true;
     }
   }
@@ -130,15 +168,37 @@ export function initPopUp() {
       if (input.id === "modalPropertyType") {
         const err = input.parentElement.querySelector(".form__error_required");
         if (!!input.value) err.classList.remove("visible");
+        adjustModalHeight();
         return;
       }
-      if (fieldsConfig[input.id]) validateField(input);
+      if (fieldsConfig[input.id]) {
+        validateField(input); 
+        adjustModalHeight();
+      }
     });
   });
-
   const radioGroupWrapper = form.querySelector(".form__radio-group__wrapper");
   const radios = radioGroupWrapper.querySelectorAll("input[type='radio']");
   radios.forEach(radio => {
     radio.addEventListener("change", () => validateRadioGroup(radioGroupWrapper));
   });
+
+  const fileInput = document.getElementById("modalFile");
+  const fileInfo = fileInput.closest(".form__file").querySelector(".form__file-info");
+
+  fileInput.addEventListener("change", () => {
+    const file = fileInput.files[0];
+    if (file) {
+      fileInfo.innerHTML = `
+        <p>File uploaded: ${file.name}</p>
+        <p>Size: ${(file.size / 1024 / 1024).toFixed(2)} MB</p>
+      `;
+    } else {
+      fileInfo.innerHTML = `
+        <p>Attach your file</p>
+        <p>File size not more than 10 MB</p>
+      `;
+    }
+  });
+
 }

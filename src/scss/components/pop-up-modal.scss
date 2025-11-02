@@ -27,7 +27,7 @@
     background-color: #F2F2F2;
     box-shadow: 0 2px 24px 0 rgba(0, 0, 0, .04);
     color: variables.$color-main-white;
-    padding: 56px 124px;
+    padding: 56px 124px calc(56px + var(--extra-padding, 0px)); 
     max-width: 800px;
     max-height: 689px;
     width: 100%;
@@ -35,20 +35,19 @@
     z-index: 2;
     font-family: variables.$font-family-main;
 
-
     @include respond-to(md) {
-        padding: 31px 50px 26px;
+        padding: 31px 50px calc(26px + var(--extra-padding, 0px));
         max-width: 706px;
         max-height: 609px;
     }
     @include respond-to(sm) {
-        padding: 34px 41px;
+        padding: 34px 41px calc(34px + var(--extra-padding, 0px));
         max-width: 62.3%;
         max-height: 862px;
     }
     @include respond-to(xs) {
         background-color: #080808;
-        padding: 0;
+        padding: 0 0 calc(0px + var(--extra-padding, 0px));
         max-width: 88%;
         max-height: 892px;
     }
