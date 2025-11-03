@@ -130,7 +130,7 @@
             @include respond-to(xs) {
                 gap: 34px;
                 flex-wrap: wrap;
-                width: 335px;
+                // width: 335px;
             }
         &__item {
 
@@ -143,10 +143,16 @@
 
         &:nth-child(2) {
             min-width: 162px;
+            @include respond-to(xs) {
+                min-width: 0;
+            }
         }
 
         &:nth-child(3) {
             min-width: 154px;
+            @include respond-to(xs) {
+                min-width: 0;
+            }
         }
             &_city {
             font-family: variables.$font-family-main;

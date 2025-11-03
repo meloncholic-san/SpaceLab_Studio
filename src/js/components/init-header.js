@@ -1,58 +1,56 @@
 export function initHeader() {
-    const headerLink = document.querySelector('.header');
-    const MobileMenulinks = document.querySelectorAll('.mobile-menu__item a');
+    const header = document.querySelector('.header');
+    const burgerBtn = document.querySelector('.header__burger-container');
+    const mobileLinks = document.querySelectorAll('.mobile-menu__item a');
     const currentPath = window.location.pathname.split('/').pop();
-    const burgerBtnLink = document.querySelector('.header__burger-container');
 
-
-    MobileMenulinks.forEach(link => {
+    mobileLinks.forEach(link => {
         if (link.getAttribute('href') === currentPath) {
             link.classList.add('active');
         }
     });
 
-    burgerBtnLink.addEventListener('click', () => {
-        headerLink.classList.toggle('modal-open');
-        if (headerLink.classList.contains('modal-open')) {
-            document.body.style.overflow = 'hidden';
-            document.documentElement.style.overflow = 'hidden';
-        } else {
-            document.documentElement.style.overflow = '';
-            document.body.style.overflow = '';
-        }
+    burgerBtn.addEventListener('click', () => {
+        header.classList.toggle('modal-open');
+        updateViewportHeight();
 
-        setHeaderHeightVariable();
+        const isOpen = header.classList.contains('modal-open');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        document.documentElement.style.overflow = isOpen ? 'hidden' : '';
+
+        updateHeaderHeight();
     });
 
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY >= headerLink.offsetHeight) {
-            headerLink.classList.add('scroll');
-        } else {
-            headerLink.classList.remove('scroll');
-        }
+        header.classList.toggle('scroll', window.scrollY >= header.offsetHeight);
     });
 
 
     window.addEventListener('resize', () => {
-        if (headerLink.classList.contains('modal-open')) {
-            headerLink.classList.remove('modal-open');
+        if (header.classList.contains('modal-open')) {
+            header.classList.remove('modal-open');
             document.body.style.overflow = '';
             document.documentElement.style.overflow = '';
         }
-
-        setHeaderHeightVariable();
+        updateHeaderHeight();
+        updateViewportHeight();
     });
 
-    setHeaderHeightVariable();
+    window.addEventListener('orientationchange', updateViewportHeight);
 
-    const resizeObserver = new ResizeObserver(setHeaderHeightVariable);
-    resizeObserver.observe(headerLink);
+    updateHeaderHeight();
+    updateViewportHeight();
 
-}
 
-function setHeaderHeightVariable() {
-    const header = document.querySelector('.header');
+    new ResizeObserver(updateHeaderHeight).observe(header);
 
-    const height = header.offsetHeight;
-    document.documentElement.style.setProperty('--header-height', `${height}px`);
+    function updateHeaderHeight() {
+        document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+    }
+
+    function updateViewportHeight() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
 }

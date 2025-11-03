@@ -316,6 +316,9 @@
                 @include respond-to(sm) {
                     gap: 50px;
                 }
+                @include respond-to(xs) {
+                    gap: 20px;
+                }
         }
 
     

@@ -5,6 +5,7 @@
 .projects {
     max-width: 1440px;
     margin: 0 auto;
+    min-height: 1500px;
         @include respond-to(md) {
             max-width: 1024px;
         }
