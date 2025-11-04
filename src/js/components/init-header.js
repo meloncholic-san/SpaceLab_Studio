@@ -10,7 +10,6 @@ export function initHeader() {
         }
     });
 
-
     function updateHeaderHeight() {
         document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
     }
@@ -20,22 +19,58 @@ export function initHeader() {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
 
-    function closeBurger() {
-        header.classList.remove('modal-open');
-        document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
-    }
+    let scrollPosition = 0;
 
-    function handleResizeLikeEvent() {
+    // function openBurger() {
+    //     scrollPosition = window.scrollY;
+    //     header.classList.add('modal-open');
+
+    //     updateHeaderHeight();
+    //     updateViewportHeight();
+    //     document.body.style.position = 'fixed';
+    //     document.body.style.top = `-${scrollPosition}px`;
+    //     document.body.style.width = '100%';
+    // }
+
+    // function closeBurger() {
+    //     header.classList.remove('modal-open');
+
+    //     updateHeaderHeight();
+    //     updateViewportHeight();
+
+    //     document.body.style.position = '';
+    //     document.body.style.top = '';
+    //     document.body.style.width = '';
+    //     window.scrollTo(0, scrollPosition);
+    // }
+
+
+    function openBurger() {
+        scrollPosition = window.scrollY;
+        header.classList.add('modal-open');
         updateHeaderHeight();
         updateViewportHeight();
+
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
     }
 
+    function closeBurger() {
+        header.classList.remove('modal-open');
+        updateHeaderHeight();
+        updateViewportHeight();
+        
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, scrollPosition);
+    }
 
     burgerBtn.addEventListener('click', () => {
-        const isOpen = header.classList.toggle('modal-open');
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-        document.documentElement.style.overflow = isOpen ? 'hidden' : '';
+        if (header.classList.contains('modal-open')) {
+            closeBurger();
+        } else {
+            openBurger();
+        }
         updateHeaderHeight();
         updateViewportHeight();
     });
@@ -44,18 +79,33 @@ export function initHeader() {
         header.classList.toggle('scroll', window.scrollY >= header.offsetHeight);
     });
 
+    let lastWindowWidth = window.innerWidth;
+
     window.addEventListener('resize', () => {
-        if (header.classList.contains('modal-open')) closeBurger();
-        handleResizeLikeEvent();
+        updateHeaderHeight();
+        updateViewportHeight();
+
+        if (header.classList.contains('modal-open') && Math.abs(window.innerWidth - lastWindowWidth) > 50) {
+            closeBurger();
+        }
+
+        lastWindowWidth = window.innerWidth;
     });
 
-    window.addEventListener('orientationchange', handleResizeLikeEvent);
+    window.addEventListener('orientationchange', () => {
+        updateHeaderHeight();
+        updateViewportHeight();
+    });
 
     if (window.visualViewport) {
-        window.visualViewport.addEventListener('resize', handleResizeLikeEvent);
+        window.visualViewport.addEventListener('resize', () => {
+            updateHeaderHeight();
+            updateViewportHeight();
+        });
     }
 
     new ResizeObserver(updateHeaderHeight).observe(header);
+
 
     updateHeaderHeight();
     updateViewportHeight();
