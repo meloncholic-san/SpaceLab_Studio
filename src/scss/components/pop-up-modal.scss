@@ -4,16 +4,19 @@
 .pop-up-modal {
   position: fixed;
   inset: 0;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(8, 8, 8, 0.75);
   z-index: 100;
+
+  opacity: 0;
+  pointer-events: none;
   transition: opacity 0.4s ease;
 
   &.active {
-    display: flex;
     opacity: 1;
+    pointer-events: auto;
   }
 
   &__overlay {
