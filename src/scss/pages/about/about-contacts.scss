@@ -79,16 +79,17 @@
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateX(2px);
+    @include respond-from(lg) {
+      &:hover {
+        transform: translateX(2px);
+      }
+    }
+    @include respond-to(md) {
+      &:active {
+        transform: translateX(2px);
+      }
     }
   }
-
-    &__icon {
-        fill: none;
-    }
-
 
     &__phrase {
         max-width: 366px;

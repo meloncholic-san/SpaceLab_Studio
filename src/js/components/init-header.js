@@ -10,40 +10,6 @@ export function initHeader() {
         }
     });
 
-    burgerBtn.addEventListener('click', () => {
-        header.classList.toggle('modal-open');
-        updateViewportHeight();
-
-        const isOpen = header.classList.contains('modal-open');
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-        document.documentElement.style.overflow = isOpen ? 'hidden' : '';
-
-        updateHeaderHeight();
-    });
-
-
-    window.addEventListener('scroll', () => {
-        header.classList.toggle('scroll', window.scrollY >= header.offsetHeight);
-    });
-
-
-    window.addEventListener('resize', () => {
-        if (header.classList.contains('modal-open')) {
-            header.classList.remove('modal-open');
-            document.body.style.overflow = '';
-            document.documentElement.style.overflow = '';
-        }
-        updateHeaderHeight();
-        updateViewportHeight();
-    });
-
-    window.addEventListener('orientationchange', updateViewportHeight);
-
-    updateHeaderHeight();
-    updateViewportHeight();
-
-
-    new ResizeObserver(updateHeaderHeight).observe(header);
 
     function updateHeaderHeight() {
         document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
@@ -53,4 +19,44 @@ export function initHeader() {
         const vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
+
+    function closeBurger() {
+        header.classList.remove('modal-open');
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+    }
+
+    function handleResizeLikeEvent() {
+        updateHeaderHeight();
+        updateViewportHeight();
+    }
+
+
+    burgerBtn.addEventListener('click', () => {
+        const isOpen = header.classList.toggle('modal-open');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        document.documentElement.style.overflow = isOpen ? 'hidden' : '';
+        updateHeaderHeight();
+        updateViewportHeight();
+    });
+
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scroll', window.scrollY >= header.offsetHeight);
+    });
+
+    window.addEventListener('resize', () => {
+        if (header.classList.contains('modal-open')) closeBurger();
+        handleResizeLikeEvent();
+    });
+
+    window.addEventListener('orientationchange', handleResizeLikeEvent);
+
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', handleResizeLikeEvent);
+    }
+
+    new ResizeObserver(updateHeaderHeight).observe(header);
+
+    updateHeaderHeight();
+    updateViewportHeight();
 }

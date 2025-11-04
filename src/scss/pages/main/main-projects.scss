@@ -171,24 +171,45 @@
     &__project-room {
         position: relative;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-        &:hover {
-            // transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        @include respond-to(lg) {
+            &:hover {
+                // transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            }
+        }
+        @include respond-to(md) {
+            &:active {
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            }
         }
         &__room-big {
             position: relative;
             margin-top: 4px;
             margin-bottom: 4px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            @include respond-to(lg) {
                 &:hover {
                 // transform: translateY(-5px) scale(1.02);
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
                 }
-                &:hover .project-room__description {
-                opacity: 1;
-                visibility: visible;
+            }
+            @include respond-to(md) {
+                &:active {
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
                 }
+            }
+            @include respond-to(lg) {
+                &:hover .project-room__description {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            @include respond-to(md) {    
+                &:active .project-room__description {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
             
             @include respond-to(md) {
             margin-bottom: 2px;
@@ -222,9 +243,17 @@
                 }
             }
         }
-            &:hover .project-room__description {
-                opacity: 1;
-                visibility: visible;
+            @include respond-to(lg) {
+                &:hover .project-room__description {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            @include respond-to(md) {
+                &:active .project-room__description {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
 
         &__phrase {

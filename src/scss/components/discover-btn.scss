@@ -47,23 +47,46 @@
     color: variables.$color-main-white;
 }
 
-.discover-btn_white:hover {
-    color: variables.$color-main-black;
+@include respond-to(lg) {
+    .discover-btn_white:hover {
+        color: variables.$color-main-black;
+    }
+}
+@include respond-to(md) {
+    .discover-btn_white:active {
+        color: variables.$color-main-black;
+    }
 }
 
-.discover-btn_white:hover::after,
-.discover-btn_white:hover::before {
-    background-color: variables.$color-main-black;
+@include respond-to(lg) {
+    .discover-btn_white:hover::after,
+    .discover-btn_white:hover::before {
+        background-color: variables.$color-main-black;
+    }
 }
+@include respond-to(md) {
+    .discover-btn_white:active::after,
+    .discover-btn_white:active::before {
+        background-color: variables.$color-main-black;
+    }
+}
+
 
 
 .discover-btn_black {
     color: variables.$color-main-black;
 }
 
-.discover-btn_black:hover {
-    color: rgb(0 0 0 / 32%)
-}
+    @include respond-to(lg) {
+        .discover-btn_black:hover {
+            color: rgb(0 0 0 / 32%)
+        }
+    }
+    @include respond-to(md) {
+        .discover-btn_black:active {
+            color: rgb(0 0 0 / 32%)
+        }
+    }
 
 .project-room-btn {
     display: none;
