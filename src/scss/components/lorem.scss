@@ -120,7 +120,7 @@
             left: -164px;
             }
             @include respond-to(xxs) {
-            top: 99px;
+            top: 96px;
             left: -89px;
             }
         }
@@ -137,7 +137,7 @@
             left: 40px;
             }
             @include respond-to(xxs) {
-            top: 38px;
+            top: 34px;
             left: 53px;
             }
         }
@@ -154,7 +154,7 @@
             right: 89px;
             }
             @include respond-to(xxs) {
-            top: 113px;
+            top: 109px;
             right: -93px;
             }
         }
@@ -187,7 +187,7 @@
             }
             @include respond-to(xxs) {
             right: -140px;
-            bottom: 117px;
+            bottom: 121px;
             }
         }
         &.picture-6{
@@ -202,7 +202,7 @@
             right: 159px;
             }
             @include respond-to(xxs) {
-            bottom: -18px;
+            bottom: -14px;
             right: 39px;
             }
         }
@@ -219,7 +219,7 @@
             left: 45px;
             }
             @include respond-to(xxs) {
-            bottom: 139px;
+            bottom: 143px;
             left: 22px;
             z-index: 3;
             }
@@ -236,7 +236,7 @@
             @include respond-to(xxs) {
                 display: block;
                 left: -59px;
-                bottom: 64px;
+                bottom: 68px;
                 z-index: 1;
             }
         }
@@ -258,6 +258,15 @@
         .lorem__phrase-mobile {
             color: variables.$color-main-white;
             opacity: 0.6;
+        }
+    }
+
+
+    &__main {
+        .lorem__content {
+            @include respond-to(md) {
+                margin-left: 0px;
+            }
         }
     }
 }

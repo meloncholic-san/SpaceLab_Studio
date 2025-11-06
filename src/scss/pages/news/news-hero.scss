@@ -391,6 +391,7 @@
             }
             @include respond-to(sm) {
                 gap: 25px;
+                max-width: 218px;
             }
             @include respond-to(xs) {
                 gap: 25px;

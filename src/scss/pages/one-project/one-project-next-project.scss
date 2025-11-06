@@ -62,6 +62,7 @@
                 @include respond-to(md) {
                     font-size: 32px;
                     margin-bottom: 38px;
+                    margin-left: 0;
                 }
                 @include respond-to(sm) {
                     margin-bottom: 72px;

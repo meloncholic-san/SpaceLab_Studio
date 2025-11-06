@@ -21,6 +21,40 @@ export function initHeader() {
 
     let scrollPosition = 0;
 
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    function openBurger() {
+        scrollPosition = window.scrollY;
+        header.classList.add('modal-open');
+        updateHeaderHeight();
+        updateViewportHeight();
+
+        if (isIOS) {
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPosition}px`;
+            document.body.style.width = '100%';
+        }
+    }
+
+    function closeBurger() {
+        header.classList.remove('modal-open');
+        updateHeaderHeight();
+        updateViewportHeight();
+
+        if (isIOS) {
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+        } else {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPosition);
+        }
+    }
+    
     // function openBurger() {
     //     scrollPosition = window.scrollY;
     //     header.classList.add('modal-open');
@@ -45,25 +79,25 @@ export function initHeader() {
     // }
 
 
-    function openBurger() {
-        scrollPosition = window.scrollY;
-        header.classList.add('modal-open');
-        updateHeaderHeight();
-        updateViewportHeight();
+    // function openBurger() {
+    //     scrollPosition = window.scrollY;
+    //     header.classList.add('modal-open');
+    //     updateHeaderHeight();
+    //     updateViewportHeight();
 
-        document.documentElement.style.overflow = 'hidden';
-        document.body.style.overflow = 'hidden';
-    }
+    //     document.documentElement.style.overflow = 'hidden';
+    //     document.body.style.overflow = 'hidden';
+    // }
 
-    function closeBurger() {
-        header.classList.remove('modal-open');
-        updateHeaderHeight();
-        updateViewportHeight();
+    // function closeBurger() {
+    //     header.classList.remove('modal-open');
+    //     updateHeaderHeight();
+    //     updateViewportHeight();
         
-        document.documentElement.style.overflow = '';
-        document.body.style.overflow = '';
-        window.scrollTo(0, scrollPosition);
-    }
+    //     document.documentElement.style.overflow = '';
+    //     document.body.style.overflow = '';
+    //     window.scrollTo(0, scrollPosition);
+    // }
 
     burgerBtn.addEventListener('click', () => {
         if (header.classList.contains('modal-open')) {
